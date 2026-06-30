@@ -1160,7 +1160,7 @@
 
     <script>
 
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwNHV3oz3m9BG1lmQ7GPK3YMoB_7v6hsZ2Ri7PKMWpoQrk6SDdMU5YeXpkBNBtCQNpmbA/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxdv7ssyQAGZFb_hqLR6JdiWtAJEcTYRJY2Em8blkKedKZE4WDKAxoevSqQ6ANfXPP0qg/exec";
 
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -1188,7 +1188,7 @@
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = "Sending...";
 
-                fetch(scriptURL, {
+    fetch(scriptURL, {
     method: "POST",
     body: new URLSearchParams({
         name: document.getElementById("name").value,
