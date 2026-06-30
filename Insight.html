@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Furniture Ideas & Interior Tips | OM Modular Furniture</title>
+
+    <meta name="description"
+        content="Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture.">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ============================
+           RESET & BASE
+        ============================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 90px;
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding-top: 75px;
+            }
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f2ed;
+            color: #555;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        :root {
+            --cream: #f5f2ed;
+            --taupe: #8A8175;
+            --taupe-light: #bcb8b3;
+            --dark: #111;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* ============================
+           CURSOR
+        ============================ */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #8A8175;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(138, 129, 117, .5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width .3s var(--ease-out), height .3s var(--ease-out), opacity .3s;
+        }
+
+        .cursor-ring.expand {
+            width: 60px;
+            height: 60px;
+            opacity: .5;
+        }
+
+        /* ============================
+           SCROLL PROGRESS
+        ============================ */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8A8175, #bcb8b3);
+            z-index: 99997;
+            width: 0%;
+            transition: width .1s linear;
+        }
+
+        /* ============================
+   HEADER
+============================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 1000;
+            transition: background .4s ease, height .4s ease, transform .5s var(--ease-out);
+            animation: headerDrop .8s .2s var(--ease-out) both;
+        }
+
+        @keyframes headerDrop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        header.scrolled {
+            background: rgba(17, 17, 17, .92);
+            backdrop-filter: blur(20px);
+            height: 70px;
+        }
+
+        header.hide-header {
+            transform: translateY(-100%);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-area a {
+            text-decoration: none;
+            color: #f5f2ed;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color .3s, letter-spacing .3s;
+        }
+
+        .logo-area a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #bcb8b3;
+            transition: width .4s var(--ease-out);
+        }
+
+        .logo-area a:hover {
+            color: #bcb8b3;
+            letter-spacing: 3px;
+        }
+
+        .logo-area a:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform .4s var(--ease-out), opacity .3s;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .logo:hover {
+            transform: translate(-50%, -50%) scale(1.06);
+            opacity: .85;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icons i {
+            font-size: 20px;
+            color: #f5f2ed;
+            cursor: none;
+            transition: color .3s, transform .3s;
+        }
+
+        .icons i:hover {
+            color: #8A8175;
+            transform: scale(1.15);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-form {
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            transform: translateY(-50%);
+            width: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .4s var(--ease-out);
+        }
+
+        .search-box.active .search-form {
+            width: 250px;
+            opacity: 1;
+        }
+
+        .search-input {
+            width: 250px;
+            height: 42px;
+            padding: 0 15px;
+            border: 1px solid rgba(138, 129, 117, .4);
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, .9);
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color .3s;
+        }
+
+        .search-input:focus {
+            border-color: #8A8175;
+        }
+
+        .menu-btn {
+            transition: transform .4s var(--ease-out);
+        }
+
+        .menu-box.active .menu-btn {
+            transform: rotate(90deg);
+            color: #b8aa9b;
+        }
+
+        .menu-dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 240px;
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(20px);
+            border-radius: 18px;
+            padding: 15px 25px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(.97);
+            transform-origin: top right;
+            transition: opacity .35s, transform .35s var(--ease-out), visibility .35s;
+            z-index: 9999;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #555;
+            font-size: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .06);
+            transition: color .3s, padding-left .3s;
+        }
+
+        .menu-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .menu-dropdown a:hover {
+            color: #8A8175;
+            padding-left: 12px;
+        }
+
+        .menu-box.active .menu-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* ============================
+           HERO IMAGE
+        ============================ */
+
+        .hero-image {
+            width: 100%;
+            min-height: 100vh;
+            height: calc(100vh - 75px);
+            position: relative;
+            overflow: hidden;
+            margin-top: -90px;
+        }
+
+        .hero-bg-layer {
+            position: absolute;
+            inset: 0;
+            background: url("image/In.jpg") center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .45);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .cutting-edge {
+            max-width: 900px;
+            text-align: center;
+            color: white;
+            font-size: 26px;
+            line-height: 1.8;
+            font-weight: 300;
+            padding: 0 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1.4s 1s var(--ease-out) forwards;
+        }
+
+        @media(max-width:768px) {
+
+            .hero-image {
+                height: 75vh;
+                min-height: 500px;
+            }
+
+            .hero-bg-layer {
+                background-position: center center;
+                background-size: cover;
+            }
+
+        }
+
+        /* Decorative quote marks */
+        .cutting-edge::before {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, .15);
+            line-height: 0;
+            vertical-align: -30px;
+            margin-right: 10px;
+        }
+
+        .cutting-edge::after {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, .15);
+            line-height: 0;
+            vertical-align: -30px;
+            margin-left: 10px;
+        }
+
+        /* Hero line */
+        .hero-line {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 0;
+            background: rgba(255, 255, 255, .3);
+            z-index: 3;
+            animation: lineDown 1.2s 1.8s var(--ease-out) forwards;
+        }
+
+        @keyframes lineDown {
+            to {
+                height: 80px;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeUp .8s 2s var(--ease-out) forwards;
+        }
+
+        .scroll-indicator span {
+            color: rgba(255, 255, 255, .5);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .scroll-mouse {
+            width: 24px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, .4);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            padding-top: 6px;
+        }
+
+        .scroll-wheel {
+            width: 3px;
+            height: 8px;
+            background: rgba(255, 255, 255, .7);
+            border-radius: 2px;
+            animation: scrollWheel 2s ease infinite;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(12px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================
+           SCROLL REVEAL
+        ============================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal[data-delay="2"] {
+            transition-delay: .15s;
+        }
+
+        .reveal[data-delay="3"] {
+            transition-delay: .3s;
+        }
+
+        /* ============================
+           STORY SECTION
+        ============================ */
+        .story-section {
+            background: #f5f2ed;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Big watermark number */
+        .story-section::before {
+            content: '01';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 280px;
+            font-weight: 700;
+            color: rgba(138, 129, 117, .06);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .story-box {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .story-box h1 {
+            font-size: 50px;
+            font-weight: 300;
+            color: #8A8175;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .story-box h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: #bcb8b3;
+            transition: width 1.4s 1s var(--ease-out);
+        }
+
+        .story-box.active h1::after {
+            width: 60%;
+        }
+
+        .story-text {
+            max-width: 1000px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 2;
+            color: #666;
+        }
+
+        /* ============================
+           INSIGHT SLIDER
+        ============================ */
+        .insight-slider {
+            width: 100%;
+            padding: 80px 0;
+            background: #f5f2ed;
+        }
+
+        .mySwiper {
+            width: 90%;
+            height: 650px;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+
+        .swiper-slide-active img {
+            transform: scale(1.08);
+        }
+
+        .swiper-pagination-bullet {
+            background: #8A8175;
+        }
+
+        .swiper-pagination-bullet-active {
+            transform: scale(1.3);
+        }
+
+        /* ============================
+           WHY OMF + BESPOKE BOX
+        ============================ */
+        .two-col-section {
+            background: #fbfbfa;
+            padding: 140px 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            max-width: 1300px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 80px;
+        }
+
+        .left-content,
+        .right-content {
+            width: 50%;
+        }
+
+        .left-content h5,
+        .right-content h5 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #8A8175;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .left-content h5::after,
+        .right-content h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 1px;
+            background: #8A8175;
+            transition: width .8s var(--ease-out);
+        }
+
+        .left-content.active h5::after,
+        .right-content.active h5::after {
+            width: 80px;
+        }
+
+        .left-content h4 {
+            font-size: 22px;
+            line-height: 1.4;
+            font-weight: 300;
+            color: #323232;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .left-content p,
+        .right-content p {
+            font-size: 18px;
+            line-height: 2;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Vertical divider */
+        .col-divider {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #bcb8b3, transparent);
+            align-self: stretch;
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 1s .5s ease;
+        }
+
+        .col-divider.active {
+            opacity: 1;
+        }
+
+        /* ============================
+           OUR SERVICE
+        ============================ */
+        .our-service {
+            width: 100%;
+            padding: 100px 20px;
+            background: #f5f2ed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .our-service::before {
+            content: '02';
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            font-size: 260px;
+            font-weight: 700;
+            color: rgba(138, 129, 117, .05);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .service-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #8A8175;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 0 0 30px 0;
+        }
+
+        .service-box h4 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #333;
+            letter-spacing: 2px;
+            margin: 60px 0 20px 0;
+        }
+
+        .service-box>p {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            font-size: 20px;
+            line-height: 2;
+            color: #666;
+            text-align: left;
+        }
+
+        .service-box img {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            border-radius: 12px;
+            transition: transform .8s var(--ease-out), box-shadow .8s ease;
+        }
+
+        .service-box img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .1);
+        }
+
+        /* Service list items */
+        .service-list {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .service-item {
+            flex: 1;
+            min-width: 260px;
+            max-width: 320px;
+            border: 1px solid rgba(138, 129, 117, .2);
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: left;
+            transition: border-color .4s ease, transform .4s var(--ease-out), box-shadow .4s ease;
+            background: #fff;
+        }
+
+        .service-item:hover {
+            border-color: #8A8175;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(138, 129, 117, .12);
+        }
+
+        .service-item .icon {
+            font-size: 28px;
+            color: #8A8175;
+            margin-bottom: 15px;
+        }
+
+        .service-item h6 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .service-item p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #777;
+        }
+
+        /* ============================
+           CONTACT
+        ============================ */
+        .contact {
+            background: #8A8175;
+            color: white;
+            padding: 100px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: 'OMF';
+            position: absolute;
+            right: -60px;
+            bottom: -40px;
+            font-size: 250px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .05);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .contact h1 {
+            font-size: 38px;
+            font-weight: 500;
+            text-align: left;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            font-size: 18px;
+            text-align: left;
+            max-width: 700px;
+            line-height: 1.9;
+        }
+
+        /* ============================
+           FOOTER
+        ============================ */
+        footer {
+            background: #111;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 20px 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            flex: 1;
+            text-align: left;
+            margin-left: 90px;
+            font-size: 16px;
+        }
+
+        .footer-center {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+            font-size: 16px;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+            margin-right: 90px;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color .3s ease;
+            font-size: 16px;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+
+        /* ============================
+           DIVIDER
+        ============================ */
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #bcb8b3 30%, #bcb8b3 70%, transparent);
+            width: 0;
+            margin: 0 auto;
+            transition: width 1.4s var(--ease-out);
+        }
+
+        .divider-line.active {
+            width: 80%;
+        }
+
+        /* ============================
+           RESPONSIVE
+        ============================ */
+        @media(max-width: 991px) {
+            .box {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .left-content,
+            .right-content {
+                width: 100%;
+            }
+
+            .col-divider {
+                display: none;
+            }
+
+            .two-col-section {
+                padding: 80px 30px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            header {
+                height: 75px;
+                padding: 0 15px;
+            }
+
+            .logo {
+                position: static;
+                transform: none;
+                width: 75px;
+            }
+
+            .logo img {
+                width: 75px;
+            }
+
+            .cutting-edge {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+
+            .story-box h1 {
+                font-size: 34px;
+            }
+
+            .mySwiper {
+                height: 300px;
+            }
+
+            .contact {
+                padding: 50px 20px;
+            }
+
+            .contact h1,
+            .contact h2,
+            .contact p {
+                text-align: center;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                padding: 25px 15px;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        @media(max-width: 600px) {
+            h1 {
+                font-size: 32px !important;
+            }
+
+            h2 {
+                font-size: 28px !important;
+            }
+
+            p {
+                font-size: 16px !important;
+                line-height: 1.6;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* ============================
+   MOBILE HEADER
+============================ */
+
+        @media (max-width:768px) {
+
+            header {
+                height: 75px;
+                padding: 0 15px;
+                background: rgba(17, 17, 17, .75);
+                backdrop-filter: blur(15px);
+            }
+
+
+            .logo-area {
+                display: flex;
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+
+            .logo-area a {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+
+            .logo {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+
+            .logo img {
+                width: 90px;
+            }
+
+
+            .icons {
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+
+            .icons i {
+                font-size: 17px;
+            }
+
+
+            .search-form {
+                right: 0;
+                top: 55px;
+            }
+
+
+            .search-box.active .search-form {
+                width: 190px;
+            }
+
+
+            .search-input {
+                width: 190px;
+                height: 38px;
+            }
+
+
+            .menu-dropdown {
+                position: fixed;
+                top: 75px;
+                right: 12px;
+                width: 210px;
+            }
+
+        }
+
+
+
+        /* SMALL MOBILE */
+        @media(max-width:420px) {
+
+            header {
+                padding: 0 10px;
+            }
+
+
+            .logo-area {
+                gap: 8px;
+            }
+
+
+            .logo-area a {
+                font-size: 9px;
+            }
+
+
+            .logo img {
+                width: 75px;
+            }
+
+
+            .icons {
+                gap: 8px;
+            }
+
+
+            .icons i {
+                font-size: 16px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- PROGRESS BAR -->
+    <div id="progress-bar"></div>
+
+    <header id="mainHeader">
+        <div class="logo-area">
+            <a href="culture.html">Culture</a>
+            <a href="insight.html">Insight</a>
+        </div>
+
+        <div class="logo">
+            <img src="image/logo.png" alt="OM Modular Furniture">
+        </div>
+
+        <div class="icons">
+            <div class="search-box">
+                <i class="fas fa-search search-btn"></i>
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Search...">
+                </form>
+            </div>
+
+            <div class="menu-box">
+                <i class="fas fa-bars menu-btn"></i>
+                <div class="menu-dropdown">
+                    <a href="modular-kitchen.html">Modular Kitchen</a>
+                    <a href="living-space.html">Living Space</a>
+                    <a href="workspace.html">Workspace</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO IMAGE -->
+    <section class="hero-image">
+        <div class="hero-bg-layer" id="heroBg"></div>
+        <div class="hero-overlay">
+            <p class="cutting-edge">
+                Cutting-Edge Design, Advanced Technology, and Exquisite Craftsmanship that
+                Metamorphosis ideas into reality
+            </p>
+        </div>
+        <div class="hero-line"></div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story-section">
+        <div class="story-box reveal">
+            <h1>Design + Build your story</h1>
+            <p class="story-text">
+                Nestled in Surat, India's renowned silk city, our roots run deep in the furniture industry.
+                Our state-of-the-art factory, a testament to modern design and creative craftsmanship,
+                transforms dreams into tangible realities. Spanning over 50,000 square feet amidst lush landscapes,
+                this is where the magic of production unfolds. Our experience centre, sprawling across 6,000 square feet
+                in the same vibrant city, showcases live displays of diverse modular kitchens, living spaces, and
+                workspaces solutions. From conception to fabrication to execution, our dynamic team comprises
+                individuals
+                from all walks of life—varying ages, genders, and backgrounds—coming together to create an inclusive
+                environment where challenges are embraced, and dream ideas are brought to life.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider-line" style="margin:0 auto;"></div>
+
+    <!-- INSIGHT SLIDER -->
+    <section class="insight-slider">
+        <div class="swiper mySwiper reveal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/insight1.jpg" alt="Insight 1"></div>
+                <div class="swiper-slide"><img src="image/insight2.jpg" alt="Insight 2"></div>
+                <div class="swiper-slide"><img src="image/insight3.jpg" alt="Insight 3"></div>
+                <div class="swiper-slide"><img src="image/insight4.jpg" alt="Insight 4"></div>
+                <div class="swiper-slide"><img src="image/insight5.jpg" alt="Insight 5"></div>
+                <div class="swiper-slide"><img src="image/insight6.jpg" alt="Insight 6"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- WHY OMF + BESPOKE -->
+    <div class="two-col-section">
+        <div class="box">
+            <div class="left-content reveal-left">
+                <h5>Why OMF</h5>
+                <h4>
+                    Creativity, Trust, Flexibility and
+                    Personalisation are our driving forces.
+                </h4>
+                <p>
+                    We believe in the essence of every living space—a soul waiting to be unveiled.
+                    It's the passion, expertise, and creativity we pour into every design, manufacturing process, and
+                    application. Within it resides an internal universe, woven from the dreams, desires, feelings, and
+                    stories of those who inhabit it daily. We strive to interpret and transform these vital
+                    spaces—whether
+                    for living or working—into authentic reflections of their occupants.
+                    This convergence of affinities, shared experiences, and relationships shapes our vision of space.
+                    It transcends mere products, imbuing materials, technologies, and design with profound personal
+                    significance, crafting individual project stories that resonate deeply.
+                </p>
+            </div>
+
+            <div class="col-divider"></div>
+
+            <div class="right-content reveal-right">
+                <h5>Bespoke Concierge Service</h5>
+                <p>
+                    Step into luxury with our exclusive Concierge Service, where you'll meet our specialized
+                    team-consultants. Whether online, over the phone, or in person at our showroom, we cater to your
+                    preferences and adapt to your schedule seamlessly. At the heart of our exceptional service is a deep
+                    understanding of our clients, ensuring every solution is meticulously tailored to exceed your
+                    expectations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR SERVICE -->
+    <section class="our-service">
+        <div class="service-box">
+            <h3 class="reveal">Our Service</h3>
+
+            <!-- Animated service cards -->
+            <div class="service-list">
+                <div class="service-item reveal" data-delay="1">
+                    <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h6>Tailored Design</h6>
+                    <p>Customized solutions built around your unique preferences and lifestyle.</p>
+                </div>
+                <div class="service-item reveal" data-delay="2">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <h6>German Craftsmanship</h6>
+                    <p>Enduring quality with precision German technology and artisanal craftsmanship.</p>
+                </div>
+                <div class="service-item reveal" data-delay="3">
+                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h6>Design-Driven Execution</h6>
+                    <p>Organized, detail-oriented process from conception to installation.</p>
+                </div>
+            </div>
+
+            <p class="reveal">
+                We provide customized modular furniture solutions, incorporating the latest designs, accessories, and
+                appliances. Our offerings are continually updated to align with global innovations, enhancing comfort,
+                style, and functionality.
+            </p>
+
+            <img src="image/Picture1.png" alt="Our Service" class="reveal">
+
+            <h4 class="reveal">Work Process</h4>
+
+            <img src="image/Picture2.png" alt="Work Process" class="reveal">
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+        <h1 class="reveal">Om Modular Furniture</h1>
+        <h2 class="reveal">Craft your modular luxury!</h2>
+        <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
+        <p class="reveal">Instagram · LinkedIn</p>
+        <p class="reveal">📍 G 11, Ichhapore Textile Park, Opp. RJD Textile Park, Bhatpore, Surat-394510, Gujarat,
+            India.</p>
+        <p class="reveal">📞 +91 99130 08830</p>
+        <p class="reveal">📧 ommodular11@gmail.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left"><a href="FAQ.html">FAQ</a></div>
+        <div class="footer-center"><a href="privacy-policy.html">Privacy Policy</a></div>
+        <div class="footer-right">© 2026 OM Modular Furniture</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        /* ============================
+           CURSOR
+        ============================ */
+        const dot = document.getElementById("cursorDot");
+        const ring = document.getElementById("cursorRing");
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener("mousemove", e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + "px";
+            dot.style.top = mouseY + "px";
+        });
+        (function ringFollow() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + "px";
+            ring.style.top = ringY + "px";
+            requestAnimationFrame(ringFollow);
+        })();
+        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
+            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+        });
+
+        /* ============================
+           SCROLL PROGRESS
+        ============================ */
+        const progressBar = document.getElementById("progress-bar");
+        window.addEventListener("scroll", () => {
+            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            progressBar.style.width = pct + "%";
+        });
+
+        /* ============================
+           HEADER ON SCROLL
+        ============================ */
+        const header = document.getElementById("mainHeader");
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            const y = window.scrollY;
+            header.classList.toggle("scrolled", y > 60);
+            lastScroll = y;
+        });
+
+        /* ============================
+           PARALLAX HERO
+        ============================ */
+        const heroBg = document.getElementById("heroBg");
+        window.addEventListener("scroll", () => {
+            if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+        });
+
+        /* ============================
+           SWIPER
+        ============================ */
+        new Swiper(".mySwiper", {
+            loop: true, speed: 1500,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            effect: "fade",
+            fadeEffect: { crossFade: true }
+        });
+
+        /* ============================
+           SCROLL REVEAL
+        ============================ */
+        const revealEls = document.querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right, .divider-line, .story-box, .col-divider, .left-content, .right-content"
+        );
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("active"); });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => observer.observe(el));
+
+        /* ============================
+           MENU
+        ============================ */
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.querySelector(".menu-btn");
+            const menuBox = document.querySelector(".menu-box");
+            menuBtn.addEventListener("click", e => { e.stopPropagation(); menuBox.classList.toggle("active"); });
+            document.addEventListener("click", () => menuBox.classList.remove("active"));
+        });
+
+        /* ============================
+           SEARCH
+        ============================ */
+        /* SEARCH */
+        const searchBtn = document.querySelector(".search-btn");
+        const searchBox = document.querySelector(".search-box");
+
+        if (searchBtn) {
+
+            searchBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+
+                searchBox.classList.toggle("active");
+
+                if (searchBox.classList.contains("active")) {
+                    setTimeout(() => {
+                        searchInput.focus();
+                    }, 200);
+                }
+            });
+
+            searchBox.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", function () {
+                searchBox.classList.remove("active");
+            });
+
+        }
+
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
+
+        searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let value = searchInput.value.toLowerCase().trim();
+            if (value.includes("kitchen")) {
+                window.location.href = "modular-kitchen.html";
+            }
+            else if (
+                value.includes("living") ||
+                value.includes("space") ||
+                value.includes("living space")
+            ) {
+                window.location.href = "living-space.html";
+            }
+            else if (
+                value.includes("work") ||
+                value.includes("workspace") ||
+                value.includes("office")
+            ) {
+                window.location.href = "workspace.html";
+            }
+            else if (
+                value.includes("contact") ||
+                value.includes("phone") ||
+                value.includes("email")
+            ) {
+                window.location.href = "contact.html";
+            }
+            else if (value.includes("culture")) {
+                window.location.href = "culture.html";
+            }
+            else if (
+                value.includes("insight") ||
+                value.includes("design") ||
+                value.includes("story")
+            ) {
+                window.location.href = "insight.html";
+            }
+            else {
+                alert("Page not found");
+            }
+        });
+    </script>
+</body>
+
+</html>

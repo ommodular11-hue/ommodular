@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | OM Modular Furniture</title>
+
+    <style>
+        /* ============================
+           SCROLL PROGRESS BAR
+        ============================ */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8A8175, #bcb8b3);
+            z-index: 99997;
+            width: 0%;
+            transition: width .1s linear;
+        }
+
+
+        /* ============================
+   HEADER
+============================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 9999;
+
+            background: transparent;
+            transition:
+                background-color .45s ease,
+                backdrop-filter .45s ease,
+                box-shadow .45s ease,
+                height .45s ease,
+                transform .45s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(17, 17, 17, .92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+            height: 75px;
+        }
+
+        header.hide-header {
+            transform: translateY(-100%);
+        }
+
+        @keyframes headerDrop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .logo a {
+            display: inline-block;
+        }
+
+        .logo img {
+            width: 110px;
+            display: block;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width:768px) {
+
+            .logo {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .logo img {
+                width: 80px;
+            }
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .page-content {
+            max-width: 1100px;
+            margin: 120px auto 80px;
+            padding: 0 8%;
+        }
+
+        /* ── TITLE ── */
+        .page-content h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+            color: #8A8175;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+
+            opacity: 0;
+            transform: translateY(-24px);
+            animation: fadeDown 0.7s cubic-bezier(.4, 0, .2, 1) forwards 0.1s;
+        }
+
+        /* ── PROGRESS BAR ── */
+        .reading-progress-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            z-index: 999;
+        }
+
+        .reading-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8A8175, #b5aca3);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ── SECTION ITEMS ── */
+        .policy-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .policy-item.visible {
+            animation: slideUp 0.55s cubic-bezier(.4, 0, .2, 1) forwards;
+        }
+
+        .policy-item:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ── HEADINGS ── */
+        .page-content h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #8A8175;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            border-bottom: 1px solid #e5dfd6;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: default;
+            transition: color 0.3s ease;
+        }
+
+        .page-content h2:hover {
+            color: #6f665c;
+        }
+
+        .h2-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f5f1ec;
+            color: #8A8175;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.3s, color 0.3s, transform 0.4s;
+        }
+
+        .policy-item:hover .h2-num {
+            background: #8A8175;
+            color: #fff;
+            transform: rotate(360deg);
+        }
+
+        /* ── PARAGRAPHS ── */
+        .page-content p {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            text-align: justify;
+            padding-left: 46px;
+        }
+
+        /* ── BACK TO TOP ── */
+        .back-top {
+            position: fixed;
+            bottom: 36px;
+            right: 36px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #8A8175;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.3s, transform 0.3s, background 0.2s;
+            z-index: 999;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            background: #6f665c;
+        }
+
+        .back-top svg {
+            width: 18px;
+            height: 18px;
+            stroke: #fff;
+        }
+
+        /* ── KEYFRAMES ── */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .page-content {
+                margin-top: 100px;
+                padding: 0 6%;
+            }
+
+            .page-content h1 {
+                font-size: 42px;
+                margin-bottom: 40px;
+            }
+
+            .page-content h2 {
+                font-size: 20px;
+            }
+
+            .page-content p {
+                font-size: 15px;
+                line-height: 1.8;
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-content h1 {
+                font-size: 34px;
+            }
+
+            .page-content h2 {
+                font-size: 18px;
+            }
+
+            .page-content p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="mainHeader">
+
+        <div class="logo">
+            <a href="om.html">
+                <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            </a>
+        </div>
+
+    </header>
+
+    <!-- Reading progress bar -->
+    <div class="reading-progress-wrap">
+        <div class="reading-progress-fill" id="reading-progress"></div>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-top" id="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <section class="page-content">
+
+        <h1>Privacy Policy</h1>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">1</span> Acceptance of our terms</h2>
+            <p>By visiting the website of OM Modular Furniture, viewing, accessing or otherwise using any of the
+                services or information created, collected, compiled or submitted by us, you agree to be bound by the
+                following Terms and Conditions of Service. If you do not agree with these Terms, your only option is to
+                discontinue use of our website and services.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">2</span> Provision of services</h2>
+            <p>OM Modular Furniture reserves the right to modify, improve or discontinue any products, services or
+                website content at its sole discretion without prior notice. We may also provide services through
+                affiliated entities, partners or representatives where necessary.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">3</span> Proprietary rights</h2>
+            <p>All content, designs, logos, trademarks, images, text and materials displayed on this website are the
+                property of OM Modular Furniture unless otherwise stated. Unauthorized reproduction, distribution,
+                modification or commercial use of any content is strictly prohibited without prior written consent.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">4</span> Submitted content</h2>
+            <p>By submitting inquiries, forms, feedback or other content through our website, you grant OM Modular
+                Furniture the right to use such content for communication, customer service and business-related
+                purposes. You confirm that you have the authority to provide such information.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">5</span> Termination of agreement</h2>
+            <p>These Terms remain effective until terminated by either party. OM Modular Furniture reserves the right to
+                suspend or terminate access to its services at any time without prior notice where deemed necessary.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">6</span> Disclaimer of warranties</h2>
+            <p>All products, services and website content are provided on an "As Is" and "As Available" basis. OM
+                Modular Furniture makes no warranties regarding uninterrupted access, accuracy of information or
+                suitability for any particular purpose.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">7</span> Limitation of liability</h2>
+            <p>OM Modular Furniture shall not be liable for any direct, indirect, incidental, consequential or special
+                damages arising from the use of this website, products or services, including but not limited to loss of
+                business, profits, data or goodwill.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">8</span> External content</h2>
+            <p>This website may contain links to third-party websites or resources. OM Modular Furniture does not
+                control, endorse or assume responsibility for the content, products or services available through such
+                external websites.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">9</span> Jurisdiction</h2>
+            <p>Any disputes arising from the use of this website shall be governed by and interpreted in accordance with
+                the laws applicable in Gujarat, India. Users agree to submit to the jurisdiction of the competent courts
+                located in Surat, Gujarat.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">10</span> Entire agreement</h2>
+            <p>These Terms constitute the entire agreement between the user and OM Modular Furniture regarding the use
+                of this website and supersede any prior agreements or understandings.</p>
+        </div>
+
+        <div class="policy-item">
+            <h2><span class="h2-num">11</span> Changes to the terms</h2>
+            <p>OM Modular Furniture reserves the right to revise, update or modify these Terms and Conditions at any
+                time without prior notice. Continued use of the website following such changes constitutes acceptance of
+                the revised Terms.</p>
+        </div>
+
+    </section>
+
+    <script>
+
+        /* ============================
+      PROGRESS BAR
+   ============================ */
+        window.addEventListener('scroll', () => {
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('progress-bar').style.width = pct + '%';
+        }, { passive: true });
+
+        /* ============================
+           HEADER SCROLL
+        ============================ */
+        const header = document.getElementById("mainHeader");
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 250) {
+                header.classList.add("hide-header");
+            } else {
+                header.classList.remove("hide-header");
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+
+        /* ── SCROLL-TRIGGERED ENTRANCE (IntersectionObserver) ── */
+        const items = document.querySelectorAll('.policy-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        items.forEach((el, i) => {
+            el.style.animationDelay = (i * 0.06) + 's';
+            observer.observe(el);
+        });
+
+        /* ── READING PROGRESS BAR ── */
+        const progressFill = document.getElementById('reading-progress');
+        window.addEventListener('scroll', () => {
+            const docH = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docH > 0 ? Math.round((window.scrollY / docH) * 100) : 0;
+            progressFill.style.width = pct + '%';
+
+            /* back to top button */
+            const btn = document.getElementById('back-top');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        /* ── BACK TO TOP ── */
+        document.getElementById('back-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+
+</html>

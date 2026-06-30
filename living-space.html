@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Space Furniture Surat | Modern Home Interiors | OM Modular</title>
+
+    <meta name="description"
+        content="Create beautiful living spaces with customized furniture designs by OM Modular Furniture Surat. Explore sofas, storage and interior solutions.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        /* ============================
+   RESET & BASE
+============================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f2ed;
+            color: #555;
+            cursor: default;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        :root {
+            --cream: #f5f2ed;
+            --taupe: #8A8175;
+            --taupe-light: #bcb8b3;
+            --dark: #111;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* GRAIN */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 99990;
+            opacity: .03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ============================
+   PROGRESS BAR
+============================ */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8A8175, #bcb8b3, #8A8175);
+            background-size: 200% 100%;
+            z-index: 99997;
+            width: 0%;
+            animation: shimmer 2s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% 0;
+            }
+        }
+
+        /* ============================
+   HEADER
+============================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 1000;
+            transition: background .4s ease, height .4s ease, transform .5s var(--ease-out);
+            animation: headerDrop .8s .2s var(--ease-out) both;
+        }
+
+        @keyframes headerDrop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        header.scrolled {
+            background: rgba(17, 17, 17, .92);
+            backdrop-filter: blur(20px);
+            height: 70px;
+        }
+
+        header.hide-header {
+            transform: translateY(-100%);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-area a {
+            text-decoration: none;
+            color: #f5f2ed;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color .3s, letter-spacing .3s;
+        }
+
+        .logo-area a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #bcb8b3;
+            transition: width .4s var(--ease-out);
+        }
+
+        .logo-area a:hover {
+            color: #bcb8b3;
+            letter-spacing: 3px;
+        }
+
+        .logo-area a:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform .4s var(--ease-out), opacity .3s;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .logo:hover {
+            transform: translate(-50%, -50%) scale(1.06);
+            opacity: .85;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icons i {
+            font-size: 20px;
+            color: #f5f2ed;
+            cursor: none;
+            transition: color .3s, transform .3s;
+        }
+
+        .icons i:hover {
+            color: #8A8175;
+            transform: scale(1.15);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-form {
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            transform: translateY(-50%);
+            width: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .4s var(--ease-out);
+        }
+
+        .search-box.active .search-form {
+            width: 250px;
+            opacity: 1;
+        }
+
+        .search-input {
+            width: 250px;
+            height: 42px;
+            padding: 0 15px;
+            border: 1px solid rgba(138, 129, 117, .4);
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, .9);
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color .3s;
+        }
+
+        .search-input:focus {
+            border-color: #8A8175;
+        }
+
+        .menu-btn {
+            transition: transform .4s var(--ease-out);
+        }
+
+        .menu-box.active .menu-btn {
+            transform: rotate(90deg);
+            color: #b8aa9b;
+        }
+
+        .menu-dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 240px;
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(20px);
+            border-radius: 18px;
+            padding: 15px 25px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(.97);
+            transform-origin: top right;
+            transition: opacity .35s, transform .35s var(--ease-out), visibility .35s;
+            z-index: 9999;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #555;
+            font-size: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .06);
+            transition: color .3s, padding-left .3s;
+        }
+
+        .menu-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .menu-dropdown a:hover {
+            color: #8A8175;
+            padding-left: 12px;
+        }
+
+        .menu-box.active .menu-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* ============================
+   HERO
+============================ */
+        .page-hero {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url("image/Bed.jpg") center center no-repeat;
+            background-size: cover;
+            /* આખો section cover કરશે */
+            transform: scale(1);
+            will-change: auto;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .6) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .hero-label {
+            font-size: 11px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .55);
+            margin-bottom: 22px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp .8s 1s var(--ease-out) forwards;
+        }
+
+        .hero-title {
+            color: #fff;
+            font-size: 56px;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 3px;
+        }
+
+        .hero-title .word {
+            display: inline-block;
+            overflow: hidden;
+            margin-right: 16px;
+        }
+
+        .hero-title .word .char {
+            display: inline-block;
+            transform: translateY(110%);
+            animation: charUp .7s var(--ease-out) forwards;
+        }
+
+        .hero-sub {
+            max-width: 820px;
+            text-align: center;
+            color: rgba(255, 255, 255, .7);
+            font-size: 16px;
+            line-height: 2.1;
+            margin-top: 34px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp .9s 2.1s var(--ease-out) forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeUp .8s 2.5s var(--ease-out) forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, .5);
+            text-transform: uppercase;
+        }
+
+        .scroll-line-el {
+            width: 1px;
+            height: 60px;
+            background: rgba(255, 255, 255, .2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line-el::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, .8));
+            animation: scrollAnim 1.6s 2.7s ease-in-out infinite;
+        }
+
+        @keyframes scrollAnim {
+            to {
+                top: 200%;
+            }
+        }
+
+        @keyframes charUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================
+   INTRO
+============================ */
+        .gg {
+            background: #fff;
+            padding: 110px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gg::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: linear-gradient(to bottom, #f5f2ed, transparent);
+        }
+
+        .gg h2 {
+            font-size: 12px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #bcb8b3;
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+        }
+
+        .gg h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .c1 {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            font-size: 20px;
+            line-height: 2.1;
+            color: #555;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .9s .1s var(--ease-out), transform .9s .1s var(--ease-out);
+        }
+
+        .c1.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Features grid */
+        .features-grid {
+            max-width: 820px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .8s .25s var(--ease-out), transform .8s .25s var(--ease-out);
+        }
+
+        .features-grid.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-item {
+            font-size: 15px;
+            color: #8A8175;
+            line-height: 1.9;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(138, 129, 117, .15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color .3s, padding-left .3s;
+        }
+
+        .feature-item::before {
+            content: '→';
+            font-size: 12px;
+            color: #bcb8b3;
+            flex-shrink: 0;
+            transition: transform .3s;
+        }
+
+        .feature-item:hover {
+            color: #555;
+            padding-left: 6px;
+        }
+
+        .feature-item:hover::before {
+            transform: translateX(4px);
+        }
+
+        /* ============================
+   DIVIDER
+============================ */
+        .divider {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d5d0ca, transparent);
+            margin: 0 auto;
+            transition: width 1.2s var(--ease-out);
+        }
+
+        .divider.visible {
+            width: 55%;
+        }
+
+        /* ============================
+   SPACE SECTIONS
+============================ */
+        .space-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+            padding: 110px 8%;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .space-section:nth-child(even) {
+            background: #faf8f5;
+        }
+
+        .space-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Section number watermark */
+        .space-section::before {
+            content: attr(data-num);
+            position: absolute;
+            font-size: 200px;
+            font-weight: 700;
+            color: rgba(138, 129, 117, .04);
+            line-height: 1;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            letter-spacing: -10px;
+        }
+
+        .space-section.reverse::before {
+            right: auto;
+            left: 5%;
+        }
+
+        .space-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+        }
+
+        .space-section.reverse .space-content {
+            transform: translateX(40px);
+        }
+
+        .space-section.visible .space-content {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .space-eyebrow {
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #bcb8b3;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .space-content h2 {
+            font-size: 42px;
+            color: #222;
+            margin-bottom: 26px;
+            font-weight: 500;
+            line-height: 1.15;
+            position: relative;
+            display: inline-block;
+        }
+
+        .space-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8A8175;
+            transition: width .7s .4s var(--ease-out);
+        }
+
+        .space-section.visible .space-content h2::after {
+            width: 55%;
+        }
+
+        .space-content p {
+            color: #777;
+            line-height: 2;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .space-content h4 {
+            margin: 26px 0 10px;
+            color: #8A8175;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .space-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .space-list li {
+            font-size: 15px;
+            color: #777;
+            line-height: 1;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color .3s, padding-left .3s;
+        }
+
+        .space-list li:last-child {
+            border-bottom: none;
+        }
+
+        .space-list li::before {
+            content: '→';
+            color: #8A8175;
+            font-size: 12px;
+            flex-shrink: 0;
+            transition: transform .3s;
+        }
+
+        .space-list li:hover {
+            color: #555;
+            padding-left: 8px;
+        }
+
+        .space-list li:hover::before {
+            transform: translateX(4px);
+        }
+
+        /* ============================
+   IMAGE SLIDER (within space sections)
+============================ */
+        .space-slider {
+            flex: 1;
+            position: relative;
+            height: 560px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .1);
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity .9s .15s var(--ease-out), transform .9s .15s var(--ease-out);
+        }
+
+        .space-section.reverse .space-slider {
+            transform: translateX(-40px);
+        }
+
+        .space-section.visible .space-slider {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .space-slider img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.04);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .space-slider img.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Slide counter */
+        .slide-counter {
+            position: absolute;
+            bottom: 20px;
+            right: 24px;
+            z-index: 2;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, .7);
+            background: rgba(0, 0, 0, .25);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 30px;
+        }
+
+        /* Dots */
+        .slide-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .slide-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .4);
+            transition: background .3s, width .3s;
+            cursor: none;
+        }
+
+        .slide-dot.active {
+            background: #fff;
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        /* Image hover zoom */
+        .space-slider:hover img.active {
+            transform: scale(1.03);
+        }
+
+        /* ============================
+           CONTACT
+        ============================ */
+        .contact {
+            background: #8A8175;
+            color: white;
+            padding: 100px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: 'OMF';
+            position: absolute;
+            right: -60px;
+            bottom: -40px;
+            font-size: 250px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .04);
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .contact h1 {
+            font-size: 38px;
+            font-weight: 500;
+            text-align: left;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            font-size: 18px;
+            text-align: left;
+            max-width: 700px;
+            line-height: 1.9;
+        }
+
+        /* ============================
+           FOOTER
+        ============================ */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #111;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .footer-left {
+            flex: 1;
+            text-align: left;
+            margin-left: 90px;
+            font-size: 16px;
+        }
+
+        .footer-center {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+            font-size: 16px;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+            margin-right: 90px;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+
+        /* ============================
+   MOBILE
+============================ */
+        @media(max-width:768px) {
+            body {
+                cursor: auto;
+            }
+
+            #cursor-dot,
+            #cursor-ring {
+                display: none;
+            }
+
+            header {
+                height: 75px;
+                padding: 0 15px;
+            }
+
+            .logo {
+                position: absolute;
+                left: 50%;
+                top: 12px;
+                transform: translateX(-50%);
+            }
+
+            .logo img {
+                width: 75px;
+            }
+
+            .logo-area a {
+                font-size: 12px;
+            }
+
+            .icons i {
+                font-size: 20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+
+            .hero-sub {
+                font-size: 15px;
+            }
+
+            .gg {
+                padding: 70px 20px;
+            }
+
+            .c1 {
+                font-size: 17px;
+            }
+        }
+
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 20px;
+        }
+
+        @media(max-width:768px) {
+
+            .space-section,
+            .space-section.reverse {
+
+                .contact {
+                    padding: 70px 20px;
+                }
+
+                .contact h1 {
+                    font-size: 28px;
+                }
+
+                .contact-grid {
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                }
+
+                footer {
+                    gap: 15px;
+                }
+            }
+
+            @media(max-width:480px) {
+                .features-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        /* ============================
+   MOBILE HEADER
+============================ */
+
+        @media (max-width:768px) {
+
+            header {
+                height: 75px;
+                padding: 0 15px;
+                background: rgba(17, 17, 17, .75);
+                backdrop-filter: blur(15px);
+            }
+
+
+            .logo-area {
+                display: flex;
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+
+            .logo-area a {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+
+            .logo {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+
+            .logo img {
+                width: 90px;
+            }
+
+
+            .icons {
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+
+            .icons i {
+                font-size: 17px;
+            }
+
+
+            .search-form {
+                right: 0;
+                top: 55px;
+            }
+
+
+            .search-box.active .search-form {
+                width: 190px;
+            }
+
+
+            .search-input {
+                width: 190px;
+                height: 38px;
+            }
+
+
+            .menu-dropdown {
+                position: fixed;
+                top: 75px;
+                right: 12px;
+                width: 210px;
+            }
+
+        }
+
+
+
+        /* SMALL MOBILE */
+        @media(max-width:420px) {
+
+            header {
+                padding: 0 10px;
+            }
+
+
+            .logo-area {
+                gap: 8px;
+            }
+
+
+            .logo-area a {
+                font-size: 9px;
+            }
+
+
+            .logo img {
+                width: 75px;
+            }
+
+
+            .icons {
+                gap: 8px;
+            }
+
+
+            .icons i {
+                font-size: 16px;
+            }
+
+        }
+
+        /* ============================
+   MOBILE FOOTER FIX
+============================ */
+
+        @media(max-width:768px) {
+
+            footer {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+                padding: 35px 20px;
+                text-align: center;
+            }
+
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                flex: unset;
+                width: 100%;
+                margin: 0;
+                text-align: center;
+                font-size: 14px;
+            }
+
+
+            footer a {
+                font-size: 14px;
+            }
+
+        }
+
+
+        @media(max-width:420px) {
+
+            footer {
+                padding: 30px 15px;
+                gap: 15px;
+            }
+
+
+            .footer-right {
+                line-height: 1.5;
+                font-size: 13px;
+            }
+
+        }
+
+        /* ============================
+   LIVING SPACE MOBILE FIX
+============================ */
+
+        @media(max-width:768px) {
+
+
+            /* HEADER LOGO PERFECT CENTER */
+            header {
+                height: 75px;
+                display: flex;
+                align-items: center;
+            }
+
+
+            .logo {
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+
+
+            .logo img {
+                width: 85px;
+            }
+
+
+
+            /* HERO IMAGE FIX */
+            .page-hero,
+            .living-hero {
+                height: auto !important;
+                min-height: 100vh;
+                overflow: hidden;
+            }
+
+
+            .hero-bg,
+            .living-bg {
+                position: absolute;
+                inset: 0;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                transform: none !important;
+            }
+
+
+            .hero-overlay {
+                min-height: 100vh;
+                padding: 100px 20px 50px;
+            }
+
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+
+            .hero-sub {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+
+        }
+
+        @media(max-width:768px) {
+
+            .space-section {
+                overflow: visible !important;
+            }
+
+
+            .space-content {
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+
+            .space-content p,
+            .space-list,
+            .space-list li {
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+
+
+            .space-list li {
+                line-height: 1.7 !important;
+                padding: 12px 0;
+            }
+
+
+            .space-slider {
+                height: 280px;
+                flex-shrink: 0;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .space-section,
+            .space-section.reverse {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding: 60px 20px;
+                overflow: visible !important;
+            }
+
+
+            .space-content {
+                order: 1;
+                width: 100%;
+                height: auto !important;
+                max-height: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+
+            .space-content h2 {
+                font-size: 28px;
+            }
+
+
+            .space-content p {
+                font-size: 15px;
+                line-height: 1.8;
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+
+            .space-list {
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+
+            .space-list li {
+                line-height: 1.6;
+                padding: 10px 0;
+            }
+
+
+            /* IMAGE BELOW TEXT */
+            .space-slider {
+                order: 2;
+                position: relative !important;
+                width: 100%;
+                height: 300px !important;
+                flex: none;
+                opacity: 1 !important;
+                transform: none !important;
+                overflow: hidden;
+                border-radius: 20px;
+            }
+
+
+            .space-slider img {
+                position: absolute !important;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                inset: 0;
+            }
+
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform .8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact p,
+        .contact h1,
+        .contact h2 {
+            transition: transform .35s ease;
+        }
+
+        .contact p:hover,
+        .contact h1:hover,
+        .contact h2:hover {
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-bar"></div>
+
+    <header id="mainHeader">
+        <div class="logo-area">
+            <a href="culture.html">Culture</a>
+            <a href="insight.html">Insight</a>
+        </div>
+
+        <a href="Om.html" class="logo"><img src="image/logo.png"
+                alt="OM Modular Furniture - Modular Kitchen & Interior Solutions"></a>
+
+        <div class="icons">
+            <div class="search-box">
+                <i class="fas fa-search search-btn"></i>
+                <form class="search-form">
+                    <input class="search-input" type="text" placeholder="Search...">
+                </form>
+            </div>
+            <div class="menu-box">
+                <i class="fas fa-bars menu-btn"></i>
+                <div class="menu-dropdown">
+                    <a href="modular-kitchen.html">Modular Kitchen</a>
+                    <a href="living-space.html">Living Space</a>
+                    <a href="workspace.html">Workspace</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="hero-bg" id="parallaxBg"></div>
+        <div class="hero-overlay">
+            <h1 class="hero-title" id="heroTitle">Living Spaces</h1>
+            <p class="hero-sub">
+                From fostering physical vitality and mental clarity to nurturing emotional well-being,
+                our living spaces serve as pivotal influencers of your overall quality of life.
+                Every room — thoughtfully designed, beautifully realized.
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Explore</span>
+            <div class="scroll-line-el"></div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="gg">
+        <h2 class="scroll-reveal">Our Philosophy</h2>
+        <p class="c1 scroll-reveal">
+            With the ability to meticulously design and personalize living areas, bedrooms, bathrooms, and storage
+            spaces,
+            we curate environments that not only fulfil practical needs but also cultivate genuine happiness and
+            contentment.
+        </p>
+        <div class="features-grid scroll-reveal">
+            <div class="feature-item">Living Room</div>
+            <div class="feature-item">Bedroom</div>
+            <div class="feature-item">Bathroom</div>
+            <div class="feature-item">Storage</div>
+            <div class="feature-item">Wardrobe</div>
+            <div class="feature-item">Custom Units</div>
+        </div>
+    </section>
+
+    <div class="divider scroll-reveal-divider"></div>
+
+    <!-- LIVING ROOM -->
+    <section class="space-section" data-num="01" id="ss1">
+        <div class="space-content">
+            <span class="space-eyebrow">Configuration · 01</span>
+            <h2>Living Room Spaces</h2>
+            <p>The living room is the heart of every home — a place where comfort, style and functionality come
+                together. Thoughtfully designed modular furniture helps create an elegant space for entertaining guests
+                and enjoying everyday living.</p>
+            <ul class="space-list">
+                <li>TV Unit</li>
+                <li>Display Unit</li>
+                <li>Storage Cabinet</li>
+                <li>Coffee Table</li>
+                <li>Entertainment Unit</li>
+            </ul>
+        </div>
+        <div class="space-slider" id="slider1">
+            <img src="image/living1.jpg" class="active" alt="">
+            <img src="image/living2.jpg" alt="">
+            <img src="image/living3.jpg" alt="">
+            <img src="image/living4.jpg" alt="">
+            <div class="slide-dots" id="dots1"></div>
+            <div class="slide-counter" id="counter1">1 / 4</div>
+        </div>
+    </section>
+
+    <div class="divider scroll-reveal-divider"></div>
+
+    <!-- BEDROOM -->
+    <section class="space-section reverse" data-num="02" id="ss2">
+        <div class="space-content">
+            <span class="space-eyebrow">Configuration · 02</span>
+            <h2>Bedroom Spaces</h2>
+            <p>Bedrooms are cosy havens designed for relaxation and comfort. Modular bedroom furniture helps maximize
+                available space while creating an elegant and organized environment that genuinely restores.</p>
+            <ul class="space-list">
+                <li>Modular Bed</li>
+                <li>Side Storage</li>
+                <li>Wall Mirror</li>
+                <li>TV Unit</li>
+                <li>Study / Work Unit</li>
+            </ul>
+        </div>
+        <div class="space-slider" id="slider2">
+            <img src="image/bedroom1.jpg" class="active" alt="">
+            <img src="image/bedroom2.jpg" alt="">
+            <img src="image/bedroom3.jpg" alt="">
+            <img src="image/bedroom4.jpg" alt="">
+            <div class="slide-dots" id="dots2"></div>
+            <div class="slide-counter" id="counter2">1 / 4</div>
+        </div>
+    </section>
+
+    <div class="divider scroll-reveal-divider"></div>
+
+    <!-- BATHROOM -->
+    <section class="space-section" data-num="03" id="ss3">
+        <div class="space-content">
+            <span class="space-eyebrow">Configuration · 03</span>
+            <h2>Bathroom Spaces</h2>
+            <p>Design bathroom spaces through seamless integration of form and functionality — intelligent storage
+                solutions tailored to your lifestyle, where every detail is considered and every surface earns its
+                place.</p>
+            <ul class="space-list">
+                <li>Vanity &amp; Sink Unit</li>
+                <li>Dressing Unit</li>
+                <li>Storage Solutions</li>
+            </ul>
+        </div>
+        <div class="space-slider" id="slider3">
+            <img src="image/bathroom1.jpg" class="active" alt="">
+            <img src="image/bathroom2.jpg" alt="">
+            <img src="image/bathroom3.jpg" alt="">
+            <img src="image/bathroom4.jpg" alt="">
+            <div class="slide-dots" id="dots3"></div>
+            <div class="slide-counter" id="counter3">1 / 4</div>
+        </div>
+    </section>
+
+    <div class="divider scroll-reveal-divider"></div>
+
+    <!-- STORAGE -->
+    <section class="space-section reverse" data-num="04" id="ss4">
+        <div class="space-content">
+            <span class="space-eyebrow">Configuration · 04</span>
+            <h2>Storage Spaces</h2>
+            <p>Modern storage solutions combine elegance and efficiency, helping you organize belongings while enhancing
+                the beauty of your interiors.</p>
+            <h4>Sliding Wardrobe</h4>
+            <p>Ample storage while maintaining a sleek and space-efficient appearance — ideal for compact rooms.</p>
+            <h4>Walk-In Wardrobe</h4>
+            <p>Luxury and organization with innovative storage solutions and generous space for the discerning
+                homeowner.</p>
+            <h4>Hinged Door Wardrobe</h4>
+            <p>Opens outward for enhanced visibility and adapts beautifully to various interior styles.</p>
+        </div>
+        <div class="space-slider" id="slider4">
+            <img src="image/storage1.jpg" class="active" alt="">
+            <img src="image/storage2.jpg" alt="">
+            <img src="image/storage3.jpg" alt="">
+            <img src="image/storage4.jpg" alt="">
+            <div class="slide-dots" id="dots4"></div>
+            <div class="slide-counter" id="counter4">1 / 4</div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+        <h1 class="reveal">Om Modular Furniture</h1>
+        <h2 class="reveal">Craft your modular luxury!</h2>
+        <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
+        <p class="reveal">Instagram · LinkedIn</p>
+        <p class="reveal">
+            📍 G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
+            Bhatpore, Surat-394510, Gujarat, India.
+        </p>
+        <p class="reveal">📞 +91 99130 08830</p>
+        <p class="reveal">📧 ommodular11@gmail.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left"><a href="FAQ.html">FAQ</a></div>
+        <div class="footer-center"><a href="privacy-policy.html">Privacy Policy</a></div>
+        <div class="footer-right">© 2026 OM Modular Furniture</div>
+    </footer>
+
+    <script>
+
+        /* ============================
+           PROGRESS BAR
+        ============================ */
+        window.addEventListener('scroll', () => {
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('progress-bar').style.width = pct + '%';
+        }, { passive: true });
+
+        /* ============================
+           HEADER SCROLL
+        ============================ */
+        const header = document.getElementById('mainHeader');
+        let lastY = 0;
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            header.classList.toggle('scrolled', y > 60);
+            header.classList.toggle('hide-header', y > lastY + 10 && y > 300);
+            if (y < lastY || y < 100) header.classList.remove('hide-header');
+            lastY = y;
+        }, { passive: true });
+
+        /* ============================
+           PARALLAX HERO
+        ============================ */
+        const heroBg = document.getElementById('parallaxBg');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < window.innerHeight * 1.5)
+                heroBg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.1)`;
+        }, { passive: true });
+
+        /* ============================
+           HERO TEXT SPLIT
+        ============================ */
+        (function () {
+            const h1 = document.getElementById('heroTitle');
+            const words = h1.textContent.trim().split(' ');
+            h1.innerHTML = '';
+            words.forEach((word, wi) => {
+                const ws = document.createElement('span'); ws.className = 'word';
+                [...word].forEach((ch, ci) => {
+                    const cs = document.createElement('span'); cs.className = 'char';
+                    cs.textContent = ch;
+                    cs.style.animationDelay = (wi * 0.1 + ci * 0.03 + 1.2) + 's';
+                    ws.appendChild(cs);
+                });
+                h1.appendChild(ws);
+                if (wi < words.length - 1) h1.appendChild(document.createTextNode(' '));
+            });
+        })();
+
+        /* ============================
+           SPACE SECTION OBSERVERS
+        ============================ */
+        document.querySelectorAll('.space-section').forEach(section => {
+            const obs = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) { section.classList.add('visible'); obs.disconnect(); }
+            }, { threshold: 0.1 });
+            obs.observe(section);
+        });
+
+        /* ============================
+           GENERIC SCROLL REVEALS
+        ============================ */
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.scroll-reveal,.scroll-reveal-divider').forEach(el => {
+            if (el.classList.contains('scroll-reveal-divider')) el.classList.add('divider');
+            revealObs.observe(el);
+        });
+
+        // Contact
+        document.querySelectorAll('.contact h1,.contact h2,.contact-grid').forEach((el, i) => {
+            const o = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) { setTimeout(() => el.classList.add('visible'), i * 150); o.disconnect(); }
+            }, { threshold: 0.1 });
+            o.observe(el);
+        });
+
+        /* ============================
+           IMAGE SLIDERS WITH DOTS
+        ============================ */
+        function initSlider(sliderEl, dotsEl, counterEl) {
+            const imgs = sliderEl.querySelectorAll('img');
+            const total = imgs.length;
+            let current = 0;
+
+            // Build dots
+            imgs.forEach((_, i) => {
+                const d = document.createElement('div');
+                d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                d.addEventListener('click', () => goTo(i));
+                dotsEl.appendChild(d);
+            });
+
+            function goTo(n) {
+                imgs[current].classList.remove('active');
+                dotsEl.children[current].classList.remove('active');
+                current = n;
+                imgs[current].classList.add('active');
+                dotsEl.children[current].classList.add('active');
+                counterEl.textContent = (current + 1) + ' / ' + total;
+            }
+
+            setInterval(() => { goTo((current + 1) % total); }, 3200);
+        }
+
+        // Init all sliders once page loads
+        [1, 2, 3, 4].forEach(i => {
+            const slider = document.getElementById('slider' + i);
+            const dots = document.getElementById('dots' + i);
+            const counter = document.getElementById('counter' + i);
+            if (slider && dots && counter) initSlider(slider, dots, counter);
+        });
+
+        /* ============================
+           MENU
+        ============================ */
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuBox = document.querySelector('.menu-box');
+        menuBtn.addEventListener('click', e => { e.stopPropagation(); menuBox.classList.toggle('active'); });
+        document.addEventListener('click', () => menuBox.classList.remove('active'));
+
+        /* ============================
+           SEARCH
+        ============================ */
+        const searchBtn = document.querySelector('.search-btn');
+        const searchBox = document.querySelector('.search-box');
+        const searchInput = document.querySelector('.search-input');
+        const searchForm = document.querySelector('.search-form');
+        searchBtn.addEventListener('click', e => {
+            e.stopPropagation(); searchBox.classList.toggle('active');
+            if (searchBox.classList.contains('active')) setTimeout(() => searchInput.focus(), 200);
+        });
+        searchBox.addEventListener('click', e => e.stopPropagation());
+        document.addEventListener('click', () => searchBox.classList.remove('active'));
+        searchForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const v = searchInput.value.toLowerCase().trim();
+            if (v.includes('kitchen')) location.href = 'modular-kitchen.html';
+            else if (v.includes('living') || v.includes('space')) location.href = 'living-space.html';
+            else if (v.includes('work') || v.includes('office')) location.href = 'workspace.html';
+            else if (v.includes('contact')) location.href = 'contact.html';
+            else if (v.includes('culture')) location.href = 'culture.html';
+            else if (v.includes('insight')) location.href = 'insight.html';
+            else alert('Page not found');
+        });
+
+        document.querySelectorAll('.contact .reveal').forEach((el, i) => {
+
+            const observer = new IntersectionObserver((entries) => {
+
+                if (entries[0].isIntersecting) {
+
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, i * 120);
+
+                    observer.disconnect();
+                }
+
+            }, { threshold: 0.1 });
+
+            observer.observe(el);
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | OM Modular Furniture</title>
+
+    <style>
+        /* ============================
+           SCROLL PROGRESS BAR
+        ============================ */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8A8175, #bcb8b3);
+            z-index: 99997;
+            width: 0%;
+            transition: width .1s linear;
+        }
+
+        /* ============================
+   HEADER
+============================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            z-index: 9999;
+
+            background: transparent;
+            transition:
+                background-color .45s ease,
+                backdrop-filter .45s ease,
+                box-shadow .45s ease,
+                height .45s ease,
+                transform .45s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(17, 17, 17, .92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+            height: 75px;
+        }
+
+        header.hide-header {
+            transform: translateY(-100%);
+        }
+
+        @keyframes headerDrop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .logo a {
+            display: inline-block;
+        }
+
+        .logo img {
+            width: 110px;
+            display: block;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width:768px) {
+
+            .logo {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .logo img {
+                width: 80px;
+            }
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .page-content {
+            max-width: 1100px;
+            margin: 120px auto 80px;
+            padding: 0 8%;
+        }
+
+        /* ── PAGE TITLE ── */
+        .page-content h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+            color: #8A8175;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+
+            opacity: 0;
+            transform: translateY(-24px);
+            animation: fadeDown 0.7s cubic-bezier(.4, 0, .2, 1) forwards 0.1s;
+        }
+
+        /* ── SEARCH BAR ── */
+        .faq-search-wrap {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-16px);
+            animation: fadeDown 0.6s cubic-bezier(.4, 0, .2, 1) forwards 0.3s;
+        }
+
+        .faq-search-wrap svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            stroke: #8A8175;
+            pointer-events: none;
+        }
+
+        #faq-search {
+            width: 100%;
+            padding: 13px 18px 13px 46px;
+            border: 1px solid #e5dfd6;
+            border-radius: 50px;
+            font-size: 15px;
+            color: #555;
+            background: #faf9f7;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            font-family: inherit;
+        }
+
+        #faq-search:focus {
+            border-color: #8A8175;
+            box-shadow: 0 0 0 4px rgba(138, 129, 117, 0.1);
+        }
+
+        #faq-search::placeholder {
+            color: #bbb;
+        }
+
+        /* ── CATEGORY TABS ── */
+        .faq-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+            opacity: 0;
+            transform: translateY(-12px);
+            animation: fadeDown 0.6s cubic-bezier(.4, 0, .2, 1) forwards 0.45s;
+        }
+
+        .faq-tab {
+            padding: 7px 20px;
+            border-radius: 50px;
+            border: 1px solid #e5dfd6;
+            background: transparent;
+            color: #8A8175;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+            font-family: inherit;
+        }
+
+        .faq-tab:hover {
+            background: #f5f1ec;
+            transform: translateY(-1px);
+        }
+
+        .faq-tab.active {
+            background: #8A8175;
+            color: #fff;
+            border-color: #8A8175;
+        }
+
+        /* ── NO RESULTS ── */
+        .no-results {
+            text-align: center;
+            color: #bbb;
+            font-size: 15px;
+            padding: 48px 0;
+            display: none;
+        }
+
+        /* ── FAQ ITEMS ── */
+        .faq-item {
+            border: 1px solid #e5dfd6;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            background: #fff;
+            overflow: hidden;
+            transition: border-color 0.25s, box-shadow 0.3s, transform 0.25s;
+
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .faq-item.visible {
+            animation: slideUp 0.5s cubic-bezier(.4, 0, .2, 1) forwards;
+        }
+
+        .faq-item:hover {
+            border-color: #c9c0b6;
+            box-shadow: 0 4px 20px rgba(138, 129, 117, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-item.open {
+            border-color: #8A8175;
+            box-shadow: 0 6px 28px rgba(138, 129, 117, 0.13);
+        }
+
+        /* ── QUESTION ROW ── */
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 22px;
+            cursor: pointer;
+            gap: 14px;
+            user-select: none;
+        }
+
+        .faq-q-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .faq-num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #f5f1ec;
+            color: #8A8175;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.25s, color 0.25s, transform 0.3s;
+        }
+
+        .faq-item.open .faq-num {
+            background: #8A8175;
+            color: #fff;
+            transform: rotate(360deg);
+        }
+
+        .faq-q-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: #8A8175;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+        .faq-item:hover .faq-q-text {
+            color: #6f665c;
+        }
+
+        /* chevron */
+        .faq-chevron {
+            width: 20px;
+            height: 20px;
+            stroke: #8A8175;
+            flex-shrink: 0;
+            transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), stroke 0.2s;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+            stroke: #6f665c;
+        }
+
+        /* ── ANSWER PANEL ── */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .faq-answer-inner {
+            padding: 0 22px 22px 66px;
+            color: #777;
+            font-size: 15px;
+            line-height: 1.9;
+            border-top: 1px solid #f0ece7;
+            padding-top: 16px;
+        }
+
+        /* highlight on search */
+        mark.hl {
+            background: #f5f1ec;
+            color: #6f665c;
+            font-weight: 600;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+
+        /* ── PROGRESS BAR ── */
+        .faq-progress-wrap {
+            height: 3px;
+            background: #f0ece7;
+            border-radius: 2px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeDown 0.5s ease forwards 0.55s;
+        }
+
+        .faq-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8A8175, #b5aca3);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.5s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        /* ── KEYFRAMES ── */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── RESPONSIVE (kept from original) ── */
+        @media (max-width: 768px) {
+            .page-content {
+                margin-top: 100px;
+                padding: 0 6%;
+            }
+
+            .page-content h1 {
+                font-size: 42px;
+                margin-bottom: 40px;
+            }
+
+            .faq-q-text {
+                font-size: 15px;
+            }
+
+            .faq-answer-inner {
+                font-size: 14px;
+                line-height: 1.8;
+                padding-left: 22px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-content h1 {
+                font-size: 34px;
+            }
+
+            .faq-q-text {
+                font-size: 14px;
+            }
+
+            .faq-answer-inner {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="mainHeader">
+
+        <div class="logo">
+            <a href="om.html">
+                <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            </a>
+        </div>
+
+    </header>
+
+    <section class="page-content">
+
+        <h1>FAQ</h1>
+
+        <!-- Search -->
+        <div class="faq-search-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="faq-search" placeholder="Search questions…" autocomplete="off" />
+        </div>
+
+        <!-- Category tabs -->
+        <div class="faq-tabs" id="faq-tabs">
+            <button class="faq-tab active" data-cat="all">All</button>
+            <button class="faq-tab" data-cat="quotes">Quotes &amp; Orders</button>
+            <button class="faq-tab" data-cat="warranty">Warranty</button>
+            <button class="faq-tab" data-cat="support">Support</button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="faq-progress-wrap">
+            <div class="faq-progress-fill" id="faq-progress"></div>
+        </div>
+
+        <!-- FAQ list -->
+        <div id="faq-list"></div>
+        <div class="no-results" id="no-results">No results found. Try a different keyword.</div>
+
+    </section>
+
+    <script>
+
+        /* ============================
+   PROGRESS BAR
+============================ */
+        window.addEventListener('scroll', () => {
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('progress-bar').style.width = pct + '%';
+        }, { passive: true });
+
+        /* ============================
+           HEADER SCROLL
+        ============================ */
+        const header = document.getElementById("mainHeader");
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 250) {
+                header.classList.add("hide-header");
+            } else {
+                header.classList.remove("hide-header");
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        const faqs = [
+            { cat: 'quotes', q: 'How can I obtain a quote?', a: 'The cost of our modular innovations varies based on factors like size, type of elements, and choice of appliances. For a detailed overview, including current products, initiatives, designs, and pricing, we recommend reaching out to one of our sales representatives. They will provide you with a comprehensive quote and personalized assistance.' },
+            { cat: 'quotes', q: 'Can I get a quote if I send you a plan of my kitchen?', a: 'Absolutely! For the best experience, we recommend contacting one of our sales points. Our dedicated sales team will be delighted to provide you with a detailed overview of our current initiatives, and supply you with a customized drawing and quotation tailored to your specific needs.' },
+            { cat: 'quotes', q: 'What are the delivery times for a kitchen or other modular furniture?', a: 'Delivery times depend on several factors, including production schedules, model type, door finishes, and custom-sized elements. For precise information, we recommend visiting our experience centre, where our experts can provide you with all the details you need.' },
+            { cat: 'quotes', q: 'Can I make additions or alterations to an existing OMF kitchen or modular furniture in my new home?', a: 'Yes, you can! However, the feasibility of additions or alterations depends on the age of your kitchen or furniture, as certain models, finishes, or technical components may no longer be in production. To explore your options, we recommend reaching out to one of our sales representatives. They have all the up-to-date information to assist you effectively.' },
+            { cat: 'warranty', q: 'What is the warranty period for OMF products?', a: 'All OMF products come with a legal warranty that covers any defects in conformity for two years from the date of delivery.' },
+            { cat: 'warranty', q: 'How long is the warranty period and what is the deadline for claiming it on consumer goods?', a: 'The seller is liable for any non-conformity present at the time of delivery for two years after the item\'s delivery. For used items, the seller and buyer may agree on a shorter liability period, but it must be at least one year.' },
+            { cat: 'support', q: 'How can I report a defect in my purchased product?', a: 'To report a defect, keep all purchase documentation for at least 24 months from the delivery date. This includes receipts, invoices, and payment slips, which serve as proof of purchase.' },
+            { cat: 'support', q: 'What does the repair or replacement process entail?', a: 'To address any non-conformity, consumers can initially request a free repair or replacement of the defective item. The seller covers all essential expenses, including shipping, labour, and materials. However, if the requested remedy is impossible or incurs excessive costs for the seller, they may refuse. In such cases, the consumer can request a price reduction or contract termination.' },
+            { cat: 'support', q: 'Who should I contact to file a complaint?', a: 'For any complaints, please contact the salesperson with whom you signed the purchase contract. They will be your point of contact throughout the entire warranty period.' },
+            { cat: 'support', q: 'What after-delivery services does OMF offer?', a: 'OMF offers comprehensive after-delivery support, including assistance with any issues related to purchased goods. We ensure proper fitting and usage of our products and provide user manuals for your convenience.' },
+            { cat: 'support', q: "I've lost my receipt/invoice. What should I do?", a: 'In this situation, please contact the point of sale where you made your purchase. They will be able to assist you.' },
+            { cat: 'support', q: 'Who should I contact for invoice-related inquiries?', a: 'For any questions regarding your invoice, please email us at ommodular11@gmail.com' }
+        ];
+
+        let activeCat = 'all';
+        let openIndex = null;
+        let searchTerm = '';
+
+        function esc(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function highlight(text, term) {
+            if (!term) return text;
+            return text.replace(new RegExp(`(${esc(term)})`, 'gi'), '<mark class="hl">$1</mark>');
+        }
+
+        function getFiltered() {
+            return faqs.map((f, i) => ({ ...f, _i: i })).filter(f => {
+                const catOk = activeCat === 'all' || f.cat === activeCat;
+                const termOk = !searchTerm || f.q.toLowerCase().includes(searchTerm) || f.a.toLowerCase().includes(searchTerm);
+                return catOk && termOk;
+            });
+        }
+
+        function render() {
+            const list = document.getElementById('faq-list');
+            const noR = document.getElementById('no-results');
+            const prog = document.getElementById('faq-progress');
+            const items = getFiltered();
+
+            list.innerHTML = '';
+
+            if (items.length === 0) {
+                noR.style.display = 'block';
+                prog.style.width = '0%';
+                return;
+            }
+            noR.style.display = 'none';
+
+            // progress based on open item
+            if (openIndex !== null) {
+                const pos = items.findIndex(f => f._i === openIndex);
+                prog.style.width = pos >= 0 ? Math.round(((pos + 1) / items.length) * 100) + '%' : '0%';
+            } else {
+                prog.style.width = '0%';
+            }
+
+            items.forEach((f, i) => {
+                const isOpen = openIndex === f._i;
+                const div = document.createElement('div');
+                div.className = 'faq-item' + (isOpen ? ' open' : '');
+                div.innerHTML = `
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="${isOpen}">
+                        <div class="faq-q-left">
+                            <span class="faq-num">${i + 1}</span>
+                            <span class="faq-q-text">${highlight(f.q, searchTerm)}</span>
+                        </div>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer" style="max-height:${isOpen ? '600px' : '0'}">
+                        <div class="faq-answer-inner">${highlight(f.a, searchTerm)}</div>
+                    </div>`;
+
+                const btn = div.querySelector('.faq-question');
+                btn.addEventListener('click', () => toggle(f._i));
+                btn.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(f._i); }
+                });
+
+                list.appendChild(div);
+
+                // staggered entrance
+                requestAnimationFrame(() => {
+                    setTimeout(() => div.classList.add('visible'), i * 60);
+                });
+            });
+        }
+
+        function toggle(idx) {
+            openIndex = openIndex === idx ? null : idx;
+            render();
+        }
+
+        document.getElementById('faq-search').addEventListener('input', e => {
+            searchTerm = e.target.value.toLowerCase().trim();
+            openIndex = null;
+            render();
+        });
+
+        document.getElementById('faq-tabs').addEventListener('click', e => {
+            const btn = e.target.closest('.faq-tab');
+            if (!btn) return;
+            document.querySelectorAll('.faq-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCat = btn.dataset.cat;
+            openIndex = null;
+            render();
+        });
+
+        render();
+    </script>
+
+</body>
+
+</html>
