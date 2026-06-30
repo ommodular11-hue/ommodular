@@ -1222,6 +1222,25 @@
 
         });
 
+        function doPost(e) {
+
+  const data = e.parameter;
+
+  MailApp.sendEmail({
+    to: "ommodular11@gmail.com",
+    subject: "New Contact Form",
+    htmlBody:
+    "Name: " + data.name +
+    "<br>Phone: " + data.phone +
+    "<br>Email: " + data.email +
+    "<br>Message: " + data.message
+  });
+
+  return ContentService
+    .createTextOutput("Success")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+        
     </script>
 
     <script src="script.js"></script>
