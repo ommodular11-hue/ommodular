@@ -980,11 +980,8 @@
         <img src="image/logo.png" alt="OM Modular Furniture">
     </a>
 </div>
-
         <div class="icons">
-
         </div>
-
     </header>
 
 
@@ -1192,17 +1189,14 @@
                 submitBtn.innerHTML = "Sending...";
 
                 fetch(scriptURL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: document.getElementById("name").value,
-                        phone: iti.getNumber(),
-                        email: document.getElementById("email").value,
-                        message: document.getElementById("message").value
-                    })
-                })
+    method: "POST",
+    body: new URLSearchParams({
+        name: document.getElementById("name").value,
+        phone: iti.getNumber(),
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    })
+})
 
                     .then(res => res.text())
 
