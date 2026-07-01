@@ -346,6 +346,37 @@
             transform: translateY(0) scale(1);
         }
 
+        @media (max-width:768px) {
+
+            .search-box {
+                position: relative;
+            }
+
+            .search-form {
+                position: absolute;
+                top: 42px;
+                right: -5px;
+                transform: none;
+                width: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: .35s;
+            }
+
+            .search-box.active .search-form {
+                width: 130px;
+                opacity: 1;
+            }
+
+            .search-input {
+                width: 130px;
+                height: 30px;
+                font-size: 12px;
+                padding: 0 10px;
+            }
+
+        }
+
         /* ============================
            HERO
         ============================ */
@@ -434,7 +465,6 @@
         .hero-bg-layer {
             position: absolute;
             inset: -10%;
-            background: url("image/hero.jpg") center center/cover no-repeat;
             z-index: 0;
             transition: transform .1s linear;
         }
@@ -486,6 +516,20 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .hero,
+        .hero-bg-layer {
+            background: url("image/hero.jpg") center center/cover no-repeat;
+        }
+
+        @media (max-width:768px) {
+
+            .hero,
+            .hero-bg-layer {
+                background-image: url("image/hero.jpg");
+            }
+
         }
 
         /* Scroll indicator */
@@ -543,6 +587,19 @@
                 transform: translateY(0);
                 opacity: 0;
             }
+        }
+
+        @media (max-width:768px) {
+
+            .scroll-indicator {
+                position: fixed !important;
+                left: 50% !important;
+                right: auto !important;
+                bottom: 20px !important;
+                transform: translateX(-50%) !important;
+                margin: 0 !important;
+            }
+
         }
 
         /* ============================
@@ -644,6 +701,47 @@
             max-width: 800px;
             margin: 30px auto 0;
             text-align: center;
+        }
+
+        /* ===== COMMON SECTION HEADING ===== */
+
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #8A8175;
+            margin-bottom: 40px;
+            padding-bottom: 18px;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 2px;
+            background: #bcb8b3;
+            border-radius: 20px;
+        }
+
+        @media(max-width:768px) {
+
+            .section-heading {
+                font-size: 30px;
+                letter-spacing: 2px;
+                margin-bottom: 30px;
+            }
+
+            .section-heading::after {
+                width: 70px;
+            }
+
         }
 
         /* ============================
@@ -805,9 +903,9 @@
 
         .german-left h2 {
             font-size: 40px;
-            font-weight: 300;
+            font-weight: 600;
             line-height: 1.2;
-            color: #2f2e2e;
+            color: #8A8175;
             margin-bottom: 30px;
             margin-top: 5px;
         }
@@ -912,6 +1010,30 @@
         /* ============================
            CONTACT
         ============================ */
+
+        /* Contact Section */
+        .contact {
+            text-align: left;
+            padding: 60px 20px;
+        }
+
+        /* Logo Container */
+        .logo1 {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        /* Logo Image */
+        .logo1 img {
+            margin-left: 10%;
+            width: 90px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .contact {
             background: #8A8175;
             color: white;
@@ -934,7 +1056,7 @@
         }
 
         .contact h1 {
-            font-size: 38px;
+            font-size: 28px;
             font-weight: 500;
             text-align: left;
             letter-spacing: 2px;
@@ -944,7 +1066,7 @@
         }
 
         .contact h2 {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 400;
             margin-bottom: 20px;
             text-align: left;
@@ -956,6 +1078,31 @@
             text-align: left;
             max-width: 700px;
             line-height: 1.9;
+        }
+
+        /* Mobile Fix */
+        @media (max-width: 768px) {
+
+            .contact {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .logo1 {
+                width: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto 20px;
+            }
+
+            .logo1 img {
+                width: 150px;
+                /* જરૂર હોય તો 160px કે 180px કરી શકે */
+                margin: 0 auto;
+            }
         }
 
         /* ============================
@@ -1320,7 +1467,7 @@
         <div class="loader-content">
             <h1>OM MODULAR FURNITURE</h1>
             <div class="loader-line"></div>
-            <p>Craft your modular luxury</p>
+            <p>Craft your modular luxury!</p>
         </div>
     </div>
 
@@ -1377,10 +1524,10 @@
     <!-- WHO WE ARE -->
     <section class="write">
         <div class="write-content reveal">
-            <h3>Who We Are</h3>
+            <h2 class="section-heading">Who We Are</h2>
             <p>
                 We embarked on our journey with a vision: to deliver innovative modular furniture solutions of the
-                highest quality, meeting the dynamic needs of the market. Vanessa represents a fusion of kitchen,
+                highest quality, meeting the dynamic needs of the market. OMF represents a fusion of kitchen,
                 living,
                 and workspace modular furniture solutions. Our creations not only transform ordinary spaces into
                 stunning
@@ -1413,7 +1560,7 @@
         </div>
 
         <div class="innovation-text reveal-right">
-            <h2>Modular Innovations</h2>
+            <h2 class="section-heading">Modular Innovations</h2>
             <p>
                 The evolution of furniture design mirrors the progression of human civilization, encapsulating
                 lifestyle, materials, and technological advancements of each era. At OMF, we consistently stay
@@ -1449,7 +1596,7 @@
             <div class="stat-label">Projects Completed</div>
         </div>
         <div class="stat-item reveal" data-delay="2">
-            <div class="stat-num" data-target="12">0</div>
+            <div class="stat-num" data-target="10">0</div>
             <div class="stat-label">Years of Excellence</div>
         </div>
         <div class="stat-item reveal" data-delay="3">
@@ -1457,7 +1604,7 @@
             <div class="stat-label">German Technology</div>
         </div>
         <div class="stat-item reveal" data-delay="1">
-            <div class="stat-num" data-target="50"><span>+</span>0</div>
+            <div class="stat-num" data-target="10"><span>+</span>0</div>
             <div class="stat-label">Design Experts</div>
         </div>
     </section>
@@ -1465,7 +1612,7 @@
     <!-- GERMAN TECH -->
     <section class="german-tech">
         <div class="german-left reveal-left">
-            <h2>100% German Technology Production</h2>
+            <h2>100% GERMAN TECHNOLOGY PRODUCTION</h2>
             <p>
                 Our modular innovations are fabricated in-house with advanced
                 technology and exquisite craftsmanship that converts ideas into reality.
@@ -1479,15 +1626,19 @@
 
     <!-- CONTACT -->
     <section class="contact">
+
+        <div class="logo1">
+            <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+        </div>
+
         <h1 class="reveal">Om Modular Furniture</h1>
         <h2 class="reveal">Craft your modular luxury!</h2>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
-        <p class="reveal">Instagram · LinkedIn</p>
         <p class="reveal">
             📍 G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
             Bhatpore, Surat-394510, Gujarat, India.
         </p>
-        <p class="reveal">📞 +91 99130 08830</p>
+        <p class="reveal"> +91 99130 08830</p>
         <p class="reveal">📧 ommodular11@gmail.com</p>
     </section>
 
