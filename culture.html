@@ -293,6 +293,37 @@
             transform: translateY(0) scale(1);
         }
 
+        @media (max-width:768px) {
+
+            .search-box {
+                position: relative;
+            }
+
+            .search-form {
+                position: absolute;
+                top: 42px;
+                right: -5px;
+                transform: none;
+                width: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: .35s;
+            }
+
+            .search-box.active .search-form {
+                width: 130px;
+                opacity: 1;
+            }
+
+            .search-input {
+                width: 130px;
+                height: 30px;
+                font-size: 12px;
+                padding: 0 10px;
+            }
+
+        }
+
           /* ============================
            CURSOR
         ============================ */
