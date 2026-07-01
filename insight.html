@@ -4,29 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About OM Modular Furniture Surat | Our Culture</title>
+
+    <title>Furniture Ideas & Interior Tips | OM Modular Furniture</title>
 
     <meta name="description"
-        content="Know about OM Modular Furniture Surat, our design approach, quality and furniture craftsmanship.">
+        content="Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture.">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         /* ============================
-   RESET & BASE
-============================ */
+           RESET & BASE
+        ============================ */
         *,
         *::before,
         *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         html,
@@ -37,10 +36,18 @@
 
         body {
             padding-top: 90px;
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding-top: 75px;
+            }
+        }
+
+        body {
             font-family: 'Montserrat', sans-serif;
             background: #f5f2ed;
             color: #555;
-            cursor: default;
         }
 
         img {
@@ -59,39 +66,49 @@
         }
 
         /* ============================
-   GRAIN OVERLAY
-============================ */
-        body::before {
-            content: '';
+           CURSOR
+        ============================ */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #8A8175;
+            border-radius: 50%;
             position: fixed;
-            inset: 0;
             pointer-events: none;
-            z-index: 99990;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(138, 129, 117, .5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width .3s var(--ease-out), height .3s var(--ease-out), opacity .3s;
+        }
+
+        .cursor-ring.expand {
+            width: 60px;
+            height: 60px;
+            opacity: .5;
         }
 
         /* ============================
-   SCROLL PROGRESS
-============================ */
+           SCROLL PROGRESS
+        ============================ */
         #progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             height: 2px;
-            background: linear-gradient(90deg, #8A8175, #bcb8b3, #8A8175);
-            background-size: 200% 100%;
+            background: linear-gradient(90deg, #8A8175, #bcb8b3);
             z-index: 99997;
             width: 0%;
             transition: width .1s linear;
-            animation: shimmer 2s linear infinite;
-        }
-
-        @keyframes shimmer {
-            to {
-                background-position: 200% 0;
-            }
         }
 
         /* ============================
@@ -293,102 +310,107 @@
             transform: translateY(0) scale(1);
         }
 
-          /* ============================
-           CURSOR
-        ============================ */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background: #8A8175;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 99999;
-            transform: translate(-50%, -50%);
-        }
-
-        .cursor-ring {
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(138, 129, 117, .5);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 99998;
-            transform: translate(-50%, -50%);
-            transition: width .3s var(--ease-out), height .3s var(--ease-out), opacity .3s;
-        }
-
-        .cursor-ring.expand {
-            width: 60px;
-            height: 60px;
-            opacity: .5;
-        }
-
-
         /* ============================
-   HERO BANNER
-============================ */
-        .culture-banner {
+           HERO IMAGE
+        ============================ */
+
+        .hero-image {
             width: 100%;
-            height: 100vh;
-            background: url("image/culture.jpg") center center/cover no-repeat;
+            min-height: 100vh;
+            height: calc(100vh - 75px);
             position: relative;
-            margin-top: -90px;
             overflow: hidden;
+            margin-top: -90px;
         }
 
-        /* Parallax inner */
-        .banner-bg {
-            position: absolute;
-            inset: -10%;
-            background: url("image/culture.jpg") center center/cover no-repeat;
-            transform: scale(1.1);
-            transition: transform 0s linear;
-            will-change: transform;
-        }
-
-        .banner-overlay {
+        .hero-bg-layer {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .5) 100%);
+            background: url("image/In.jpg") center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .45);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            z-index: 2;
         }
 
-        .hero-label {
-            font-size: 11px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .6);
-            margin-bottom: 24px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp .8s 1s var(--ease-out) forwards;
-        }
-
-        .banner-overlay h1 {
-            color: #fff;
-            font-size: 35px;
-            font-weight: 300;
+        .cutting-edge {
+            max-width: 900px;
             text-align: center;
-            max-width: 800px;
-            line-height: 1.25;
-            overflow: hidden;
+            color: white;
+            font-size: 26px;
+            line-height: 1.8;
+            font-weight: 300;
+            padding: 0 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1.4s 1s var(--ease-out) forwards;
         }
 
-        .banner-overlay h1 .word {
-            display: inline-block;
-            overflow: hidden;
-            margin-right: 12px;
+        @media(max-width:768px) {
+
+            .hero-image {
+                height: 75vh;
+                min-height: 500px;
+            }
+
+            .hero-bg-layer {
+                background-position: center center;
+                background-size: cover;
+            }
+
         }
 
-        .banner-overlay h1 .word .char {
-            display: inline-block;
-            transform: translateY(110%);
-            animation: charUp .7s var(--ease-out) forwards;
+        /* Decorative quote marks */
+        .cutting-edge::before {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, .15);
+            line-height: 0;
+            vertical-align: -30px;
+            margin-right: 10px;
+        }
+
+        .cutting-edge::after {
+            content: '"';
+            font-size: 80px;
+            color: rgba(255, 255, 255, .15);
+            line-height: 0;
+            vertical-align: -30px;
+            margin-left: 10px;
+        }
+
+        /* Hero line */
+        .hero-line {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 0;
+            background: rgba(255, 255, 255, .3);
+            z-index: 3;
+            animation: lineDown 1.2s 1.8s var(--ease-out) forwards;
+        }
+
+        @keyframes lineDown {
+            to {
+                height: 80px;
+            }
         }
 
         /* Scroll indicator */
@@ -397,49 +419,54 @@
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             opacity: 0;
-            animation: fadeUp .8s 2.2s var(--ease-out) forwards;
+            animation: fadeUp .8s 2s var(--ease-out) forwards;
         }
 
         .scroll-indicator span {
-            font-size: 10px;
-            letter-spacing: 4px;
-            color: rgba(255, 255, 255, .6);
+            color: rgba(255, 255, 255, .5);
+            font-size: 11px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        .scroll-line {
-            width: 1px;
-            height: 60px;
-            background: rgba(255, 255, 255, .2);
-            position: relative;
-            overflow: hidden;
+        .scroll-mouse {
+            width: 24px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, .4);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            padding-top: 6px;
         }
 
-        .scroll-line::after {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, .8));
-            animation: scrollAnim 1.6s 2.5s ease-in-out infinite;
+        .scroll-wheel {
+            width: 3px;
+            height: 8px;
+            background: rgba(255, 255, 255, .7);
+            border-radius: 2px;
+            animation: scrollWheel 2s ease infinite;
         }
 
-        @keyframes scrollAnim {
-            to {
-                top: 200%;
-            }
-        }
-
-        @keyframes charUp {
-            to {
+        @keyframes scrollWheel {
+            0% {
                 transform: translateY(0);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(12px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
             }
         }
 
@@ -451,455 +478,410 @@
         }
 
         /* ============================
-   INTRO PARAGRAPH
-============================ */
-        .gg {
-            background: #ffffff;
-            padding: 120px 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gg::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, #f5f2ed, transparent);
-        }
-
-        .gg .c1 {
-            max-width: 950px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 20px;
-            line-height: 2.1;
-            color: #555;
+           SCROLL REVEAL
+        ============================ */
+        .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(50px);
             transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
         }
 
-        .gg .c1.visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ============================
-   DIVIDER LINE
-============================ */
-        .divider-line {
-            width: 0%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #8A8175, transparent);
-            margin: 0 auto;
-            transition: width 1.2s var(--ease-out);
-        }
-
-        .divider-line.visible {
-            width: 60%;
-        }
-
-        /* ============================
-   CULTURE SECTION
-============================ */
-        .culture-section {
-            width: 100%;
-            max-width: 1500px;
-            margin: 130px auto;
-            padding: 0 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 80px;
-        }
-
-        .culture-content {
-            width: 35%;
-        }
-
-        .small-title {
-            color: #8A8175;
-            font-size: 18px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
+        .reveal-left {
             opacity: 0;
-            transform: translateX(-20px);
-            transition: opacity .7s .1s var(--ease-out), transform .7s .1s var(--ease-out);
+            transform: translateX(-60px);
+            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
         }
 
-        .culture-section.visible .small-title {
+        .reveal-left.active {
             opacity: 1;
             transform: translateX(0);
         }
 
-        .culture-content h2 {
-            font-size: 45px;
-            line-height: 1.15;
-            margin: 0 0 30px;
-            color: #222;
-            font-weight: 500;
+        .reveal-right {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity .8s .2s var(--ease-out), transform .8s .2s var(--ease-out);
-        }
-
-        .culture-section.visible .culture-content h2 {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .culture-content p {
-            font-size: 17px;
-            line-height: 2;
-            color: #666;
-            margin-bottom: 24px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity .8s .35s var(--ease-out), transform .8s .35s var(--ease-out);
-        }
-
-        .culture-section.visible .culture-content p:first-of-type {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .culture-content p:nth-of-type(2) {
-            transition-delay: .5s;
-        }
-
-        .culture-section.visible .culture-content p {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* STAT ROW */
-        .stat-row {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity .8s .6s var(--ease-out), transform .8s .6s var(--ease-out);
-        }
-
-        .culture-section.visible .stat-row {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-number {
-            font-size: 34px;
-            font-weight: 600;
-            color: #8A8175;
-            line-height: 1;
-        }
-
-        .stat-number .count {
-            display: inline-block;
-        }
-
-        .stat-label {
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #aaa;
-            text-transform: uppercase;
-            margin-top: 6px;
-        }
-
-        /* SLIDER */
-        .culture-slider {
-            width: 65%;
-        }
-
-        .myCultureSlider {
-            width: 100%;
-            height: 680px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .15);
-            opacity: 0;
-            transform: translateX(60px) scale(.97);
-            transition: opacity 1s .3s var(--ease-out), transform 1s .3s var(--ease-out);
-        }
-
-        .culture-section.visible .myCultureSlider {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-        }
-
-        .myCultureSlider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Swiper custom */
-        .swiper-pagination-bullet {
-            background: #8A8175;
-            opacity: .5;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-            width: 24px;
-            border-radius: 4px;
-            transition: width .3s;
-        }
-
-        /* ============================
-   MISSION SECTION
-============================ */
-        .Graph {
-            width: 100%;
-            padding: 130px 20px;
-            background: #1a1814;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Ambient floating orbs */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: .12;
-            pointer-events: none;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .orb1 {
-            width: 500px;
-            height: 500px;
-            background: #8A8175;
-            top: -150px;
-            left: -100px;
-            animation-delay: 0s;
-        }
-
-        .orb2 {
-            width: 400px;
-            height: 400px;
-            background: #bcb8b3;
-            bottom: -100px;
-            right: -50px;
-            animation-delay: -4s;
-        }
-
-        .orb3 {
-            width: 300px;
-            height: 300px;
-            background: #8A8175;
-            top: 40%;
-            left: 30%;
-            animation-delay: -2s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            33% {
-                transform: translate(30px, -20px) scale(1.05);
-            }
-
-            66% {
-                transform: translate(-20px, 30px) scale(.95);
-            }
-        }
-
-        .om {
-            max-width: 950px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .om h3 {
-            font-size: 20px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: #bcb8b3;
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
-        }
-
-        .om h3.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mission-block {
-            margin-bottom: 80px;
-            opacity: 0;
-            transform: translateY(40px);
+            transform: translateX(60px);
             transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
         }
 
-        .mission-block.visible {
+        .reveal-right.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
-        .mission-block:nth-child(3) {
-            transition-delay: .2s;
+        .reveal[data-delay="2"] {
+            transition-delay: .15s;
         }
 
-        .mission-block h4 {
-            font-size: 36px;
-            font-weight: 500;
-            color: #f5f2ed;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .mission-block p {
-            font-size: 18px;
-            line-height: 2;
-            color: rgba(245, 242, 237, .6);
+        .reveal[data-delay="3"] {
+            transition-delay: .3s;
         }
 
         /* ============================
-   VISION ROW
-============================ */
-        .vision-section {
+           STORY SECTION
+        ============================ */
+        .story-section {
             background: #f5f2ed;
-            padding: 130px 70px;
+            padding: 120px 20px;
             position: relative;
             overflow: hidden;
         }
 
-        .vision-section::before {
-            content: 'VISION';
+        /* Big watermark number */
+        .story-section::before {
+            content: '01';
             position: absolute;
-            right: -40px;
+            left: -30px;
             top: 50%;
-            transform: translateY(-50%) rotate(90deg);
-            font-size: 160px;
+            transform: translateY(-50%);
+            font-size: 280px;
             font-weight: 700;
-            color: rgba(138, 129, 117, .04);
-            letter-spacing: 20px;
+            color: rgba(138, 129, 117, .06);
             pointer-events: none;
-            white-space: nowrap;
+            line-height: 1;
         }
 
-        .vision-row {
-            max-width: 1200px;
-            margin: 0 auto;
+        .story-box {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .story-box h1 {
+            font-size: 50px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8A8175;
+            margin-bottom: 45px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+        }
+
+        .story-box h1::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -18px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: #8A8175;
+            transition: width 1.2s ease;
+        }
+
+        .story-box.active h1::after {
+            width: 140px;
+        }
+
+        .story-text {
+            max-width: 1000px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 2;
+            color: #666;
+        }
+
+        /* ============================
+           INSIGHT SLIDER
+        ============================ */
+        .insight-slider {
+            width: 100%;
+            padding: 80px 0;
+            background: #f5f2ed;
+        }
+
+        .mySwiper {
+            width: 90%;
+            height: 650px;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+
+        .swiper-slide-active img {
+            transform: scale(1.08);
+        }
+
+        .swiper-pagination-bullet {
+            background: #8A8175;
+        }
+
+        .swiper-pagination-bullet-active {
+            transform: scale(1.3);
+        }
+
+        /* ============================
+           WHY OMF + BESPOKE BOX
+        ============================ */
+        .two-col-section {
+            background: #fbfbfa;
+            padding: 140px 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            max-width: 1300px;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 100px;
+            gap: 80px;
         }
 
-        .vision-card {
-            flex: 1;
-            padding: 50px;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, .05);
-            transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity .9s var(--ease-out), transform .9s var(--ease-out), box-shadow .3s;
-            will-change: transform;
+        .left-content,
+        .right-content {
+            width: 50%;
         }
 
-        .vision-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .vision-card:nth-child(2) {
-            transition-delay: .2s;
-        }
-
-        .vision-card:hover {
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .12);
-        }
-
-        .vision-card h4 {
-            font-size: 24px;
-            color: #222;
-            margin-bottom: 24px;
+        .left-content h5,
+        .right-content h5 {
+            font-size: 36px;
             font-weight: 500;
-            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8A8175;
+            margin-bottom: 35px;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 18px;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .vision-card h4::after {
-            content: '';
+        .left-content h5::after,
+        .right-content h5::after {
+            content: "";
             position: absolute;
-            bottom: 0;
             left: 0;
-            width: 40px;
+            bottom: 0;
+            width: 70px;
             height: 2px;
             background: #8A8175;
-            transition: width .4s var(--ease-out);
+            transition: width 1s ease;
         }
 
-        .vision-card:hover h4::after {
-            width: 100%;
+        .left-content.active h5::after,
+        .right-content.active h5::after {
+            width: 140px;
         }
 
-        .vision-card p {
-            font-size: 16px;
+        .left-content h4 {
+            font-size: 22px;
+            line-height: 1.4;
+            font-weight: 300;
+            color: #323232;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .left-content p,
+        .right-content p {
+            font-size: 18px;
             line-height: 2;
-            color: #777;
+            color: #666;
+            font-weight: 300;
         }
 
-        .value-list {
-            list-style: none;
-            padding: 0;
+        /* Vertical divider */
+        .col-divider {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #bcb8b3, transparent);
+            align-self: stretch;
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 1s .5s ease;
         }
 
-        .value-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #f0ece6;
-            font-size: 16px;
-            color: #777;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: color .3s, padding-left .3s;
+        .col-divider.active {
+            opacity: 1;
         }
 
-        .value-list li:last-child {
-            border-bottom: none;
+        /* ============================
+           OUR SERVICE
+        ============================ */
+        .our-service {
+            width: 100%;
+            padding: 100px 20px;
+            background: #f5f2ed;
+            position: relative;
+            overflow: hidden;
         }
 
-        .value-list li::before {
-            content: '→';
+        .our-service::before {
+            content: '02';
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            font-size: 260px;
+            font-weight: 700;
+            color: rgba(138, 129, 117, .05);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .service-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-box h3 {
+            font-size: 42px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             color: #8A8175;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-box h3::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -18px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: #8A8175;
+            transition: width 1s ease;
+        }
+
+        .service-box h3.reveal.active::after {
+            width: 140px;
+        }
+
+        .service-box h4 {
+            font-size: 42px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8A8175;
+            margin: 80px 0 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-box h4::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: #333;
+            transition: width 1s ease;
+        }
+
+        .service-box h4.reveal.active::after {
+            width: 140px;
+        }
+
+        .service-box>p {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            font-size: 20px;
+            line-height: 2;
+            color: #666;
+            text-align: left;
+        }
+
+        .service-box img {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            border-radius: 12px;
+            transition: transform .8s var(--ease-out), box-shadow .8s ease;
+        }
+
+        .service-box img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .1);
+        }
+
+        /* Service list items */
+        .service-list {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .service-item {
+            flex: 1;
+            min-width: 260px;
+            max-width: 320px;
+            border: 1px solid rgba(138, 129, 117, .2);
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: left;
+            transition: border-color .4s ease, transform .4s var(--ease-out), box-shadow .4s ease;
+            background: #fff;
+        }
+
+        .service-item:hover {
+            border-color: #8A8175;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(138, 129, 117, .12);
+        }
+
+        .service-item .icon {
+            font-size: 28px;
+            color: #8A8175;
+            margin-bottom: 15px;
+        }
+
+        .service-item h6 {
             font-size: 14px;
-            transition: transform .3s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
 
-        .value-list li:hover {
-            color: #555;
-            padding-left: 8px;
+        .service-item p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #777;
         }
 
-        .value-list li:hover::before {
-            transform: translateX(4px);
+        @media (max-width:768px) {
+
+            .story-box h1 {
+                font-size: 38px;
+            }
+
+            .left-content h5,
+            .right-content h5 {
+                font-size: 28px;
+            }
+
+            .service-box h3,
+            .service-box h4 {
+                font-size: 30px;
+            }
+
         }
-    
+
         /* =====================================
    CONTACT
 ===================================== */
@@ -1098,230 +1080,122 @@
 
         }
 
+
         /* ============================
-   MOBILE
-============================ */
-        @media(max-width:768px) {
-            body {
-                padding-top: 75px;
-                cursor: auto;
-            }
+           DIVIDER
+        ============================ */
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #bcb8b3 30%, #bcb8b3 70%, transparent);
+            width: 0;
+            margin: 0 auto;
+            transition: width 1.4s var(--ease-out);
+        }
 
-            #cursor-dot,
-            #cursor-ring {
-                display: none;
-            }
+        .divider-line.active {
+            width: 80%;
+        }
 
-            header {
-                height: 75px;
-                padding: 0 15px;
-            }
-
-            .logo-area a {
-                font-size: 12px;
-            }
-
-            .logo {
-                position: absolute;
-                left: 50%;
-                top: 12px;
-                transform: translateX(-50%);
-            }
-
-            .logo img {
-                width: 75px;
-            }
-
-            .icons i {
-                font-size: 22px;
-            }
-
-            .culture-banner {
-                height: 60vh;
-            }
-
-            .banner-overlay h1 {
-                font-size: 28px;
-                padding: 0 20px;
-            }
-
-            .gg {
-                padding: 60px 20px;
-            }
-
-            .gg .c1 {
-                font-size: 16px;
-            }
-
-            .culture-section {
+        /* ============================
+           RESPONSIVE
+        ============================ */
+        @media(max-width: 991px) {
+            .box {
                 flex-direction: column;
-                padding: 0 20px;
-                gap: 40px;
-                margin: 70px auto;
+                gap: 50px;
             }
 
-            .culture-content,
-            .culture-slider {
+            .left-content,
+            .right-content {
                 width: 100%;
             }
 
-            .culture-content h2 {
-                font-size: 34px;
-            }
-
-            .myCultureSlider {
-                height: 320px;
-                border-radius: 16px;
-            }
-
-            .stat-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .Graph {
-                padding: 80px 20px;
-            }
-
-            .mission-block h4 {
-                font-size: 26px;
-            }
-
-            .mission-block p {
-                font-size: 16px;
-            }
-
-            .vision-section {
-                padding: 80px 20px;
-            }
-
-            .vision-row {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .vision-card {
-                padding: 30px;
-            }
-
-            .contact {
-                padding: 70px 20px;
-            }
-
-            .contact h1 {
-                font-size: 28px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            footer {
-                gap: 15px;
-            }
-        }
-
-        @media(max-width:991px) {
-            .vision-section::before {
+            .col-divider {
                 display: none;
             }
+
+            .two-col-section {
+                padding: 80px 30px;
+            }
         }
 
-        /* CONTACT REVEAL ANIMATION */
-
-        .contact .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity .8s var(--ease-out),
-                transform .8s var(--ease-out);
-        }
-
-        .contact .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media(max-width:768px) {
-
+        @media(max-width: 768px) {
             header {
                 height: 75px;
                 padding: 0 15px;
-                position: fixed;
-                top: 0;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
             }
 
             .logo {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: auto;
+                position: static;
+                transform: none;
+                width: 75px;
             }
 
             .logo img {
                 width: 75px;
             }
 
-            .logo-area {
-                display: flex;
-                gap: 12px;
-                align-items: center;
-            }
-
-            .logo-area a {
-                font-size: 12px;
-            }
-
-            .icons {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .icons i {
-                font-size: 22px;
-            }
-        }
-
-    
-
-        /* ============================
-   MOBILE HERO FINAL FIX
-============================ */
-
-        @media(max-width:768px) {
-
-            .culture-banner {
-                height: 60vh;
-                margin-top: -75px;
-                background-position: center center;
-            }
-
-
-            .banner-bg {
-                inset: 0;
-                background-position: center center;
-                transform: scale(1);
-            }
-
-
-            .banner-overlay {
-                justify-content: center;
+            .cutting-edge {
+                font-size: 18px;
                 padding: 0 20px;
             }
 
+            .story-box h1 {
+                font-size: 34px;
+            }
 
-            .banner-overlay h1 {
-                font-size: 26px;
-                line-height: 1.35;
-                max-width: 330px;
+            .mySwiper {
+                height: 300px;
+            }
+
+            .contact {
+                padding: 50px 20px;
+            }
+
+            .contact h1,
+            .contact h2,
+            .contact p {
                 text-align: center;
             }
 
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                padding: 25px 15px;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        @media(max-width: 600px) {
+            h1 {
+                font-size: 32px !important;
+            }
+
+            h2 {
+                font-size: 28px !important;
+            }
+
+            p {
+                font-size: 16px !important;
+                line-height: 1.6;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
         }
 
         /* ============================
@@ -1435,59 +1309,16 @@
             }
 
         }
-
-        /* ===== MOBILE FOOTER ===== */
-
-        @media (max-width:768px) {
-
-            footer {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 18px;
-
-                background: #111;
-                color: #fff;
-
-                padding: 30px 20px;
-
-                text-align: center;
-            }
-
-            .footer-left,
-            .footer-center,
-            .footer-right {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-            }
-
-            .footer-left a,
-            .footer-center a {
-                color: #fff;
-                text-decoration: none;
-                font-size: 15px;
-                letter-spacing: .5px;
-            }
-
-            .footer-right {
-                font-size: 14px;
-                color: #d8d8d8;
-            }
-
-        }
     </style>
 </head>
 
 <body>
 
-        <!-- CURSOR -->
+    <!-- CURSOR -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Progress Bar -->
+    <!-- PROGRESS BAR -->
     <div id="progress-bar"></div>
 
     <header id="mainHeader">
@@ -1504,9 +1335,10 @@
             <div class="search-box">
                 <i class="fas fa-search search-btn"></i>
                 <form class="search-form">
-                    <input class="search-input" type="text" placeholder="Search...">
+                    <input type="text" class="search-input" placeholder="Search...">
                 </form>
             </div>
+
             <div class="menu-box">
                 <i class="fas fa-bars menu-btn"></i>
                 <div class="menu-dropdown">
@@ -1519,141 +1351,135 @@
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="culture-hero">
-        <div class="culture-banner">
-            <div class="banner-bg" id="parallaxBg"></div>
-            <div class="banner-overlay">
-                <h1 id="heroTitle">Being catalyst for a positive change</h1>
-            </div>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
+    <!-- HERO IMAGE -->
+    <section class="hero-image">
+        <div class="hero-bg-layer" id="heroBg"></div>
+        <div class="hero-overlay">
+            <p class="cutting-edge">
+                Cutting-Edge Design, Advanced Technology, and Exquisite Craftsmanship that
+                Metamorphosis ideas into reality
+            </p>
+        </div>
+        <div class="hero-line"></div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
             </div>
         </div>
     </section>
 
-    <!-- INTRO -->
-    <div class="gg">
-        <p class="c1 scroll-reveal">
-            OM Modular Furniture is fuelled by a passion for making a positive impact on the communities we serve.
-            Guided by our core values, we aim to uplift the lives of our clients, partners, and friends.
-            Together, we work to create transformative change in areas where we can make the most significant
-            difference.
-            <br><br>
-            We are a specialized company driven by creativity, culture, and emotional insight, setting a benchmark
-            for values that go beyond the physical and technical aspects of our products.
-            We share intangible, fundamental, and personal values with designers and clients alike.
-        </p>
+    <!-- STORY -->
+    <section class="story-section">
+        <div class="story-box reveal">
+            <h1>Design + Build your story</h1>
+            <p class="story-text">
+                Nestled in Surat, India's renowned silk city, our roots run deep in the furniture industry.
+                Our state-of-the-art factory, a testament to modern design and creative craftsmanship,
+                transforms dreams into tangible realities. Spanning over 50,000 square feet amidst lush landscapes,
+                this is where the magic of production unfolds. Our experience centre, sprawling across 6,000 square feet
+                in the same vibrant city, showcases live displays of diverse modular kitchens, living spaces, and
+                workspaces solutions. From conception to fabrication to execution, our dynamic team comprises
+                individuals
+                from all walks of life—varying ages, genders, and backgrounds—coming together to create an inclusive
+                environment where challenges are embraced, and dream ideas are brought to life.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider-line" style="margin:0 auto;"></div>
+
+    <!-- INSIGHT SLIDER -->
+    <section class="insight-slider">
+        <div class="swiper mySwiper reveal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/insight1.jpg" alt="Insight 1"></div>
+                <div class="swiper-slide"><img src="image/insight2.jpg" alt="Insight 2"></div>
+                <div class="swiper-slide"><img src="image/insight3.jpg" alt="Insight 3"></div>
+                <div class="swiper-slide"><img src="image/insight4.jpg" alt="Insight 4"></div>
+                <div class="swiper-slide"><img src="image/insight5.jpg" alt="Insight 5"></div>
+                <div class="swiper-slide"><img src="image/insight6.jpg" alt="Insight 6"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- WHY OMF + BESPOKE -->
+    <div class="two-col-section">
+        <div class="box">
+            <div class="left-content reveal-left">
+                <h5>Why OMF</h5>
+                <h4>
+                    Creativity, Trust, Flexibility and
+                    Personalisation are our driving forces.
+                </h4>
+                <p>
+                    We believe in the essence of every living space—a soul waiting to be unveiled.
+                    It's the passion, expertise, and creativity we pour into every design, manufacturing process, and
+                    application. Within it resides an internal universe, woven from the dreams, desires, feelings, and
+                    stories of those who inhabit it daily. We strive to interpret and transform these vital
+                    spaces—whether
+                    for living or working—into authentic reflections of their occupants.
+                    This convergence of affinities, shared experiences, and relationships shapes our vision of space.
+                    It transcends mere products, imbuing materials, technologies, and design with profound personal
+                    significance, crafting individual project stories that resonate deeply.
+                </p>
+            </div>
+
+            <div class="col-divider"></div>
+
+            <div class="right-content reveal-right">
+                <h5>Bespoke Concierge Service</h5>
+                <p>
+                    Step into luxury with our exclusive Concierge Service, where you'll meet our specialized
+                    team-consultants. Whether online, over the phone, or in person at our showroom, we cater to your
+                    preferences and adapt to your schedule seamlessly. At the heart of our exceptional service is a deep
+                    understanding of our clients, ensuring every solution is meticulously tailored to exceed your
+                    expectations.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="divider-line scroll-line-reveal" style="margin:0 auto;"></div>
+    <!-- OUR SERVICE -->
+    <section class="our-service">
+        <div class="service-box">
+            <h3 class="reveal">Our Service</h3>
 
-    <!-- CULTURE SECTION -->
-    <section class="culture-section" id="cultureSection">
-        <div class="culture-content">
-            <span class="small-title">Our Culture</span>
-            <h2>Creating Spaces That Reflect Life</h2>
-            <p>
-                At OM Modular Furniture, we believe every space carries a story.
-                Our culture is built on creativity, craftsmanship, innovation,
-                and attention to detail.
+            <!-- Animated service cards -->
+            <div class="service-list">
+                <div class="service-item reveal" data-delay="1">
+                    <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h6>Tailored Design</h6>
+                    <p>Customized solutions built around your unique preferences and lifestyle.</p>
+                </div>
+                <div class="service-item reveal" data-delay="2">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <h6>German Craftsmanship</h6>
+                    <p>Enduring quality with precision German technology and artisanal craftsmanship.</p>
+                </div>
+                <div class="service-item reveal" data-delay="3">
+                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h6>Design-Driven Execution</h6>
+                    <p>Organized, detail-oriented process from conception to installation.</p>
+                </div>
+            </div>
+
+            <p class="reveal">
+                We provide customized modular furniture solutions, incorporating the latest designs, accessories, and
+                appliances. Our offerings are continually updated to align with global innovations, enhancing comfort,
+                style, and functionality.
             </p>
-            <p>
-                We transform kitchens, wardrobes, living spaces and workspaces
-                into functional and elegant environments that inspire everyday life.
-            </p>
-            <div class="stat-row">
-                <div class="stat-item">
-                    <div class="stat-number"><span class="count" data-target="5000">0</span> Sq.Ft</div>
-                    <div class="stat-label">Experience Centre</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number"><span class="count" data-target="50">0</span>+</div>
-                    <div class="stat-label">Collaborations</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number"><span class="count" data-target="500">0</span>+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-            </div>
-        </div>
 
-        <div class="culture-slider">
-            <div class="swiper myCultureSlider">
-                <div class="swiper-wrapper">
+            <img src="image/Picture1.png" alt="Our Service" class="reveal">
 
-                    <div class="swiper-slide">
-                        <img src="image/culture1.jpg"
-                            alt="Modern Modular Furniture Interior Design by OM Modular Furniture Surat">
-                    </div>
+            <h4 class="reveal">Work Process</h4>
 
-                    <div class="swiper-slide">
-                        <img src="image/culture2.jpg" alt="Luxury Modular Kitchen Design Surat OM Modular Furniture">
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img src="image/culture3.jpg" alt="Custom Furniture Solutions and Interior Design Surat">
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img src="image/culture4.jpg" alt="Premium Home Interior Furniture Design by OM Modular">
-                    </div>
-
-                </div>
-
-                <div class="swiper-pagination"></div>
-            </div>
+            <img src="image/Picture2.png" alt="Work Process" class="reveal">
         </div>
     </section>
 
-    <!-- MISSION -->
-    <section class="Graph">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="orb orb3"></div>
-        <div class="om">
-            <h3 class="scroll-reveal">Mission &amp; Vision</h3>
-            <div class="mission-block scroll-reveal">
-                <h4>Passion and Empowerment</h4>
-                <p>We are committed to pioneering sustainable innovation. By sharing ethical, aesthetic, and emotional
-                    content,
-                    we inspire and nurture the spirit of new generations, placing our trust in a brighter future.</p>
-            </div>
-            <div class="mission-block scroll-reveal">
-                <h4>Ethos and Creativity</h4>
-                <p>Our ethos drives us to pour our energy, ingenuity, and creative spirit into crafting Modular
-                    Innovations.
-                    We seek a perfect fusion of beauty, wellness, and functionality,
-                    transcending the confines of individual products to deliver projects centred around people.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- VISION -->
-    <section class="vision-section">
-        <div class="vision-row">
-            <div class="vision-card scroll-reveal" id="card1">
-                <h4>Elevate Spaces with Inspired Collections</h4>
-                <p>Our marketplace is where stories meet solutions — where we delve into the needs of our buyers and
-                    guide
-                    them towards the perfect fit. Our showroom, factory and workshops are more than just spaces — they
-                    are
-                    the gateways to discovery. Here we understand the need and curate modern day solutions that resonate
-                    with your aspirations.</p>
-            </div>
-            <div class="vision-card scroll-reveal" id="card2">
-                <h4>Core Value Proposition</h4>
-                <ul class="value-list">
-                    <li>Creativity and Innovation</li>
-                    <li>Customized Tailor-Made Solutions</li>
-                    <li>Pursuing Excellence</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-<!-- CONTACT -->
+    <!-- CONTACT -->
     <section class="contact">
 
         <div class="logo1">
@@ -1678,10 +1504,10 @@
         <div class="footer-right">© 2026 OM Modular Furniture</div>
     </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-
-           /* ============================
+        /* ============================
            CURSOR
         ============================ */
         const dot = document.getElementById("cursorDot");
@@ -1706,231 +1532,140 @@
         });
 
         /* ============================
-           PROGRESS BAR
+           SCROLL PROGRESS
         ============================ */
-        const progressBar = document.getElementById('progress-bar');
-        window.addEventListener('scroll', () => {
-            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            progressBar.style.width = pct + '%';
+        const progressBar = document.getElementById("progress-bar");
+        window.addEventListener("scroll", () => {
+            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            progressBar.style.width = pct + "%";
         });
 
         /* ============================
-           HEADER SCROLL
+           HEADER ON SCROLL
         ============================ */
-        const header = document.getElementById('mainHeader');
+        const header = document.getElementById("mainHeader");
         let lastScroll = 0;
-        window.addEventListener('scroll', () => {
+        window.addEventListener("scroll", () => {
             const y = window.scrollY;
-            header.classList.toggle('scrolled', y > 60);
-            header.classList.toggle('hide-header', y > lastScroll + 10 && y > 300);
-            if (y < lastScroll || y < 100) header.classList.remove('hide-header');
+            header.classList.toggle("scrolled", y > 60);
             lastScroll = y;
         });
 
         /* ============================
            PARALLAX HERO
         ============================ */
-        const parallaxBg = document.getElementById('parallaxBg');
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            if (y < window.innerHeight * 1.5) {
-                parallaxBg.style.transform = `translateY(${y * 0.35}px) scale(1.1)`;
-            }
-        }, { passive: true });
-
-        /* ============================
-           HERO TEXT SPLIT ANIMATION
-        ============================ */
-        function splitAndAnimate() {
-            const h1 = document.getElementById('heroTitle');
-            const text = h1.textContent;
-            const words = text.split(' ');
-            h1.innerHTML = '';
-            words.forEach((word, wi) => {
-                const wordSpan = document.createElement('span');
-                wordSpan.className = 'word';
-                [...word].forEach((char, ci) => {
-                    const charSpan = document.createElement('span');
-                    charSpan.className = 'char';
-                    charSpan.textContent = char;
-                    const delay = (wi * 0.08 + ci * 0.025 + 1.2);
-                    charSpan.style.animationDelay = delay + 's';
-                    wordSpan.appendChild(charSpan);
-                });
-                h1.appendChild(wordSpan);
-                if (wi < words.length - 1) h1.appendChild(document.createTextNode(' '));
-            });
-        }
-        splitAndAnimate();
-
-        /* ============================
-           INTERSECTION OBSERVER REVEALS
-        ============================ */
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    // Trigger count if stat row
-                    if (e.target.classList.contains('stat-row') || e.target.closest('.culture-section.visible')) {
-                        startCounters();
-                    }
-                    io.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.scroll-reveal, .scroll-line-reveal').forEach(el => {
-            if (el.classList.contains('scroll-line-reveal')) {
-                el.classList.add('divider-line');
-            }
-            io.observe(el);
-        });
-
-        // Culture section trigger
-        const cultureSection = document.getElementById('cultureSection');
-        const csObs = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                cultureSection.classList.add('visible');
-                setTimeout(startCounters, 600);
-                csObs.disconnect();
-            }
-        }, { threshold: 0.1 });
-        csObs.observe(cultureSection);
-
-        // Vision cards
-        document.querySelectorAll('.vision-card').forEach((card, i) => {
-            const obs = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    setTimeout(() => card.classList.add('visible'), i * 150);
-                    obs.disconnect();
-                }
-            }, { threshold: 0.15 });
-            obs.observe(card);
-        });
-
-        // Mission blocks
-        document.querySelectorAll('.mission-block').forEach((block, i) => {
-            const obs = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    setTimeout(() => block.classList.add('visible'), i * 200);
-                    obs.disconnect();
-                }
-            }, { threshold: 0.1 });
-            obs.observe(block);
-        });
-
-        /* ============================
-      CONTACT REVEAL
-   ============================ */
-
-        document.querySelectorAll('.contact .reveal').forEach((el, i) => {
-            const obs = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, i * 180);
-                    obs.disconnect();
-                }
-            }, {
-                threshold: 0.15
-            });
-
-            obs.observe(el);
-        });
-        /* ============================
-           COUNTER ANIMATION
-        ============================ */
-        let countersStarted = false;
-        function startCounters() {
-            if (countersStarted) return;
-            countersStarted = true;
-            document.querySelectorAll('.count').forEach(counter => {
-                const target = parseInt(counter.dataset.target);
-                const duration = 1800;
-                const step = target / (duration / 16);
-                let current = 0;
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) { current = target; clearInterval(timer); }
-                    counter.textContent = Math.floor(current).toLocaleString();
-                }, 16);
-            });
-        }
-
-        /* ============================
-           TILT EFFECT ON VISION CARDS
-        ============================ */
-        document.querySelectorAll('.vision-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const cx = rect.left + rect.width / 2;
-                const cy = rect.top + rect.height / 2;
-                const dx = (e.clientX - cx) / (rect.width / 2);
-                const dy = (e.clientY - cy) / (rect.height / 2);
-                card.style.transform = `translateY(0) perspective(800px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg) scale(1.02)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
+        const heroBg = document.getElementById("heroBg");
+        window.addEventListener("scroll", () => {
+            if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
         });
 
         /* ============================
            SWIPER
         ============================ */
-        new Swiper('.myCultureSlider', {
-            loop: true,
-            autoplay: { delay: 2800, disableOnInteraction: false },
-            speed: 1400,
-            effect: 'slide',
-            pagination: { el: '.swiper-pagination', clickable: true },
-            on: {
-                slideChangeTransitionStart: function () {
-                    const active = this.slides[this.activeIndex];
-                    if (active) {
-                        active.querySelector('img').style.transform = 'scale(1.08)';
-                        active.querySelector('img').style.transition = 'transform 1.4s cubic-bezier(0.22,1,0.36,1)';
-                        setTimeout(() => {
-                            if (active.querySelector('img'))
-                                active.querySelector('img').style.transform = 'scale(1)';
-                        }, 1400);
-                    }
-                }
-            }
+        new Swiper(".mySwiper", {
+            loop: true, speed: 1500,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            effect: "fade",
+            fadeEffect: { crossFade: true }
         });
 
         /* ============================
-           MENU & SEARCH
+           SCROLL REVEAL
         ============================ */
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.querySelector('.menu-btn');
-            const menuBox = document.querySelector('.menu-box');
-            menuBtn.addEventListener('click', e => { e.stopPropagation(); menuBox.classList.toggle('active'); });
-            document.addEventListener('click', () => menuBox.classList.remove('active'));
+        const revealEls = document.querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right, .divider-line, .story-box, .col-divider, .left-content, .right-content"
+        );
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("active"); });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => observer.observe(el));
+
+        /* ============================
+           MENU
+        ============================ */
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.querySelector(".menu-btn");
+            const menuBox = document.querySelector(".menu-box");
+            menuBtn.addEventListener("click", e => { e.stopPropagation(); menuBox.classList.toggle("active"); });
+            document.addEventListener("click", () => menuBox.classList.remove("active"));
         });
 
-        const searchBtn = document.querySelector('.search-btn');
-        const searchBox = document.querySelector('.search-box');
-        const searchInput = document.querySelector('.search-input');
-        const searchForm = document.querySelector('.search-form');
+        /* ============================
+           SEARCH
+        ============================ */
+        /* SEARCH */
+        const searchBtn = document.querySelector(".search-btn");
+        const searchBox = document.querySelector(".search-box");
 
-        searchBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            searchBox.classList.toggle('active');
-            if (searchBox.classList.contains('active')) setTimeout(() => searchInput.focus(), 200);
-        });
-        searchBox.addEventListener('click', e => e.stopPropagation());
-        document.addEventListener('click', () => searchBox.classList.remove('active'));
+        if (searchBtn) {
 
-        searchForm.addEventListener('submit', e => {
+            searchBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+
+                searchBox.classList.toggle("active");
+
+                if (searchBox.classList.contains("active")) {
+                    setTimeout(() => {
+                        searchInput.focus();
+                    }, 200);
+                }
+            });
+
+            searchBox.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", function () {
+                searchBox.classList.remove("active");
+            });
+
+        }
+
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
+
+        searchForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const v = searchInput.value.toLowerCase().trim();
-            if (v.includes('kitchen')) location.href = 'modular-kitchen.html';
-            else if (v.includes('living') || v.includes('space')) location.href = 'living-space.html';
-            else if (v.includes('work') || v.includes('office')) location.href = 'workspace.html';
-            else if (v.includes('contact')) location.href = 'contact.html';
-            else if (v.includes('culture')) location.href = 'culture.html';
-            else if (v.includes('insight') || v.includes('design')) location.href = 'insight.html';
-            else alert('Page not found');
+
+            let value = searchInput.value.toLowerCase().trim();
+            if (value.includes("kitchen")) {
+                window.location.href = "modular-kitchen.html";
+            }
+            else if (
+                value.includes("living") ||
+                value.includes("space") ||
+                value.includes("living space")
+            ) {
+                window.location.href = "living-space.html";
+            }
+            else if (
+                value.includes("work") ||
+                value.includes("workspace") ||
+                value.includes("office")
+            ) {
+                window.location.href = "workspace.html";
+            }
+            else if (
+                value.includes("contact") ||
+                value.includes("phone") ||
+                value.includes("email")
+            ) {
+                window.location.href = "contact.html";
+            }
+            else if (value.includes("culture")) {
+                window.location.href = "culture.html";
+            }
+            else if (
+                value.includes("insight") ||
+                value.includes("design") ||
+                value.includes("story")
+            ) {
+                window.location.href = "insight.html";
+            }
+            else {
+                alert("Page not found");
+            }
         });
     </script>
 </body>
