@@ -93,6 +93,38 @@
         }
 
         /* ============================
+           CURSOR
+        ============================ */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #8A8175;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(138, 129, 117, .5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width .3s var(--ease-out), height .3s var(--ease-out), opacity .3s;
+        }
+
+        .cursor-ring.expand {
+            width: 60px;
+            height: 60px;
+            opacity: .5;
+        }
+
+        /* ============================
    HEADER
 ============================ */
         header {
@@ -517,7 +549,7 @@
 
         .kitchen-content h2 {
             font-size: 44px;
-            color: #222;
+            color: #8A8175;
             margin-bottom: 24px;
             font-weight: 500;
             line-height: 1.15;
@@ -696,19 +728,21 @@
             transform: translateY(-3px);
         }
 
-        /* ============================
-           CONTACT
-        ============================ */
+         /* =====================================
+   CONTACT
+===================================== */
+
         .contact {
             background: #8A8175;
-            color: white;
-            padding: 100px 8%;
+            color: #fff;
+            padding: 80px 8%;
             position: relative;
             overflow: hidden;
+            margin: 0;
         }
 
         .contact::before {
-            content: 'OMF';
+            content: "OMF";
             position: absolute;
             right: -60px;
             bottom: -40px;
@@ -720,74 +754,237 @@
             line-height: 1;
         }
 
+        .logo1 {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .logo1 img {
+            width: 90px;
+            margin-left: 8%;
+        }
+
         .contact h1 {
-            font-size: 38px;
+            font-size: 30px;
             font-weight: 500;
-            text-align: left;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: white;
+            color: #fff;
             margin-bottom: 20px;
         }
 
         .contact h2 {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 400;
             margin-bottom: 20px;
-            text-align: left;
         }
 
         .contact p {
-            margin: 15px 0;
             font-size: 18px;
-            text-align: left;
-            max-width: 700px;
             line-height: 1.9;
+            margin-bottom: 15px;
+            max-width: 700px;
         }
 
-        /* ============================
-           FOOTER
-        ============================ */
+       /* =====================================
+   CONTACT
+===================================== */
+
+        .contact {
+            background: #8A8175;
+            color: #fff;
+            padding: 80px 8%;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .contact::before {
+            content: "OMF";
+            position: absolute;
+            right: -60px;
+            bottom: -40px;
+            font-size: 250px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .04);
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .logo1 {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .logo1 img {
+            width: 90px;
+            margin-left: 8%;
+        }
+
+        .contact h1 {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact h2 {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        /* =====================================
+   FOOTER
+===================================== */
+
         footer {
+            background: #111;
+            color: #fff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #111;
-            color: #fff;
+            padding: 22px 60px;
+            margin: 0;
+        }
+
+        .footer-left,
+        .footer-center,
+        .footer-right {
+            flex: 1;
             font-size: 16px;
         }
 
         .footer-left {
-            flex: 1;
+            margin-left: 40px;
             text-align: left;
-            margin-left: 90px;
-            font-size: 16px;
         }
 
         .footer-center {
-            flex: 1;
             text-align: center;
-            margin-right: 20px;
-            font-size: 16px;
         }
 
         .footer-right {
-            flex: 1;
+            margin-right: 40px;
             text-align: right;
-            margin-right: 90px;
-            font-size: 16px;
         }
 
         footer a {
             color: #fff;
             text-decoration: none;
-            transition: color .3s ease;
+            transition: .3s;
         }
 
         footer a:hover {
-            color: #ccc;
+            color: #c7c0b8;
         }
+
+        /* Remove Gap */
+
+        .contact+footer {
+            margin-top: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* =====================================
+   TABLET
+===================================== */
+
+        @media(max-width:991px) {
+
+            .contact {
+                padding: 70px 40px;
+                text-align: center;
+            }
+
+            .logo1 {
+                justify-content: center;
+            }
+
+            .logo1 img {
+                margin: 0;
+                width: 90px;
+            }
+
+            .contact h1,
+            .contact h2,
+            .contact p {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            footer {
+                padding: 20px 30px;
+            }
+
+        }
+
+        /* =====================================
+   MOBILE
+===================================== */
+
+        @media(max-width:768px) {
+
+            .contact {
+                padding: 60px 20px;
+            }
+
+            .logo1 img {
+                width: 85px;
+            }
+
+            .contact h1 {
+                font-size: 30px;
+                font-weight: 50px;
+            }
+
+            .contact h2 {
+                font-size: 26px;
+            }
+
+            .contact p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .contact::before {
+                font-size: 140px;
+                right: -25px;
+                bottom: -20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 25px 15px;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
 
         /* ============================
    MOBILE HEADER
@@ -1191,11 +1388,8 @@
             <a href="insight.html">Insight</a>
         </div>
         
-             <div class="logo">
-    <a href="/">
-        <img src="image/logo.png" alt="OM Modular Furniture">
-    </a>
-</div>
+        <a href="./index.html" class="logo"><img src="image/logo.png" alt="OM Modular Furniture Surat Logo"></a>
+
         <div class="icons">
             <div class="search-box">
                 <i class="fas fa-search search-btn"></i>
@@ -1355,12 +1549,16 @@
 
     </section>
 
-    <!-- CONTACT -->
+      <!-- CONTACT -->
     <section class="contact">
+
+        <div class="logo1">
+            <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+        </div>
+
         <h1 class="reveal">Om Modular Furniture</h1>
         <h2 class="reveal">Craft your modular luxury!</h2>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
-        <p class="reveal">Instagram · LinkedIn</p>
         <p class="reveal">
             📍 G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
             Bhatpore, Surat-394510, Gujarat, India.
@@ -1377,6 +1575,29 @@
     </footer>
 
     <script>
+             /* ============================
+           CURSOR
+        ============================ */
+        const dot = document.getElementById("cursorDot");
+        const ring = document.getElementById("cursorRing");
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener("mousemove", e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + "px";
+            dot.style.top = mouseY + "px";
+        });
+        (function ringFollow() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + "px";
+            ring.style.top = ringY + "px";
+            requestAnimationFrame(ringFollow);
+        })();
+        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
+            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+        });
 
 
         /* ============================
