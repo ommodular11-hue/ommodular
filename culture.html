@@ -293,6 +293,39 @@
             transform: translateY(0) scale(1);
         }
 
+          /* ============================
+           CURSOR
+        ============================ */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #8A8175;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(138, 129, 117, .5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width .3s var(--ease-out), height .3s var(--ease-out), opacity .3s;
+        }
+
+        .cursor-ring.expand {
+            width: 60px;
+            height: 60px;
+            opacity: .5;
+        }
+
+
         /* ============================
    HERO BANNER
 ============================ */
@@ -1450,6 +1483,10 @@
 
 <body>
 
+        <!-- CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
     <!-- Progress Bar -->
     <div id="progress-bar"></div>
 
@@ -1458,7 +1495,7 @@
             <a href="culture.html">Culture</a>
             <a href="insight.html">Insight</a>
         </div>
-        
+
         <div class="logo">
             <a href="index.html"><img src="image/logo.png" alt="OM Modular"></a>
         </div>
@@ -1643,6 +1680,30 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+
+           /* ============================
+           CURSOR
+        ============================ */
+        const dot = document.getElementById("cursorDot");
+        const ring = document.getElementById("cursorRing");
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener("mousemove", e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + "px";
+            dot.style.top = mouseY + "px";
+        });
+        (function ringFollow() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + "px";
+            ring.style.top = ringY + "px";
+            requestAnimationFrame(ringFollow);
+        })();
+        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
+            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+        });
 
         /* ============================
            PROGRESS BAR
