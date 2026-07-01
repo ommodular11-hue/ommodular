@@ -361,7 +361,9 @@
             animation: fadeUp 1.4s 1s var(--ease-out) forwards;
         }
 
-        @media(max-width:768px) {
+
+
+        @media (max-width:768px) {
 
             .hero-image {
                 height: 75vh;
@@ -369,8 +371,9 @@
             }
 
             .hero-bg-layer {
-                background-position: center center;
                 background-size: cover;
+                background-position: center top;
+                background-repeat: no-repeat;
             }
 
         }
@@ -1309,6 +1312,87 @@
             }
 
         }
+
+        /* ============================
+   HERO MOBILE FIX
+============================ */
+
+        @media (max-width:768px) {
+
+            .hero-image {
+                height: 100vh;
+                min-height: 650px;
+                margin-top: -75px;
+                overflow: hidden;
+            }
+
+            .hero-bg-layer {
+                background: url("image/In.jpg") center center no-repeat;
+                background-size: cover;
+                transform: none !important;
+            }
+
+            .hero-overlay {
+                padding: 0 25px;
+                align-items: center;
+            }
+
+            .cutting-edge {
+                max-width: 100%;
+                font-size: 18px;
+                line-height: 1.9;
+                padding: 0;
+                font-weight: 300;
+                letter-spacing: .3px;
+            }
+
+            .cutting-edge::before,
+            .cutting-edge::after {
+                font-size: 45px;
+                vertical-align: -12px;
+            }
+
+            .hero-line {
+                height: 55px !important;
+            }
+
+            .scroll-indicator {
+                bottom: 22px;
+            }
+
+            .scroll-indicator span {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .scroll-mouse {
+                width: 22px;
+                height: 34px;
+            }
+
+        }
+
+
+        /* EXTRA SMALL MOBILE */
+
+        @media (max-width:480px) {
+
+            .hero-image {
+                min-height: 600px;
+            }
+
+            .cutting-edge {
+                font-size: 16px;
+                line-height: 1.8;
+                padding: 0 5px;
+            }
+
+            .cutting-edge::before,
+            .cutting-edge::after {
+                font-size: 36px;
+            }
+
+        }
     </style>
 </head>
 
@@ -1328,7 +1412,7 @@
         </div>
 
         <div class="logo">
-            <a href="index.html"><img src="image/logo.png" alt="OM Modular"></a>
+            <a href="./index.html"><img src="image/logo.png" alt="OM Modular"></a>
         </div>
 
         <div class="icons">
