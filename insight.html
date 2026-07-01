@@ -348,21 +348,6 @@
             z-index: 2;
         }
 
-        .cutting-edge {
-            max-width: 900px;
-            text-align: center;
-            color: white;
-            font-size: 30px;
-            line-height: 1.8;
-            font-weight: 300;
-            padding: 0 40px;
-            opacity: 0;
-            transform: translateY(40px);
-            animation: fadeUp 1.4s 1s var(--ease-out) forwards;
-        }
-
-
-
         @media (max-width:768px) {
 
             .hero-image {
@@ -376,6 +361,22 @@
                 background-repeat: no-repeat;
             }
 
+        }
+
+         .cutting-edge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 650px;
+            text-align: center;
+            color: #fff;
+            font-size: 22px;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            z-index: 2;
         }
 
         /* Decorative quote marks */
