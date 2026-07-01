@@ -8,6 +8,8 @@
 
     <title>OM Modular Furniture Surat | Modular Kitchen, Wardrobe & Interior Design</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <meta name="description"
         content="OM Modular Furniture Surat offers premium modular kitchens, wardrobes, TV units, living spaces and customized interior furniture solutions with modern design.">
 
@@ -792,7 +794,7 @@
         }
 
         .innovation-text h2 {
-            font-size: 60px;
+            font-size: 42px;
             color: #8A8175;
             margin-bottom: 25px;
             line-height: 1.1;
@@ -1073,7 +1075,7 @@
 
         .logo1 img {
             width: 90px;
-            margin-left: 8%;
+            margin-left: 0;
         }
 
         .contact h1 {
@@ -1151,6 +1153,11 @@
 
         body {
             margin: 0;
+        }
+
+        .contact i {
+            color: #000;
+            margin-right: 8px;
         }
 
         /* =====================================
@@ -1536,6 +1543,11 @@
             }
 
         }
+
+        ::selection {
+            background: #8A8175;
+            color: white;
+        }
     </style>
 </head>
 
@@ -1597,14 +1609,14 @@
                 Invisible yet palpable values that redefine interior environments, elevating them from ordinary to
                 extraordinary dreamscapes."
             </p>
+
             <div class="hero-line bottom"></div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- WHO WE ARE -->
@@ -1721,10 +1733,16 @@
         <h2 class="reveal">Craft your modular luxury!</h2>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
         <p class="reveal">
-            📍 G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
+            <i class="fa-solid fa-location-dot"></i>
+            G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
             Bhatpore, Surat-394510, Gujarat, India.
         </p>
-        <p class="reveal">📞 +91 99130 08830</p>
+
+        <p class="reveal">
+            <i class="fa-solid fa-phone"></i>
+            +91 99130 08830
+        </p>
+
         <p class="reveal">📧 ommodular11@gmail.com</p>
     </section>
 
@@ -1739,9 +1757,9 @@
 
     <script>
 
-             /* ============================
-           CURSOR
-        ============================ */
+        /* ============================
+      CURSOR
+   ============================ */
         const dot = document.getElementById("cursorDot");
         const ring = document.getElementById("cursorRing");
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
