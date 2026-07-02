@@ -1804,6 +1804,128 @@
             observer.observe(el);
 
         });
+
+        const searchForm = document.querySelector(".search-form");
+const searchInput = document.querySelector(".search-input");
+
+searchForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let value = searchInput.value.toLowerCase().trim();
+
+    // Kitchen
+    if (
+        value.includes("kitchen") ||
+        value.includes("linear") ||
+        value.includes("parallel") ||
+        value.includes("l-shape") ||
+        value.includes("l shape") ||
+        value.includes("u-shape") ||
+        value.includes("u shape") ||
+        value.includes("island") ||
+        value.includes("peninsula")
+    ) {
+        window.location.href = "modular-kitchen.html";
+    }
+
+    // Living Space
+    else if (
+        value.includes("living") ||
+        value.includes("living room") ||
+        value.includes("tv unit") ||
+        value.includes("display unit") ||
+        value.includes("storage cabinet") ||
+        value.includes("coffee table") ||
+        value.includes("entertainment unit")
+    ) {
+        window.location.href = "living-space.html";
+    }
+
+    // Bedroom
+    else if (
+        value.includes("bedroom") ||
+        value.includes("bed") ||
+        value.includes("modular bed") ||
+        value.includes("side storage") ||
+        value.includes("wall mirror") ||
+        value.includes("study") ||
+        value.includes("study unit") ||
+        value.includes("work unit")
+    ) {
+        window.location.href = "bedroom.html";
+    }
+
+    // Bathroom
+    else if (
+        value.includes("bathroom") ||
+        value.includes("vanity") ||
+        value.includes("sink") ||
+        value.includes("dressing") ||
+        value.includes("dressing unit") ||
+        value.includes("bath storage")
+    ) {
+        window.location.href = "bathroom.html";
+    }
+
+    // Wardrobe
+    else if (
+        value.includes("wardrobe") ||
+        value.includes("hinged") ||
+        value.includes("sliding") ||
+        value.includes("walk-in") ||
+        value.includes("walk in")
+    ) {
+        window.location.href = "wardrobe.html";
+    }
+
+    // Workspace
+    else if (
+        value.includes("workspace") ||
+        value.includes("office") ||
+        value.includes("workstation") ||
+        value.includes("locker") ||
+        value.includes("storage") ||
+        value.includes("table") ||
+        value.includes("meeting") ||
+        value.includes("booth") ||
+        value.includes("lounge") ||
+        value.includes("bookshelf") ||
+        value.includes("reception") ||
+        value.includes("conference") ||
+        value.includes("executive")
+    ) {
+        window.location.href = "workspace.html";
+    }
+
+    // Contact
+    else if (
+        value.includes("contact") ||
+        value.includes("phone") ||
+        value.includes("email")
+    ) {
+        window.location.href = "contact.html";
+    }
+
+    // Culture
+    else if (
+        value.includes("culture")
+    ) {
+        window.location.href = "culture.html";
+    }
+
+    // Insight
+    else if (
+        value.includes("insight") ||
+        value.includes("design") ||
+        value.includes("story")
+    ) {
+        window.location.href = "insight.html";
+    }
+
+    else {
+        alert("Page not found");
+    }
+});
     </script>
 </body>
 
