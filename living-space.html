@@ -10,11 +10,42 @@
 
     <meta name="description"
         content="Create beautiful living spaces with customized furniture designs by OM Modular Furniture Surat. Explore sofas, storage and interior solutions.">
+    <link rel="canonical" href="https://www.ommodularfurniture.com/living-space.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Living Space Furniture Surat | Modern Home Interiors | OM Modular">
+    <meta property="og:description"
+        content="Create beautiful living spaces with customized furniture designs by OM Modular Furniture Surat. Explore sofas, storage and interior solutions.">
+    <meta property="og:image" content="image/Bed.jpg">
+    <meta property="og:url" content="https://www.ommodularfurniture.com/living-space.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "OM Modular Furniture",
+      "image": "image/logo.png",
+      "telephone": "+91-99130-08830",
+      "email": "ommodular11@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "G 11, Ichhapore Textile Park, Opp. RJD Textile Park, Bhatpore",
+        "addressLocality": "Surat",
+        "postalCode": "394510",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "url": "https://www.ommodularfurniture.com/living-space.html",
+      "priceRange": "$$"
+    }
+    </script>
+
     <style>
         /* ============================
    RESET & BASE
@@ -123,6 +154,18 @@
             opacity: .5;
         }
 
+        @media (max-width: 768px), (pointer: coarse) {
+
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+
         /* ============================
    HEADER
 ============================ */
@@ -225,7 +268,7 @@
         .icons i {
             font-size: 20px;
             color: #f5f2ed;
-            cursor: none;
+            cursor: pointer;
             transition: color .3s, transform .3s;
         }
 
@@ -316,6 +359,11 @@
             padding-left: 12px;
         }
 
+        .menu-dropdown a.active-page {
+            color: #8A8175;
+            font-weight: 600;
+        }
+
         .menu-box.active .menu-dropdown {
             opacity: 1;
             visibility: visible;
@@ -368,9 +416,9 @@
             inset: 0;
             background: url("image/Bed.jpg") center center no-repeat;
             background-size: cover;
-            /* આખો section cover કરશે */
-            transform: scale(1);
-            will-change: auto;
+            transform: translate3d(0, 0, 0) scale(1.08);
+            will-change: transform;
+            backface-visibility: hidden;
         }
 
         .hero-overlay {
@@ -840,7 +888,7 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, .4);
             transition: background .3s, width .3s;
-            cursor: none;
+            cursor: pointer;
         }
 
         .slide-dot.active {
@@ -911,6 +959,15 @@
             line-height: 1.9;
             margin-bottom: 15px;
             max-width: 700px;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
         }
 
         /* =====================================
@@ -1060,11 +1117,6 @@
                 cursor: auto;
             }
 
-            #cursor-dot,
-            #cursor-ring {
-                display: none;
-            }
-
             header {
                 height: 75px;
                 padding: 0 15px;
@@ -1105,40 +1157,33 @@
             .c1 {
                 font-size: 17px;
             }
-        }
 
-        .features-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px 20px;
-        }
-
-        @media(max-width:768px) {
-
-            .space-section,
-            .space-section.reverse {
-
-                .contact {
-                    padding: 70px 20px;
-                }
-
-                .contact h1 {
-                    font-size: 28px;
-                }
-
-                .contact-grid {
-                    grid-template-columns: 1fr;
-                    gap: 24px;
-                }
-
-                footer {
-                    gap: 15px;
-                }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px 20px;
             }
 
-            @media(max-width:480px) {
-                .features-grid {
-                    grid-template-columns: 1fr;
-                }
+            .contact {
+                padding: 70px 20px;
+            }
+
+            .contact h1 {
+                font-size: 28px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            footer {
+                gap: 15px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1525,6 +1570,47 @@
             color: #000;
             margin-right: 8px;
         }
+
+        /* ============================
+   REDUCED MOTION
+============================ */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            header,
+            .hero-label,
+            .hero-sub,
+            .scroll-indicator,
+            .hero-title .word .char {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .space-section,
+            .space-content,
+            .space-slider,
+            .divider,
+            .gg h2,
+            .c1,
+            .features-grid,
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .hero-bg {
+                transform: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -1542,21 +1628,22 @@
             <a href="insight.html">Insight</a>
         </div>
 
-        <a href="./index.html" class="logo"><img src="image/logo.png"
+        <a href="index.html" class="logo"><img src="image/logo.png"
                 alt="OM Modular Furniture - Modular Kitchen & Interior Solutions"></a>
 
         <div class="icons">
             <div class="search-box">
-                <i class="fas fa-search search-btn"></i>
-                <form class="search-form">
-                    <input class="search-input" type="text" placeholder="Search...">
+                <i class="fas fa-search search-btn" role="button" tabindex="0" aria-label="Open search"></i>
+                <form class="search-form" role="search">
+                    <label for="siteSearch" class="sr-only" style="position:absolute;left:-9999px;">Search</label>
+                    <input id="siteSearch" class="search-input" type="text" placeholder="Search...">
                 </form>
             </div>
             <div class="menu-box">
-                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-bars menu-btn" role="button" tabindex="0" aria-label="Open menu"></i>
                 <div class="menu-dropdown">
                     <a href="modular-kitchen.html">Modular Kitchen</a>
-                    <a href="living-space.html">Living Space</a>
+                    <a href="living-space.html" class="active-page" aria-current="page">Living Space</a>
                     <a href="workspace.html">Workspace</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -1619,11 +1706,11 @@
                 <li>Entertainment Unit</li>
             </ul>
         </div>
-        <div class="space-slider" id="slider1">
-            <img src="image/living1.jpg" class="active" alt="">
-            <img src="image/living2.jpg" alt="">
-            <img src="image/living3.jpg" alt="">
-            <img src="image/living4.jpg" alt="">
+        <div class="space-slider" id="slider1" role="region" aria-label="Living room design gallery" tabindex="0">
+            <img src="image/living1.jpg" class="active" alt="Modular living room design with TV unit and display cabinet">
+            <img src="image/living2.jpg" alt="Living room storage cabinet and coffee table setup" loading="lazy">
+            <img src="image/living3.jpg" alt="Modern living room entertainment unit design" loading="lazy">
+            <img src="image/living4.jpg" alt="Custom modular living room furniture layout" loading="lazy">
             <div class="slide-dots" id="dots1"></div>
             <div class="slide-counter" id="counter1">1 / 4</div>
         </div>
@@ -1647,11 +1734,11 @@
                 <li>Study / Work Unit</li>
             </ul>
         </div>
-        <div class="space-slider" id="slider2">
-            <img src="image/bedroom1.jpg" class="active" alt="">
-            <img src="image/bedroom2.jpg" alt="">
-            <img src="image/bedroom3.jpg" alt="">
-            <img src="image/bedroom4.jpg" alt="">
+        <div class="space-slider" id="slider2" role="region" aria-label="Bedroom design gallery" tabindex="0">
+            <img src="image/bedroom1.jpg" class="active" alt="Modular bedroom design with bed and side storage">
+            <img src="image/bedroom2.jpg" alt="Bedroom wall mirror and TV unit design" loading="lazy">
+            <img src="image/bedroom3.jpg" alt="Modular bedroom study and work unit" loading="lazy">
+            <img src="image/bedroom4.jpg" alt="Custom bedroom furniture layout" loading="lazy">
             <div class="slide-dots" id="dots2"></div>
             <div class="slide-counter" id="counter2">1 / 4</div>
         </div>
@@ -1674,11 +1761,11 @@
                 <li>Storage Solutions</li>
             </ul>
         </div>
-        <div class="space-slider" id="slider3">
-            <img src="image/bathroom1.jpg" class="active" alt="">
-            <img src="image/bathroom2.jpg" alt="">
-            <img src="image/bathroom3.jpg" alt="">
-            <img src="image/bathroom4.jpg" alt="">
+        <div class="space-slider" id="slider3" role="region" aria-label="Bathroom design gallery" tabindex="0">
+            <img src="image/bathroom1.jpg" class="active" alt="Modular bathroom vanity and sink unit design">
+            <img src="image/bathroom2.jpg" alt="Bathroom dressing unit design" loading="lazy">
+            <img src="image/bathroom3.jpg" alt="Bathroom storage solution layout" loading="lazy">
+            <img src="image/bathroom4.jpg" alt="Custom modular bathroom furniture" loading="lazy">
             <div class="slide-dots" id="dots3"></div>
             <div class="slide-counter" id="counter3">1 / 4</div>
         </div>
@@ -1702,11 +1789,11 @@
             <h4>Hinged Door Wardrobe</h4>
             <p>Opens outward for enhanced visibility and adapts beautifully to various interior styles.</p>
         </div>
-        <div class="space-slider" id="slider4">
-            <img src="image/storage1.jpg" class="active" alt="">
-            <img src="image/storage2.jpg" alt="">
-            <img src="image/storage3.jpg" alt="">
-            <img src="image/storage4.jpg" alt="">
+        <div class="space-slider" id="slider4" role="region" aria-label="Storage and wardrobe design gallery" tabindex="0">
+            <img src="image/storage1.jpg" class="active" alt="Sliding wardrobe modular storage design">
+            <img src="image/storage2.jpg" alt="Walk-in wardrobe storage layout" loading="lazy">
+            <img src="image/storage3.jpg" alt="Hinged door wardrobe design" loading="lazy">
+            <img src="image/storage4.jpg" alt="Custom modular storage unit" loading="lazy">
             <div class="slide-dots" id="dots4"></div>
             <div class="slide-counter" id="counter4">1 / 4</div>
         </div>
@@ -1729,9 +1816,9 @@
         </p>
         <p class="reveal">
             <i class="fa-solid fa-phone"></i>
-            +91 99130 08830
+            <a href="tel:+919913008830">+91 99130 08830</a>
         </p>
-        <p class="reveal">📧 ommodular11@gmail.com</p>
+        <p class="reveal">📧 <a href="mailto:ommodular11@gmail.com">ommodular11@gmail.com</a></p>
     </section>
 
     <!-- FOOTER -->
@@ -1749,23 +1836,27 @@
         const dot = document.getElementById("cursorDot");
         const ring = document.getElementById("cursorRing");
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        document.addEventListener("mousemove", e => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
-        });
-        (function ringFollow() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
-            requestAnimationFrame(ringFollow);
-        })();
-        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
-            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
-            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
-        });
+        if (!isCoarsePointer) {
+            document.addEventListener("mousemove", e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+            });
+            (function ringFollow() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
+                requestAnimationFrame(ringFollow);
+            })();
+            document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
+                el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+                el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+            });
+        }
 
         /* ============================
            PROGRESS BAR
@@ -1792,10 +1883,31 @@
            PARALLAX HERO
         ============================ */
         const heroBg = document.getElementById('parallaxBg');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY < window.innerHeight * 1.5)
-                heroBg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.1)`;
-        }, { passive: true });
+        if (!prefersReducedMotion) {
+            let targetY = 0;
+            let currentY = 0;
+            let parallaxRunning = false;
+
+            function parallaxLoop() {
+                currentY += (targetY - currentY) * 0.15;
+                heroBg.style.transform = `translate3d(0, ${currentY.toFixed(2)}px, 0) scale(1.08)`;
+                if (Math.abs(targetY - currentY) > 0.1) {
+                    requestAnimationFrame(parallaxLoop);
+                } else {
+                    parallaxRunning = false;
+                }
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < window.innerHeight * 1.5) {
+                    targetY = window.scrollY * 0.35;
+                    if (!parallaxRunning) {
+                        parallaxRunning = true;
+                        requestAnimationFrame(parallaxLoop);
+                    }
+                }
+            }, { passive: true });
+        }
 
         /* ============================
            HERO TEXT SPLIT
@@ -1828,6 +1940,25 @@
         });
 
         /* ============================
+           IMAGE PRELOAD (slider images)
+           Switches lazy slider images to eager
+           ~600px before their section is visible
+           so they're already loaded by the time
+           the user scrolls to them.
+        ============================ */
+        const sliderImgPreloadObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                        img.loading = 'eager';
+                    });
+                    sliderImgPreloadObs.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '600px 0px', threshold: 0 });
+        document.querySelectorAll('.space-section').forEach(section => sliderImgPreloadObs.observe(section));
+
+        /* ============================
            GENERIC SCROLL REVEALS
         ============================ */
         const revealObs = new IntersectionObserver(entries => {
@@ -1858,12 +1989,20 @@
             const imgs = sliderEl.querySelectorAll('img');
             const total = imgs.length;
             let current = 0;
+            let timer = null;
+            let paused = false;
 
             // Build dots
             imgs.forEach((_, i) => {
                 const d = document.createElement('div');
                 d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('role', 'button');
+                d.setAttribute('tabindex', '0');
+                d.setAttribute('aria-label', 'Show image ' + (i + 1) + ' of ' + total);
                 d.addEventListener('click', () => goTo(i));
+                d.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(i); }
+                });
                 dotsEl.appendChild(d);
             });
 
@@ -1876,7 +2015,20 @@
                 counterEl.textContent = (current + 1) + ' / ' + total;
             }
 
-            setInterval(() => { goTo((current + 1) % total); }, 3200);
+            function startAutoplay() {
+                if (prefersReducedMotion || timer) return;
+                timer = setInterval(() => {
+                    if (!paused) goTo((current + 1) % total);
+                }, 3200);
+            }
+
+            if (!prefersReducedMotion) {
+                startAutoplay();
+                sliderEl.addEventListener('mouseenter', () => paused = true);
+                sliderEl.addEventListener('mouseleave', () => paused = false);
+                sliderEl.addEventListener('focusin', () => paused = true);
+                sliderEl.addEventListener('focusout', () => paused = false);
+            }
         }
 
         // Init all sliders once page loads
@@ -1927,21 +2079,15 @@
             if (
                 value.includes("kitchen") ||
                 value.includes("modular kitchen") ||
-
                 value.includes("linear") ||
                 value.includes("parallel") ||
-
-                value.includes("l") ||
                 value.includes("l-shape") ||
                 value.includes("l shape") ||
                 value.includes("l shaped") ||
                 value.includes("lshaped") ||
-
-                value.includes("u") ||
                 value.includes("u-shape") ||
                 value.includes("u shape") ||
                 value.includes("u shaped") ||
-
                 value.includes("island") ||
                 value.includes("peninsula")
             ) {
