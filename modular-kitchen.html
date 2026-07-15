@@ -10,11 +10,42 @@
 
     <meta name="description"
         content="Explore premium modular kitchen designs in Surat by OM Modular Furniture. Get customized kitchen solutions with modern styles and quality materials.">
+    <link rel="canonical" href="https://www.ommodularfurniture.com/modular-kitchen.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Modular Kitchen Surat | Custom Kitchen Design | OM Modular Furniture">
+    <meta property="og:description"
+        content="Explore premium modular kitchen designs in Surat by OM Modular Furniture. Get customized kitchen solutions with modern styles and quality materials.">
+    <meta property="og:image" content="image/m1.png">
+    <meta property="og:url" content="https://www.ommodularfurniture.com/modular-kitchen.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "OM Modular Furniture",
+      "image": "image/logo.png",
+      "telephone": "+91-99130-08830",
+      "email": "ommodular11@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "G 11, Ichhapore Textile Park, Opp. RJD Textile Park, Bhatpore",
+        "addressLocality": "Surat",
+        "postalCode": "394510",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "url": "https://www.ommodularfurniture.com/modular-kitchen.html",
+      "priceRange": "$$"
+    }
+    </script>
+
     <style>
         /* ============================
    RESET & BASE
@@ -126,6 +157,17 @@
             opacity: .5;
         }
 
+        @media (max-width: 768px), (pointer: coarse) {
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+
         /* ============================
    HEADER
 ============================ */
@@ -228,7 +270,7 @@
         .icons i {
             font-size: 20px;
             color: #f5f2ed;
-            cursor: none;
+            cursor: pointer;
             transition: color .3s, transform .3s;
         }
 
@@ -319,6 +361,11 @@
             padding-left: 12px;
         }
 
+        .menu-dropdown a.active-page {
+            color: #8A8175;
+            font-weight: 600;
+        }
+
         .menu-box.active .menu-dropdown {
             opacity: 1;
             visibility: visible;
@@ -369,7 +416,7 @@
         .hero-bg {
             position: absolute;
             inset: -10%;
-            background: url("image/m1.png") center center/cover no-repeat;
+            background: url("image/m1.jpg") center center/cover no-repeat;
             transform: scale(1.1);
             will-change: transform;
         }
@@ -746,7 +793,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity .6s var(--ease-out), transform .6s var(--ease-out), background .3s, color .3s;
-            cursor: none;
+            cursor: pointer;
         }
 
         .type-pill.visible {
@@ -761,7 +808,7 @@
             transform: translateY(-3px);
         }
 
-         /* =====================================
+        /* =====================================
    CONTACT
 ===================================== */
 
@@ -795,67 +842,8 @@
 
         .logo1 img {
             width: 90px;
-            margin-left: 8%;
-        }
-
-        .contact h1 {
-            font-size: 30px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .contact h2 {
-            font-size: 22px;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 18px;
-            line-height: 1.9;
-            margin-bottom: 15px;
-            max-width: 700px;
-        }
-
-       /* =====================================
-   CONTACT
-===================================== */
-
-        .contact {
-            background: #8A8175;
-            color: #fff;
-            padding: 80px 8%;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-        }
-
-        .contact::before {
-            content: "OMF";
-            position: absolute;
-            right: -60px;
-            bottom: -40px;
-            font-size: 250px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .04);
-            pointer-events: none;
-            user-select: none;
-            line-height: 1;
-        }
-
-       .logo1 {
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .logo1 img {
-            width: 90px;
             margin-left: 0;
-         }
+        }
 
         .contact h1 {
             font-size: 30px;
@@ -877,6 +865,15 @@
             line-height: 1.9;
             margin-bottom: 15px;
             max-width: 700px;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
         }
 
         /* =====================================
@@ -1405,25 +1402,65 @@
         }
 
         ::selection {
-        background: #8A8175;
-        color: white;
+            background: #8A8175;
+            color: white;
         }
 
         /* Chrome, Edge, Safari, Opera, Android browsers */
-::selection {
-    background: #8A8175;
-    color: #fff;
-}
+        ::selection {
+            background: #8A8175;
+            color: #fff;
+        }
 
-/* Firefox (Desktop & Android) */
-::-moz-selection {
-    background: #8A8175;
-    color: #fff;
-}
-        
+        /* Firefox (Desktop & Android) */
+        ::-moz-selection {
+            background: #8A8175;
+            color: #fff;
+        }
+
         .contact i {
-        color: #000;
-        margin-right: 8px;
+            color: #000;
+            margin-right: 8px;
+        }
+
+        /* ============================
+   REDUCED MOTION
+============================ */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            header,
+            .hero-label,
+            .hero-sub,
+            .scroll-indicator,
+            .hero-title .word .char {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .kitchen-block,
+            .kitchen-block .kitchen-image,
+            .kitchen-block .kitchen-content,
+            .divider,
+            .types-label,
+            .type-pill,
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .hero-bg {
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -1431,7 +1468,7 @@
 <body>
 
     <!-- Cursor -->
-     <!-- CURSOR -->
+    <!-- CURSOR -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
@@ -1443,20 +1480,21 @@
             <a href="culture.html">Culture</a>
             <a href="insight.html">Insight</a>
         </div>
-        
-        <a href="./index.html" class="logo"><img src="image/logo.png" alt="OM Modular Furniture Surat Logo"></a>
+
+        <a href="index.html" class="logo"><img src="image/logo.png" alt="OM Modular Furniture Surat Logo"></a>
 
         <div class="icons">
             <div class="search-box">
-                <i class="fas fa-search search-btn"></i>
-                <form class="search-form">
-                    <input class="search-input" type="text" placeholder="Search...">
+                <i class="fas fa-search search-btn" role="button" tabindex="0" aria-label="Open search"></i>
+                <form class="search-form" role="search">
+                    <label for="siteSearch" class="sr-only" style="position:absolute;left:-9999px;">Search</label>
+                    <input id="siteSearch" class="search-input" type="text" placeholder="Search...">
                 </form>
             </div>
             <div class="menu-box">
-                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-bars menu-btn" role="button" tabindex="0" aria-label="Open menu"></i>
                 <div class="menu-dropdown">
-                    <a href="modular-kitchen.html">Modular Kitchen</a>
+                    <a href="modular-kitchen.html" class="active-page" aria-current="page">Modular Kitchen</a>
                     <a href="living-space.html">Living Space</a>
                     <a href="workspace.html">Workspace</a>
                     <a href="contact.html">Contact</a>
@@ -1506,7 +1544,7 @@
         <!-- 1: Linear -->
         <div class="kitchen-block" data-index="1">
             <div class="kitchen-image">
-                <img src="image/linear5.jpg" alt="Linear modular kitchen design Surat">
+                <img src="image/linear5.jpg" alt="Linear modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">01</span>
@@ -1523,7 +1561,7 @@
         <!-- 2: Parallel -->
         <div class="kitchen-block reverse" data-index="2">
             <div class="kitchen-image">
-                <img src="image/Parallel1.jpg" alt="Parallel modular kitchen design Surat">
+                <img src="image/Parallel1.jpg" alt="Parallel modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">02</span>
@@ -1540,7 +1578,7 @@
         <!-- 3: L-Shape -->
         <div class="kitchen-block" data-index="3">
             <div class="kitchen-image">
-                <img src="image/L shape1.jpg" alt="L shape modular kitchen design Surat">
+                <img src="image/L shape1.jpg" alt="L shape modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">03</span>
@@ -1557,7 +1595,7 @@
         <!-- 4: U-Shape -->
         <div class="kitchen-block reverse" data-index="4">
             <div class="kitchen-image">
-                <img src="image/U Shape1.jpg" alt="U shape modular kitchen design Surat">
+                <img src="image/U Shape1.jpg" alt="U shape modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">04</span>
@@ -1574,7 +1612,7 @@
         <!-- 5: Island -->
         <div class="kitchen-block" data-index="5">
             <div class="kitchen-image">
-                <img src="image/Island5.jpg" alt="Island modular kitchen design Surat">
+                <img src="image/Island5.jpg" alt="Island modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">05</span>
@@ -1591,7 +1629,7 @@
         <!-- 6: Peninsula -->
         <div class="kitchen-block reverse" data-index="6">
             <div class="kitchen-image">
-                <img src="image/Peninsula5.jpg" alt="Peninsula modular kitchen design Surat">
+                <img src="image/Peninsula5.jpg" alt="Peninsula modular kitchen design Surat" width="690" height="420" loading="lazy">
             </div>
             <div class="kitchen-content">
                 <span class="block-number">06</span>
@@ -1605,7 +1643,7 @@
 
     </section>
 
-      <!-- CONTACT -->
+    <!-- CONTACT -->
     <section class="contact">
 
         <div class="logo1">
@@ -1616,15 +1654,15 @@
         <h2 class="reveal">Craft your modular luxury!</h2>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
         <p class="reveal">
-        <i class="fa-solid fa-location-dot"></i>
-        G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
-        Bhatpore, Surat-394510, Gujarat, India.
+            <i class="fa-solid fa-location-dot"></i>
+            G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
+            Bhatpore, Surat-394510, Gujarat, India.
         </p>
         <p class="reveal">
-        <i class="fa-solid fa-phone"></i>
-        +91 99130 08830
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919913008830">+91 99130 08830</a>
         </p>
-        <p class="reveal">📧 ommodular11@gmail.com</p>
+        <p class="reveal">📧 <a href="mailto:ommodular11@gmail.com">ommodular11@gmail.com</a></p>
     </section>
 
     <!-- FOOTER -->
@@ -1635,29 +1673,33 @@
     </footer>
 
     <script>
-             /* ============================
-           CURSOR
-        ============================ */
+        /* ============================
+      CURSOR
+   ============================ */
         const dot = document.getElementById("cursorDot");
         const ring = document.getElementById("cursorRing");
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        document.addEventListener("mousemove", e => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
-        });
-        (function ringFollow() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
-            requestAnimationFrame(ringFollow);
-        })();
-        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
-            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
-            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
-        });
+        if (!isCoarsePointer) {
+            document.addEventListener("mousemove", e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+            });
+            (function ringFollow() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
+                requestAnimationFrame(ringFollow);
+            })();
+            document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
+                el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+                el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+            });
+        }
 
 
         /* ============================
@@ -1685,10 +1727,12 @@
            PARALLAX HERO
         ============================ */
         const heroBg = document.getElementById('parallaxBg');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY < window.innerHeight * 1.5)
-                heroBg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.1)`;
-        }, { passive: true });
+        if (!prefersReducedMotion) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < window.innerHeight * 1.5)
+                    heroBg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.1)`;
+            }, { passive: true });
+        }
 
         /* ============================
            HERO TEXT SPLIT
@@ -1755,14 +1799,16 @@
         }
 
         // Contact reveals
-        document.querySelectorAll('.contact h1,.contact h2,.contact-grid').forEach((el, i) => {
-            const o = new IntersectionObserver(entries => {
+        document.querySelectorAll('.contact .reveal').forEach((el, i) => {
+            const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
-                    setTimeout(() => el.classList.add('visible'), i * 150);
-                    o.disconnect();
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, i * 120);
+                    observer.disconnect();
                 }
             }, { threshold: 0.1 });
-            o.observe(el);
+            observer.observe(el);
         });
 
         /* ============================
@@ -1786,156 +1832,125 @@
         });
         searchBox.addEventListener('click', e => e.stopPropagation());
         document.addEventListener('click', () => searchBox.classList.remove('active'));
-        searchForm.addEventListener('submit', e => {
+
+        searchForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const v = searchInput.value.toLowerCase().trim();
-            if (v.includes('kitchen')) location.href = 'modular-kitchen.html';
-            else if (v.includes('living') || v.includes('space')) location.href = 'living-space.html';
-            else if (v.includes('work') || v.includes('office')) location.href = 'workspace.html';
-            else if (v.includes('contact')) location.href = 'contact.html';
-            else if (v.includes('culture')) location.href = 'culture.html';
-            else if (v.includes('insight') || v.includes('design')) location.href = 'insight.html';
-            else alert('Page not found');
+
+            let value = searchInput.value.toLowerCase().trim();
+
+            // Kitchen
+            if (
+                value.includes("kitchen") ||
+                value.includes("linear") ||
+                value.includes("parallel") ||
+                value.includes("l-shape") ||
+                value.includes("l shape") ||
+                value.includes("u-shape") ||
+                value.includes("u shape") ||
+                value.includes("island") ||
+                value.includes("peninsula")
+            ) {
+                window.location.href = "modular-kitchen.html";
+            }
+
+            // Living Space
+            else if (
+                value.includes("living") ||
+                value.includes("living room") ||
+                value.includes("tv unit") ||
+                value.includes("display unit") ||
+                value.includes("storage cabinet") ||
+                value.includes("coffee table") ||
+                value.includes("entertainment unit")
+            ) {
+                window.location.href = "living-space.html";
+            }
+
+            // Bedroom
+            else if (
+                value.includes("bedroom") ||
+                value.includes("bed") ||
+                value.includes("modular bed") ||
+                value.includes("side storage") ||
+                value.includes("wall mirror") ||
+                value.includes("study") ||
+                value.includes("study unit") ||
+                value.includes("work unit")
+            ) {
+                window.location.href = "bedroom.html";
+            }
+
+            // Bathroom
+            else if (
+                value.includes("bathroom") ||
+                value.includes("vanity") ||
+                value.includes("sink") ||
+                value.includes("dressing") ||
+                value.includes("dressing unit") ||
+                value.includes("bath storage")
+            ) {
+                window.location.href = "bathroom.html";
+            }
+
+            // Wardrobe
+            else if (
+                value.includes("wardrobe") ||
+                value.includes("hinged") ||
+                value.includes("sliding") ||
+                value.includes("walk-in") ||
+                value.includes("walk in")
+            ) {
+                window.location.href = "wardrobe.html";
+            }
+
+            // Workspace
+            else if (
+                value.includes("workspace") ||
+                value.includes("office") ||
+                value.includes("workstation") ||
+                value.includes("locker") ||
+                value.includes("storage") ||
+                value.includes("table") ||
+                value.includes("meeting") ||
+                value.includes("booth") ||
+                value.includes("lounge") ||
+                value.includes("bookshelf") ||
+                value.includes("reception") ||
+                value.includes("conference") ||
+                value.includes("executive")
+            ) {
+                window.location.href = "workspace.html";
+            }
+
+            // Contact
+            else if (
+                value.includes("contact") ||
+                value.includes("phone") ||
+                value.includes("email")
+            ) {
+                window.location.href = "contact.html";
+            }
+
+            // Culture
+            else if (
+                value.includes("culture")
+            ) {
+                window.location.href = "culture.html";
+            }
+
+            // Insight
+            else if (
+                value.includes("insight") ||
+                value.includes("design") ||
+                value.includes("story")
+            ) {
+                window.location.href = "insight.html";
+            }
+
+            else {
+                alert("Page not found");
+            }
         });
-
-        document.querySelectorAll('.contact .reveal').forEach((el, i) => {
-
-            const observer = new IntersectionObserver((entries) => {
-
-                if (entries[0].isIntersecting) {
-
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, i * 120);
-
-                    observer.disconnect();
-                }
-
-            }, { threshold: 0.1 });
-
-            observer.observe(el);
-
-        });
-
-
-searchForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let value = searchInput.value.toLowerCase().trim();
-
-    // Kitchen
-    if (
-        value.includes("kitchen") ||
-        value.includes("linear") ||
-        value.includes("parallel") ||
-        value.includes("l-shape") ||
-        value.includes("l shape") ||
-        value.includes("u-shape") ||
-        value.includes("u shape") ||
-        value.includes("island") ||
-        value.includes("peninsula")
-    ) {
-        window.location.href = "modular-kitchen.html";
-    }
-
-    // Living Space
-    else if (
-        value.includes("living") ||
-        value.includes("living room") ||
-        value.includes("tv unit") ||
-        value.includes("display unit") ||
-        value.includes("storage cabinet") ||
-        value.includes("coffee table") ||
-        value.includes("entertainment unit")
-    ) {
-        window.location.href = "living-space.html";
-    }
-
-    // Bedroom
-    else if (
-        value.includes("bedroom") ||
-        value.includes("bed") ||
-        value.includes("modular bed") ||
-        value.includes("side storage") ||
-        value.includes("wall mirror") ||
-        value.includes("study") ||
-        value.includes("study unit") ||
-        value.includes("work unit")
-    ) {
-       window.location.href = "living-space.html";
-    }
-
-    // Bathroom
-    else if (
-        value.includes("bathroom") ||
-        value.includes("vanity") ||
-        value.includes("sink") ||
-        value.includes("dressing") ||
-        value.includes("dressing unit") ||
-        value.includes("bath storage")
-    ) {
-        window.location.href = "living-space.html";
-    }
-
-    // Wardrobe
-    else if (
-        value.includes("wardrobe") ||
-        value.includes("hinged") ||
-        value.includes("sliding") ||
-        value.includes("walk-in") ||
-        value.includes("walk in")
-    ) {
-         window.location.href = "living-space.html";
-    }
-
-    // Workspace
-    else if (
-        value.includes("workspace") ||
-        value.includes("office") ||
-        value.includes("workstation") ||
-        value.includes("locker") ||
-        value.includes("storage") ||
-        value.includes("table") ||
-        value.includes("meeting") ||
-        value.includes("booth") ||
-        value.includes("lounge") ||
-        value.includes("bookshelf") ||
-        value.includes("reception") ||
-        value.includes("conference") ||
-        value.includes("executive")
-    ) {
-        window.location.href = "workspace.html";
-    }
-
-    // Contact
-    else if (
-        value.includes("contact") ||
-        value.includes("phone") ||
-        value.includes("email")
-    ) {
-        window.location.href = "contact.html";
-    }
-
-    // Culture
-    else if (
-        value.includes("culture")
-    ) {
-        window.location.href = "culture.html";
-    }
-
-    // Insight
-    else if (
-        value.includes("insight") ||
-        value.includes("design") ||
-        value.includes("story")
-    ) {
-        window.location.href = "insight.html";
-    }
-
-    else {
-        alert("Page not found");
-    }
-});
     </script>
 </body>
 
