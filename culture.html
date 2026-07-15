@@ -6,15 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About OM Modular Furniture Surat | Our Culture</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
     <meta name="description"
         content="Know about OM Modular Furniture Surat, our design approach, quality and furniture craftsmanship.">
+
+    <link rel="canonical" href="https://ommodularfurniture.com/culture.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About OM Modular Furniture Surat | Our Culture">
+    <meta property="og:description"
+        content="Know about OM Modular Furniture Surat, our design approach, quality and furniture craftsmanship.">
+    <meta property="og:image" content="https://ommodularfurniture.com/image/culture.jpg">
+    <meta property="og:url" content="https://ommodularfurniture.com/culture.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About OM Modular Furniture Surat | Our Culture">
+    <meta name="twitter:description"
+        content="Know about OM Modular Furniture Surat, our design approach, quality and furniture craftsmanship.">
+    <meta name="twitter:image" content="https://ommodularfurniture.com/image/culture.jpg">
+
+    <link rel="icon" type="image/png" href="image/logo.png">
+
+    <link rel="preload" as="image" href="image/culture.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "OM Modular Furniture",
+      "image": "https://ommodularfurniture.com/image/logo.png",
+      "telephone": "+91-99130-08830",
+      "email": "ommodular11@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "G 11, Ichhapore Textile Park, Opp. RJD Textile Park, Bhatpore",
+        "addressLocality": "Surat",
+        "postalCode": "394510",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "url": "https://ommodularfurniture.com/culture.html",
+      "description": "Know about OM Modular Furniture Surat, our design approach, quality and furniture craftsmanship."
+    }
+    </script>
+
     <style>
         /* ============================
    RESET & BASE
@@ -42,13 +87,24 @@
             font-family: 'Montserrat', sans-serif;
             background: #f5f2ed;
             color: #555;
-            cursor: default;
         }
 
         img {
             max-width: 100%;
             height: auto;
             display: block;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         :root {
@@ -163,12 +219,14 @@
             transition: width .4s var(--ease-out);
         }
 
-        .logo-area a:hover {
+        .logo-area a:hover,
+        .logo-area a:focus-visible {
             color: #bcb8b3;
             letter-spacing: 3px;
         }
 
-        .logo-area a:hover::after {
+        .logo-area a:hover::after,
+        .logo-area a:focus-visible::after {
             width: 100%;
         }
 
@@ -195,16 +253,31 @@
             gap: 20px;
         }
 
-        .icons i {
+        .icon-btn {
+            background: none;
+            border: none;
+            padding: 4px;
+            display: inline-flex;
+            cursor: pointer;
+            line-height: 0;
+        }
+
+        .icon-btn i {
             font-size: 20px;
             color: #f5f2ed;
-            cursor: none;
             transition: color .3s, transform .3s;
         }
 
-        .icons i:hover {
-            color: #8A8175;
+        .icon-btn:hover i,
+        .icon-btn:focus-visible i {
+            color: #bcb8b3;
             transform: scale(1.15);
+        }
+
+        .icon-btn:focus-visible {
+            outline: 2px solid #bcb8b3;
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
         .search-box {
@@ -284,7 +357,8 @@
             border-bottom: none;
         }
 
-        .menu-dropdown a:hover {
+        .menu-dropdown a:hover,
+        .menu-dropdown a:focus-visible {
             color: #8A8175;
             padding-left: 12px;
         }
@@ -296,10 +370,6 @@
         }
 
         @media (max-width:768px) {
-
-            .search-box {
-                position: relative;
-            }
 
             .search-form {
                 position: absolute;
@@ -327,7 +397,7 @@
         }
 
         /* ============================
-           CURSOR
+           CURSOR (fine pointer only, added via JS)
         ============================ */
         .cursor-dot {
             width: 8px;
@@ -418,7 +488,7 @@
             margin-right: 12px;
         }
 
-        .banner-overlay h1 .word .char {
+        .banner-overlay h1 .char {
             display: inline-block;
             transform: translateY(110%);
             animation: charUp .7s var(--ease-out) forwards;
@@ -597,11 +667,6 @@
             transition: opacity .8s .35s var(--ease-out), transform .8s .35s var(--ease-out);
         }
 
-        .culture-section.visible .culture-content p:first-of-type {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .culture-content p:nth-of-type(2) {
             transition-delay: .5s;
         }
@@ -645,7 +710,7 @@
         .stat-label {
             font-size: 11px;
             letter-spacing: 2px;
-            color: #aaa;
+            color: #999;
             text-transform: uppercase;
             margin-top: 6px;
         }
@@ -762,7 +827,7 @@
             z-index: 1;
         }
 
-        .om h3 {
+        .om h2 {
             font-size: 20px;
             letter-spacing: 6px;
             text-transform: uppercase;
@@ -773,7 +838,7 @@
             transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
         }
 
-        .om h3.visible {
+        .om h2.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -794,7 +859,7 @@
             transition-delay: .2s;
         }
 
-        .mission-block h4 {
+        .mission-block h3 {
             font-size: 36px;
             font-weight: 500;
             color: #f5f2ed;
@@ -847,7 +912,6 @@
             background: #fff;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, .05);
-            transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
             opacity: 0;
             transform: translateY(40px);
             transition: opacity .9s var(--ease-out), transform .9s var(--ease-out), box-shadow .3s;
@@ -867,7 +931,7 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, .12);
         }
 
-        .vision-card h4 {
+        .vision-card h3 {
             font-size: 24px;
             color: #222;
             margin-bottom: 24px;
@@ -877,7 +941,7 @@
             padding-bottom: 20px;
         }
 
-        .vision-card h4::after {
+        .vision-card h3::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -888,7 +952,7 @@
             transition: width .4s var(--ease-out);
         }
 
-        .vision-card:hover h4::after {
+        .vision-card:hover h3::after {
             width: 100%;
         }
 
@@ -971,7 +1035,7 @@
             margin-left: 0;
         }
 
-        .contact h1 {
+        .contact h2 {
             font-size: 30px;
             font-weight: 500;
             letter-spacing: 2px;
@@ -980,7 +1044,7 @@
             margin-bottom: 20px;
         }
 
-        .contact h2 {
+        .contact h3 {
             font-size: 22px;
             font-weight: 400;
             margin-bottom: 20px;
@@ -991,6 +1055,28 @@
             line-height: 1.9;
             margin-bottom: 15px;
             max-width: 700px;
+        }
+
+        .contact a {
+            color: #fff;
+        }
+
+        .contact i {
+            color: #1a1a1a;
+            margin-right: 8px;
+        }
+
+        /* CONTACT REVEAL ANIMATION */
+        .contact .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .8s var(--ease-out),
+                transform .8s var(--ease-out);
+        }
+
+        .contact .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* =====================================
@@ -1034,14 +1120,9 @@
             transition: .3s;
         }
 
-        footer a:hover {
+        footer a:hover,
+        footer a:focus-visible {
             color: #c7c0b8;
-        }
-
-        /* Remove Gap */
-
-        .contact+footer {
-            margin-top: 0;
         }
 
         body {
@@ -1068,8 +1149,8 @@
                 width: 90px;
             }
 
-            .contact h1,
             .contact h2,
+            .contact h3,
             .contact p {
                 text-align: center;
                 margin-left: auto;
@@ -1080,103 +1161,109 @@
                 padding: 20px 30px;
             }
 
+            .vision-section::before {
+                display: none;
+            }
+
         }
 
         /* =====================================
-   MOBILE
+   MOBILE (consolidated — single breakpoint block)
 ===================================== */
 
         @media(max-width:768px) {
 
-            .contact {
-                padding: 60px 20px;
-            }
-
-            .logo1 img {
-                width: 85px;
-            }
-
-            .contact h1 {
-                font-size: 30px;
-                font-weight: 50px;
-            }
-
-            .contact h2 {
-                font-size: 26px;
-            }
-
-            .contact p {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-
-            .contact::before {
-                font-size: 140px;
-                right: -25px;
-                bottom: -20px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-                padding: 25px 15px;
-            }
-
-            .footer-left,
-            .footer-center,
-            .footer-right {
-                width: 100%;
-                text-align: center;
-            }
-
-        }
-
-        /* ============================
-   MOBILE
-============================ */
-        @media(max-width:768px) {
             body {
                 padding-top: 75px;
-                cursor: auto;
             }
 
-            #cursor-dot,
-            #cursor-ring {
+            #cursorDot,
+            #cursorRing {
                 display: none;
             }
 
             header {
                 height: 75px;
                 padding: 0 15px;
+                background: rgba(17, 17, 17, .75);
+                backdrop-filter: blur(15px);
+            }
+
+            .logo-area {
+                display: flex;
+                gap: 12px;
+                flex-shrink: 0;
             }
 
             .logo-area a {
-                font-size: 12px;
+                font-size: 10px;
+                letter-spacing: 1px;
             }
 
             .logo {
                 position: absolute;
                 left: 50%;
-                top: 12px;
-                transform: translateX(-50%);
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
             }
 
             .logo img {
-                width: 75px;
+                width: 90px;
             }
 
-            .icons i {
-                font-size: 22px;
+            .icons {
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+            .icon-btn i {
+                font-size: 17px;
+            }
+
+            .search-form {
+                right: 0;
+                top: 55px;
+            }
+
+            .search-box.active .search-form {
+                width: 190px;
+            }
+
+            .search-input {
+                width: 190px;
+                height: 38px;
+            }
+
+            .menu-dropdown {
+                position: fixed;
+                top: 75px;
+                right: 12px;
+                width: 210px;
             }
 
             .culture-banner {
                 height: 60vh;
+                margin-top: -75px;
+                background-position: center center;
+            }
+
+            .banner-bg {
+                inset: 0;
+                background-position: center center;
+                transform: scale(1);
+            }
+
+            .banner-overlay {
+                justify-content: center;
+                padding: 0 20px;
             }
 
             .banner-overlay h1 {
-                font-size: 28px;
-                padding: 0 20px;
+                font-size: 26px;
+                line-height: 1.35;
+                max-width: 330px;
+                text-align: center;
             }
 
             .gg {
@@ -1217,7 +1304,7 @@
                 padding: 80px 20px;
             }
 
-            .mission-block h4 {
+            .mission-block h3 {
                 font-size: 26px;
             }
 
@@ -1239,254 +1326,39 @@
             }
 
             .contact {
-                padding: 70px 20px;
+                padding: 60px 20px;
+                text-align: center;
             }
 
-            .contact h1 {
-                font-size: 28px;
+            .logo1 img {
+                width: 85px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            footer {
-                gap: 15px;
-            }
-        }
-
-        @media(max-width:991px) {
-            .vision-section::before {
-                display: none;
-            }
-        }
-
-        /* CONTACT REVEAL ANIMATION */
-
-        .contact .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity .8s var(--ease-out),
-                transform .8s var(--ease-out);
-        }
-
-        .contact .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media(max-width:768px) {
-
-            header {
-                height: 75px;
-                padding: 0 15px;
-                position: fixed;
-                top: 0;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .logo {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: auto;
-            }
-
-            .logo img {
-                width: 75px;
-            }
-
-            .logo-area {
-                display: flex;
-                gap: 12px;
-                align-items: center;
-            }
-
-            .logo-area a {
-                font-size: 12px;
-            }
-
-            .icons {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .icons i {
-                font-size: 22px;
-            }
-        }
-
-
-
-        /* ============================
-   MOBILE HERO FINAL FIX
-============================ */
-
-        @media(max-width:768px) {
-
-            .culture-banner {
-                height: 60vh;
-                margin-top: -75px;
-                background-position: center center;
-            }
-
-
-            .banner-bg {
-                inset: 0;
-                background-position: center center;
-                transform: scale(1);
-            }
-
-
-            .banner-overlay {
-                justify-content: center;
-                padding: 0 20px;
-            }
-
-
-            .banner-overlay h1 {
+            .contact h2 {
                 font-size: 26px;
-                line-height: 1.35;
-                max-width: 330px;
+            }
+
+            .contact h3 {
+                font-size: 20px;
+            }
+
+            .contact p {
+                font-size: 15px;
+                line-height: 1.8;
                 text-align: center;
             }
 
-        }
-
-        /* ============================
-   MOBILE HEADER
-============================ */
-
-        @media (max-width:768px) {
-
-            header {
-                height: 75px;
-                padding: 0 15px;
-                background: rgba(17, 17, 17, .75);
-                backdrop-filter: blur(15px);
+            .contact::before {
+                font-size: 140px;
+                right: -25px;
+                bottom: -20px;
             }
-
-
-            .logo-area {
-                display: flex;
-                gap: 12px;
-                flex-shrink: 0;
-            }
-
-
-            .logo-area a {
-                font-size: 10px;
-                letter-spacing: 1px;
-            }
-
-
-            .logo {
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-
-            .logo img {
-                width: 90px;
-            }
-
-
-            .icons {
-                gap: 12px;
-                flex-shrink: 0;
-            }
-
-
-            .icons i {
-                font-size: 17px;
-            }
-
-
-            .search-form {
-                right: 0;
-                top: 55px;
-            }
-
-
-            .search-box.active .search-form {
-                width: 190px;
-            }
-
-
-            .search-input {
-                width: 190px;
-                height: 38px;
-            }
-
-
-            .menu-dropdown {
-                position: fixed;
-                top: 75px;
-                right: 12px;
-                width: 210px;
-            }
-
-        }
-
-
-
-        /* SMALL MOBILE */
-        @media(max-width:420px) {
-
-            header {
-                padding: 0 10px;
-            }
-
-
-            .logo-area {
-                gap: 8px;
-            }
-
-
-            .logo-area a {
-                font-size: 9px;
-            }
-
-
-            .logo img {
-                width: 75px;
-            }
-
-
-            .icons {
-                gap: 8px;
-            }
-
-
-            .icons i {
-                font-size: 16px;
-            }
-
-        }
-
-        /* ===== MOBILE FOOTER ===== */
-
-        @media (max-width:768px) {
 
             footer {
-                display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 gap: 18px;
-
-                background: #111;
-                color: #fff;
-
-                padding: 30px 20px;
-
                 text-align: center;
+                padding: 30px 20px;
             }
 
             .footer-left,
@@ -1500,8 +1372,6 @@
 
             .footer-left a,
             .footer-center a {
-                color: #fff;
-                text-decoration: none;
                 font-size: 15px;
                 letter-spacing: .5px;
             }
@@ -1513,14 +1383,54 @@
 
         }
 
-        ::selection {
-            background: #8A8175;
-            color: white;
+        /* SMALL MOBILE */
+        @media(max-width:420px) {
+
+            header {
+                padding: 0 10px;
+            }
+
+            .logo-area {
+                gap: 8px;
+            }
+
+            .logo-area a {
+                font-size: 9px;
+            }
+
+            .logo img {
+                width: 75px;
+            }
+
+            .icons {
+                gap: 8px;
+            }
+
+            .icon-btn i {
+                font-size: 16px;
+            }
+
         }
 
-        .contact i {
-            color: #000;
-            margin-right: 8px;
+        /* Visible keyboard focus */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid #8A8175;
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
 
         /* Chrome, Edge, Safari, Opera, Android browsers */
@@ -1539,38 +1449,45 @@
 
 <body>
 
-    <!-- CURSOR -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- CURSOR (injected/enabled only for fine-pointer devices via JS) -->
+    <div class="cursor-dot" id="cursorDot" hidden></div>
+    <div class="cursor-ring" id="cursorRing" hidden></div>
 
     <!-- Progress Bar -->
     <div id="progress-bar"></div>
 
     <header id="mainHeader">
-        <div class="logo-area">
+        <nav class="logo-area" aria-label="Secondary navigation">
             <a href="culture.html">Culture</a>
             <a href="insight.html">Insight</a>
-        </div>
+        </nav>
 
         <div class="logo">
-            <a href="./index.html"><img src="image/logo.png" alt="OM Modular"></a>
+            <a href="index.html" aria-label="OM Modular Furniture home">
+                <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            </a>
         </div>
 
         <div class="icons">
             <div class="search-box">
-                <i class="fas fa-search search-btn"></i>
-                <form class="search-form">
-                    <input class="search-input" type="text" placeholder="Search...">
+                <button type="button" class="icon-btn search-btn" aria-label="Toggle search" aria-expanded="false">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                <form class="search-form" role="search">
+                    <label for="siteSearch" class="visually-hidden">Search the site</label>
+                    <input id="siteSearch" class="search-input" type="text" placeholder="Search...">
                 </form>
             </div>
             <div class="menu-box">
-                <i class="fas fa-bars menu-btn"></i>
-                <div class="menu-dropdown">
+                <button type="button" class="icon-btn menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav class="menu-dropdown" aria-label="Main navigation">
                     <a href="modular-kitchen.html">Modular Kitchen</a>
                     <a href="living-space.html">Living Space</a>
                     <a href="workspace.html">Workspace</a>
                     <a href="contact.html">Contact</a>
-                </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -1580,7 +1497,8 @@
         <div class="culture-banner">
             <div class="banner-bg" id="parallaxBg"></div>
             <div class="banner-overlay">
-                <h1 id="heroTitle">Being catalyst for a positive change</h1>
+                <h1 id="heroTitle" aria-label="Being catalyst for a positive change">Being catalyst for a positive
+                    change</h1>
             </div>
             <div class="scroll-indicator">
                 <span>Scroll</span>
@@ -1636,24 +1554,26 @@
         </div>
 
         <div class="culture-slider">
-            <div class="swiper myCultureSlider">
+            <div class="swiper myCultureSlider" aria-label="OM Modular Furniture project gallery">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <img src="image/culture1.jpg"
-                            alt="Modern Modular Furniture Interior Design by OM Modular Furniture Surat">
+                        <img src="image/culture1.jpg" loading="lazy"
+                            alt="Modern modular furniture interior design by OM Modular Furniture Surat">
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="image/culture2.jpg" alt="Luxury Modular Kitchen Design Surat OM Modular Furniture">
+                        <img src="image/culture2.jpg" loading="lazy" alt="Luxury modular kitchen design in Surat">
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="image/culture3.jpg" alt="Custom Furniture Solutions and Interior Design Surat">
+                        <img src="image/culture3.jpg" loading="lazy"
+                            alt="Custom furniture solutions and interior design in Surat">
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="image/culture4.jpg" alt="Premium Home Interior Furniture Design by OM Modular">
+                        <img src="image/culture4.jpg" loading="lazy"
+                            alt="Premium home interior furniture design by OM Modular Furniture">
                     </div>
 
                 </div>
@@ -1669,15 +1589,15 @@
         <div class="orb orb2"></div>
         <div class="orb orb3"></div>
         <div class="om">
-            <h3 class="scroll-reveal">Mission &amp; Vision</h3>
+            <h2 class="scroll-reveal">Mission &amp; Vision</h2>
             <div class="mission-block scroll-reveal">
-                <h4>Passion and Empowerment</h4>
+                <h3>Passion and Empowerment</h3>
                 <p>We are committed to pioneering sustainable innovation. By sharing ethical, aesthetic, and emotional
                     content,
                     we inspire and nurture the spirit of new generations, placing our trust in a brighter future.</p>
             </div>
             <div class="mission-block scroll-reveal">
-                <h4>Ethos and Creativity</h4>
+                <h3>Ethos and Creativity</h3>
                 <p>Our ethos drives us to pour our energy, ingenuity, and creative spirit into crafting Modular
                     Innovations.
                     We seek a perfect fusion of beauty, wellness, and functionality,
@@ -1690,7 +1610,7 @@
     <section class="vision-section">
         <div class="vision-row">
             <div class="vision-card scroll-reveal" id="card1">
-                <h4>Elevate Spaces with Inspired Collections</h4>
+                <h3>Elevate Spaces with Inspired Collections</h3>
                 <p>Our marketplace is where stories meet solutions — where we delve into the needs of our buyers and
                     guide
                     them towards the perfect fit. Our showroom, factory and workshops are more than just spaces — they
@@ -1699,7 +1619,7 @@
                     with your aspirations.</p>
             </div>
             <div class="vision-card scroll-reveal" id="card2">
-                <h4>Core Value Proposition</h4>
+                <h3>Core Value Proposition</h3>
                 <ul class="value-list">
                     <li>Creativity and Innovation</li>
                     <li>Customized Tailor-Made Solutions</li>
@@ -1713,28 +1633,28 @@
     <section class="contact">
 
         <div class="logo1">
-            <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            <img src="image/logo.png" loading="lazy" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
         </div>
 
-        <h1 class="reveal">Om Modular Furniture</h1>
-        <h2 class="reveal">Craft your modular luxury!</h2>
+        <h2 class="reveal">Om Modular Furniture</h2>
+        <h3 class="reveal">Craft your modular luxury!</h3>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
 
-        <h1 class="reveal">Om Modular Furniture</h1>
-        <h2 class="reveal">Craft your modular luxury!</h2>
-        <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
         <p class="reveal">
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
             Bhatpore, Surat-394510, Gujarat, India.
         </p>
 
         <p class="reveal">
-            <i class="fa-solid fa-phone"></i>
-            +91 99130 08830
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+919913008830">+91 99130 08830</a>
         </p>
 
-        <p class="reveal">📧 ommodular11@gmail.com</p>
+        <p class="reveal">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:ommodular11@gmail.com">ommodular11@gmail.com</a>
+        </p>
     </section>
 
     <!-- FOOTER -->
@@ -1748,61 +1668,81 @@
     <script>
 
         /* ============================
-        CURSOR
+        CURSOR (fine pointer only)
      ============================ */
-        const dot = document.getElementById("cursorDot");
-        const ring = document.getElementById("cursorRing");
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        const prefersFinePointer = window.matchMedia("(pointer: fine)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        document.addEventListener("mousemove", e => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
-        });
-        (function ringFollow() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
-            requestAnimationFrame(ringFollow);
-        })();
-        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
-            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
-            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
-        });
+        if (prefersFinePointer && !prefersReducedMotion) {
+
+            const dot = document.getElementById("cursorDot");
+            const ring = document.getElementById("cursorRing");
+            dot.hidden = false;
+            ring.hidden = false;
+
+            let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+            document.addEventListener("mousemove", e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+            });
+            (function ringFollow() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
+                requestAnimationFrame(ringFollow);
+            })();
+            document.querySelectorAll("a, button, .icon-btn i, .vision-card").forEach(el => {
+                el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+                el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+            });
+        }
 
         /* ============================
            PROGRESS BAR
         ============================ */
         const progressBar = document.getElementById('progress-bar');
         window.addEventListener('scroll', () => {
-            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const pct = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
             progressBar.style.width = pct + '%';
         });
 
         /* ============================
            HEADER SCROLL
         ============================ */
-        const header = document.getElementById('mainHeader');
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            header.classList.toggle('scrolled', y > 60);
-            header.classList.toggle('hide-header', y > lastScroll + 10 && y > 300);
-            if (y < lastScroll || y < 100) header.classList.remove('hide-header');
-            lastScroll = y;
-        });
+        const header = document.getElementById("mainHeader");
 
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+
+            let currentScroll = window.pageYOffset;
+
+            header.classList.toggle("scrolled", currentScroll > 60);
+
+            if (currentScroll > lastScroll && currentScroll > 120) {
+                header.style.transform = "translateY(-100%)";
+            } else {
+                header.style.transform = "translateY(0)";
+            }
+
+            lastScroll = currentScroll;
+        });
         /* ============================
            PARALLAX HERO
         ============================ */
         const parallaxBg = document.getElementById('parallaxBg');
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            if (y < window.innerHeight * 1.5) {
-                parallaxBg.style.transform = `translateY(${y * 0.35}px) scale(1.1)`;
-            }
-        }, { passive: true });
+        if (!prefersReducedMotion) {
+            window.addEventListener('scroll', () => {
+                const y = window.scrollY;
+                if (y < window.innerHeight * 1.5) {
+                    parallaxBg.style.transform = `translateY(${y * 0.35}px) scale(1.1)`;
+                }
+            }, { passive: true });
+        }
 
         /* ============================
            HERO TEXT SPLIT ANIMATION
@@ -1812,6 +1752,7 @@
             const text = h1.textContent;
             const words = text.split(' ');
             h1.innerHTML = '';
+            h1.setAttribute('aria-label', text);
             words.forEach((word, wi) => {
                 const wordSpan = document.createElement('span');
                 wordSpan.className = 'word';
@@ -1819,6 +1760,7 @@
                     const charSpan = document.createElement('span');
                     charSpan.className = 'char';
                     charSpan.textContent = char;
+                    charSpan.setAttribute('aria-hidden', 'true');
                     const delay = (wi * 0.08 + ci * 0.025 + 1.2);
                     charSpan.style.animationDelay = delay + 's';
                     wordSpan.appendChild(charSpan);
@@ -1836,10 +1778,6 @@
             entries.forEach(e => {
                 if (e.isIntersecting) {
                     e.target.classList.add('visible');
-                    // Trigger count if stat row
-                    if (e.target.classList.contains('stat-row') || e.target.closest('.culture-section.visible')) {
-                        startCounters();
-                    }
                     io.unobserve(e.target);
                 }
             });
@@ -1903,6 +1841,7 @@
 
             obs.observe(el);
         });
+
         /* ============================
            COUNTER ANIMATION
         ============================ */
@@ -1924,21 +1863,23 @@
         }
 
         /* ============================
-           TILT EFFECT ON VISION CARDS
+           TILT EFFECT ON VISION CARDS (fine pointer only)
         ============================ */
-        document.querySelectorAll('.vision-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const cx = rect.left + rect.width / 2;
-                const cy = rect.top + rect.height / 2;
-                const dx = (e.clientX - cx) / (rect.width / 2);
-                const dy = (e.clientY - cy) / (rect.height / 2);
-                card.style.transform = `translateY(0) perspective(800px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg) scale(1.02)`;
+        if (prefersFinePointer && !prefersReducedMotion) {
+            document.querySelectorAll('.vision-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const cx = rect.left + rect.width / 2;
+                    const cy = rect.top + rect.height / 2;
+                    const dx = (e.clientX - cx) / (rect.width / 2);
+                    const dy = (e.clientY - cy) / (rect.height / 2);
+                    card.style.transform = `translateY(0) perspective(800px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg) scale(1.02)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
             });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
+        }
 
         /* ============================
            SWIPER
@@ -1953,12 +1894,14 @@
                 slideChangeTransitionStart: function () {
                     const active = this.slides[this.activeIndex];
                     if (active) {
-                        active.querySelector('img').style.transform = 'scale(1.08)';
-                        active.querySelector('img').style.transition = 'transform 1.4s cubic-bezier(0.22,1,0.36,1)';
-                        setTimeout(() => {
-                            if (active.querySelector('img'))
-                                active.querySelector('img').style.transform = 'scale(1)';
-                        }, 1400);
+                        const img = active.querySelector('img');
+                        if (img) {
+                            img.style.transform = 'scale(1.08)';
+                            img.style.transition = 'transform 1.4s cubic-bezier(0.22,1,0.36,1)';
+                            setTimeout(() => {
+                                img.style.transform = 'scale(1)';
+                            }, 1400);
+                        }
                     }
                 }
             }
@@ -1972,16 +1915,28 @@
         const menuBtn = document.querySelector(".menu-btn");
         const menuBox = document.querySelector(".menu-box");
 
-        menuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            menuBox.classList.toggle("active");
-        });
+        if (menuBtn && menuBox) {
 
-        document.addEventListener("click", function (e) {
-            if (!menuBox.contains(e.target)) {
-                menuBox.classList.remove("active");
-            }
-        });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const isOpen = menuBox.classList.toggle("active");
+                menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!menuBox.contains(e.target)) {
+                    menuBox.classList.remove("active");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    menuBox.classList.remove("active");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
 
         // SEARCH
         const searchBox = document.querySelector(".search-box");
@@ -1989,137 +1944,152 @@
         const searchForm = document.querySelector(".search-form");
         const searchInput = document.querySelector(".search-input");
 
-        searchBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            searchBox.classList.toggle("active");
+        if (searchBox && searchBtn) {
 
-            if (searchBox.classList.contains("active")) {
-                searchInput.focus();
-            }
-        });
+            searchBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const isActive = searchBox.classList.toggle("active");
+                searchBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
 
-        document.addEventListener("click", function (e) {
-            if (!searchBox.contains(e.target)) {
-                searchBox.classList.remove("active");
-            }
-        });
+                if (isActive) {
+                    searchInput.focus();
+                }
+            });
 
-        searchForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+            document.addEventListener("click", function (e) {
+                if (!searchBox.contains(e.target)) {
+                    searchBox.classList.remove("active");
+                    searchBtn.setAttribute("aria-expanded", "false");
+                }
+            });
 
-            let value = searchInput.value.toLowerCase().trim();
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    searchBox.classList.remove("active");
+                    searchBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
 
-            // Kitchen
-            if (
-                value.includes("kitchen") ||
-                value.includes("linear") ||
-                value.includes("parallel") ||
-                value.includes("l-shape") ||
-                value.includes("l shape") ||
-                value.includes("u-shape") ||
-                value.includes("u shape") ||
-                value.includes("island") ||
-                value.includes("peninsula")
-            ) {
-                window.location.href = "modular-kitchen.html";
-            }
+        if (searchForm && searchInput) {
 
-            // Living Space
-            else if (
-                value.includes("living") ||
-                value.includes("living room") ||
-                value.includes("tv unit") ||
-                value.includes("display unit") ||
-                value.includes("storage cabinet") ||
-                value.includes("coffee table") ||
-                value.includes("entertainment unit")
-            ) {
-                window.location.href = "living-space.html";
-            }
+            searchForm.addEventListener("submit", function (e) {
+                e.preventDefault();
 
-            // Bedroom
-            else if (
-                value.includes("bedroom") ||
-                value.includes("bed") ||
-                value.includes("modular bed") ||
-                value.includes("side storage") ||
-                value.includes("wall mirror") ||
-                value.includes("study") ||
-                value.includes("study unit") ||
-                value.includes("work unit")
-            ) {
-                window.location.href = "living-space.html";
-            }
+                let value = searchInput.value.toLowerCase().trim();
 
-            // Bathroom
-            else if (
-                value.includes("bathroom") ||
-                value.includes("vanity") ||
-                value.includes("sink") ||
-                value.includes("dressing") ||
-                value.includes("dressing unit") ||
-                value.includes("bath storage")
-            ) {
-                window.location.href = "living-space.html";
-            }
+                // Kitchen
+                if (
+                    value.includes("kitchen") ||
+                    value.includes("linear") ||
+                    value.includes("parallel") ||
+                    value.includes("l-shape") ||
+                    value.includes("l shape") ||
+                    value.includes("u-shape") ||
+                    value.includes("u shape") ||
+                    value.includes("island") ||
+                    value.includes("peninsula")
+                ) {
+                    window.location.href = "modular-kitchen.html";
+                }
 
-            // Wardrobe
-            else if (
-                value.includes("wardrobe") ||
-                value.includes("hinged") ||
-                value.includes("sliding") ||
-                value.includes("walk-in") ||
-                value.includes("walk in")
-            ) {
-                window.location.href = "living-space.html";
-            }
+                // Living Space
+                else if (
+                    value.includes("living") ||
+                    value.includes("living room") ||
+                    value.includes("tv unit") ||
+                    value.includes("display unit") ||
+                    value.includes("storage cabinet") ||
+                    value.includes("coffee table") ||
+                    value.includes("entertainment unit")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-            // Workspace
-            else if (
-                value.includes("workspace") ||
-                value.includes("office") ||
-                value.includes("workstation") ||
-                value.includes("locker") ||
-                value.includes("storage") ||
-                value.includes("table") ||
-                value.includes("meeting") ||
-                value.includes("booth") ||
-                value.includes("lounge") ||
-                value.includes("bookshelf") ||
-                value.includes("reception") ||
-                value.includes("conference") ||
-                value.includes("executive")
-            ) {
-                window.location.href = "workspace.html";
-            }
+                // Bedroom
+                else if (
+                    value.includes("bedroom") ||
+                    value.includes("bed") ||
+                    value.includes("modular bed") ||
+                    value.includes("side storage") ||
+                    value.includes("wall mirror") ||
+                    value.includes("study") ||
+                    value.includes("study unit") ||
+                    value.includes("work unit")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-            // Contact
-            else if (
-                value.includes("contact") ||
-                value.includes("phone") ||
-                value.includes("email")
-            ) {
-                window.location.href = "contact.html";
-            }
+                // Bathroom
+                else if (
+                    value.includes("bathroom") ||
+                    value.includes("vanity") ||
+                    value.includes("sink") ||
+                    value.includes("dressing") ||
+                    value.includes("dressing unit") ||
+                    value.includes("bath storage")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-            // Culture
-            else if (value.includes("culture")) {
-                window.location.href = "culture.html";
-            }
+                // Wardrobe
+                else if (
+                    value.includes("wardrobe") ||
+                    value.includes("hinged") ||
+                    value.includes("sliding") ||
+                    value.includes("walk-in") ||
+                    value.includes("walk in")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-            // Insight
-            else if (
-                value.includes("insight") ||
-                value.includes("design") ||
-                value.includes("story")
-            ) {
-                window.location.href = "insight.html";
-            }
+                // Workspace
+                else if (
+                    value.includes("workspace") ||
+                    value.includes("office") ||
+                    value.includes("workstation") ||
+                    value.includes("locker") ||
+                    value.includes("storage") ||
+                    value.includes("table") ||
+                    value.includes("meeting") ||
+                    value.includes("booth") ||
+                    value.includes("lounge") ||
+                    value.includes("bookshelf") ||
+                    value.includes("reception") ||
+                    value.includes("conference") ||
+                    value.includes("executive")
+                ) {
+                    window.location.href = "workspace.html";
+                }
 
-            else {
-                alert("Page not found");
-            }
-        });
+                // Contact
+                else if (
+                    value.includes("contact") ||
+                    value.includes("phone") ||
+                    value.includes("email")
+                ) {
+                    window.location.href = "contact.html";
+                }
+
+                // Culture
+                else if (value.includes("culture")) {
+                    window.location.href = "culture.html";
+                }
+
+                // Insight
+                else if (
+                    value.includes("insight") ||
+                    value.includes("design") ||
+                    value.includes("story")
+                ) {
+                    window.location.href = "insight.html";
+                }
+
+                else {
+                    alert("Page not found");
+                }
+            });
+        }
     </script>
 </body>
 
