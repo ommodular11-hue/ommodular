@@ -1497,8 +1497,7 @@
         <div class="culture-banner">
             <div class="banner-bg" id="parallaxBg"></div>
             <div class="banner-overlay">
-                <h1 id="heroTitle" aria-label="Being catalyst for a positive change">Being catalyst for a positive
-                    change</h1>
+                <h1 id="heroTitle" aria-label="Being catalyst for a positive change">Being catalyst for a positive change</h1>
             </div>
             <div class="scroll-indicator">
                 <span>Scroll</span>
@@ -1567,13 +1566,11 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="image/culture3.jpg" loading="lazy"
-                            alt="Custom furniture solutions and interior design in Surat">
+                        <img src="image/culture3.jpg" loading="lazy" alt="Custom furniture solutions and interior design in Surat">
                     </div>
 
                     <div class="swiper-slide">
-                        <img src="image/culture4.jpg" loading="lazy"
-                            alt="Premium home interior furniture design by OM Modular Furniture">
+                        <img src="image/culture4.jpg" loading="lazy" alt="Premium home interior furniture design by OM Modular Furniture">
                     </div>
 
                 </div>
@@ -1713,24 +1710,16 @@
         /* ============================
            HEADER SCROLL
         ============================ */
-        const header = document.getElementById("mainHeader");
-
+        const header = document.getElementById('mainHeader');
         let lastScroll = 0;
-
-        window.addEventListener("scroll", () => {
-
-            let currentScroll = window.pageYOffset;
-
-            header.classList.toggle("scrolled", currentScroll > 60);
-
-            if (currentScroll > lastScroll && currentScroll > 120) {
-                header.style.transform = "translateY(-100%)";
-            } else {
-                header.style.transform = "translateY(0)";
-            }
-
-            lastScroll = currentScroll;
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            header.classList.toggle('scrolled', y > 60);
+            header.classList.toggle('hide-header', y > lastScroll + 10 && y > 300);
+            if (y < lastScroll || y < 100) header.classList.remove('hide-header');
+            lastScroll = y;
         });
+
         /* ============================
            PARALLAX HERO
         ============================ */
@@ -1973,7 +1962,7 @@
 
         if (searchForm && searchInput) {
 
-            searchForm.addEventListener("submit", function (e) {
+             searchForm.addEventListener("submit", function (e) {
                 e.preventDefault();
 
                 let value = searchInput.value.toLowerCase().trim();
@@ -2087,8 +2076,8 @@
 
                 else {
                     alert("Page not found");
-                }
-            });
+                }   
+              });
         }
     </script>
 </body>
