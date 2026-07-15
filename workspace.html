@@ -16,7 +16,6 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="script.js"></script>
 
     <style>
@@ -836,7 +835,7 @@
             transform: scale(1.03);
         }
 
-       /* =====================================
+        /* =====================================
    CONTACT
 ===================================== */
 
@@ -862,15 +861,15 @@
             line-height: 1;
         }
 
-       .logo1 {
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 20px;
+        .logo1 {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
         }
 
         .logo1 img {
-        width: 90px;
-        margin-left: 0;
+            width: 90px;
+            margin-left: 0;
         }
 
         .contact h1 {
@@ -1088,9 +1087,11 @@
             }
         }
 
-        .features-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px 20px;
+        @media(max-width:768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px 20px;
+            }
         }
 
         @media(max-width:480px) {
@@ -1408,33 +1409,28 @@
 
         }
 
+        /* Chrome, Edge, Safari, Opera, Android browsers */
         ::selection {
-        background: #8A8175;
-        color: white;
+            background: #8A8175;
+            color: #fff;
         }
 
-        /* Chrome, Edge, Safari, Opera, Android browsers */
-::selection {
-    background: #8A8175;
-    color: #fff;
-}
-
-/* Firefox (Desktop & Android) */
-::-moz-selection {
-    background: #8A8175;
-    color: #fff;
-}
+        /* Firefox (Desktop & Android) */
+        ::-moz-selection {
+            background: #8A8175;
+            color: #fff;
+        }
 
         .contact i {
-        color: #000;
-        margin-right: 8px;
+            color: #000;
+            margin-right: 8px;
         }
     </style>
 
 </head>
 
 <body>
-      <!-- CURSOR -->
+    <!-- CURSOR -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
@@ -1445,7 +1441,7 @@
             <a href="culture.html">Culture</a>
             <a href="insight.html">Insight</a>
         </div>
-        <a href="./index.html" class="logo"><img src="image/logo.png" alt="OM Modular"></a>
+        <a href="index.html" class="logo"><img src="image/logo.png" alt="OM Modular"></a>
         <div class="icons">
             <div class="search-box">
                 <i class="fas fa-search search-btn"></i>
@@ -1521,10 +1517,10 @@
             </ul>
         </div>
         <div class="space-slider" id="slider1">
-            <img src="image/workspace1.jpg" class="active" alt="">
-            <img src="image/workspace2.jpg" alt="">
-            <img src="image/workspace3.jpg" alt="">
-            <img src="image/workspace4.jpg" alt="">
+            <img src="image/workspace1.jpg" class="active" alt="Modular workstation with integrated storage">
+            <img src="image/workspace2.jpg" alt="Office lounge seating area">
+            <img src="image/workspace3.jpg" alt="Modular locker and storage units">
+            <img src="image/workspace4.jpg" alt="Meeting booth workspace setup">
             <div class="slide-dots" id="dots1"></div>
             <div class="slide-counter" id="counter1">1 / 4</div>
         </div>
@@ -1548,10 +1544,10 @@
             </ul>
         </div>
         <div class="space-slider" id="slider2">
-            <img src="image/office1.jpg" class="active" alt="">
-            <img src="image/office2.jpg" alt="">
-            <img src="image/office3.jpg" alt="">
-            <img src="image/office4.jpg" alt="">
+            <img src="image/office1.jpg" class="active" alt="Modern office reception area">
+            <img src="image/office2.jpg" alt="Conference room interior design">
+            <img src="image/office3.jpg" alt="Office workstation layout">
+            <img src="image/office4.jpg" alt="Executive cabin interior">
             <div class="slide-dots" id="dots2"></div>
             <div class="slide-counter" id="counter2">1 / 4</div>
         </div>
@@ -1568,13 +1564,13 @@
         <h2 class="reveal">Craft your modular luxury!</h2>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
         <p class="reveal">
-        <i class="fa-solid fa-location-dot"></i>
-        G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
-        Bhatpore, Surat-394510, Gujarat, India.
+            <i class="fa-solid fa-location-dot"></i>
+            G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
+            Bhatpore, Surat-394510, Gujarat, India.
         </p>
         <p class="reveal">
-        <i class="fa-solid fa-phone"></i>
-        +91 99130 08830
+            <i class="fa-solid fa-phone"></i>
+            +91 99130 08830
         </p>
         <p class="reveal">📧 ommodular11@gmail.com</p>
     </section>
@@ -1588,9 +1584,9 @@
 
     <script>
 
-         /* ============================
-           CURSOR
-        ============================ */
+        /* ============================
+          CURSOR
+       ============================ */
         const dot = document.getElementById("cursorDot");
         const ring = document.getElementById("cursorRing");
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -1749,137 +1745,125 @@
         });
         searchBox.addEventListener('click', e => e.stopPropagation());
         document.addEventListener('click', () => searchBox.classList.remove('active'));
-        searchForm.addEventListener('submit', e => {
+
+        searchForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const v = searchInput.value.toLowerCase().trim();
-            if (v.includes('kitchen')) location.href = 'modular-kitchen.html';
-            else if (v.includes('living') || v.includes('space')) location.href = 'living-space.html';
-            else if (v.includes('work') || v.includes('office')) location.href = 'workspace.html';
-            else if (v.includes('contact')) location.href = 'contact.html';
-            else if (v.includes('culture')) location.href = 'culture.html';
-            else if (v.includes('insight')) location.href = 'insight.html';
-            else alert('Page not found');
+
+            let value = searchInput.value.toLowerCase().trim();
+
+            // Kitchen
+            if (
+                value.includes("kitchen") ||
+                value.includes("linear") ||
+                value.includes("parallel") ||
+                value.includes("l-shape") ||
+                value.includes("l shape") ||
+                value.includes("u-shape") ||
+                value.includes("u shape") ||
+                value.includes("island") ||
+                value.includes("peninsula")
+            ) {
+                window.location.href = "modular-kitchen.html";
+            }
+
+            // Living Space
+            else if (
+                value.includes("living") ||
+                value.includes("living room") ||
+                value.includes("tv unit") ||
+                value.includes("display unit") ||
+                value.includes("storage cabinet") ||
+                value.includes("coffee table") ||
+                value.includes("entertainment unit")
+            ) {
+                window.location.href = "living-space.html";
+            }
+
+            // Bedroom
+            else if (
+                value.includes("bedroom") ||
+                value.includes("bed") ||
+                value.includes("modular bed") ||
+                value.includes("side storage") ||
+                value.includes("wall mirror") ||
+                value.includes("study") ||
+                value.includes("study unit") ||
+                value.includes("work unit")
+            ) {
+                window.location.href = "bedroom.html";
+            }
+
+            // Bathroom
+            else if (
+                value.includes("bathroom") ||
+                value.includes("vanity") ||
+                value.includes("sink") ||
+                value.includes("dressing") ||
+                value.includes("dressing unit") ||
+                value.includes("bath storage")
+            ) {
+                window.location.href = "bathroom.html";
+            }
+
+            // Wardrobe
+            else if (
+                value.includes("wardrobe") ||
+                value.includes("hinged") ||
+                value.includes("sliding") ||
+                value.includes("walk-in") ||
+                value.includes("walk in")
+            ) {
+                window.location.href = "wardrobe.html";
+            }
+
+            // Workspace
+            else if (
+                value.includes("workspace") ||
+                value.includes("office") ||
+                value.includes("workstation") ||
+                value.includes("locker") ||
+                value.includes("storage") ||
+                value.includes("table") ||
+                value.includes("meeting") ||
+                value.includes("booth") ||
+                value.includes("lounge") ||
+                value.includes("bookshelf") ||
+                value.includes("reception") ||
+                value.includes("conference") ||
+                value.includes("executive")
+            ) {
+                window.location.href = "workspace.html";
+            }
+
+            // Contact
+            else if (
+                value.includes("contact") ||
+                value.includes("phone") ||
+                value.includes("email")
+            ) {
+                window.location.href = "contact.html";
+            }
+
+            // Culture
+            else if (
+                value.includes("culture")
+            ) {
+                window.location.href = "culture.html";
+            }
+
+            // Insight
+            else if (
+                value.includes("insight") ||
+                value.includes("design") ||
+                value.includes("story")
+            ) {
+                window.location.href = "insight.html";
+            }
+
+            else {
+                alert("Page not found");
+            }
         });
-
-
-searchForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let value = searchInput.value.toLowerCase().trim();
-
-    // Kitchen
-    if (
-        value.includes("kitchen") ||
-        value.includes("linear") ||
-        value.includes("parallel") ||
-        value.includes("l-shape") ||
-        value.includes("l shape") ||
-        value.includes("u-shape") ||
-        value.includes("u shape") ||
-        value.includes("island") ||
-        value.includes("peninsula")
-    ) {
-        window.location.href = "modular-kitchen.html";
-    }
-
-    // Living Space
-    else if (
-        value.includes("living") ||
-        value.includes("living room") ||
-        value.includes("tv unit") ||
-        value.includes("display unit") ||
-        value.includes("storage cabinet") ||
-        value.includes("coffee table") ||
-        value.includes("entertainment unit")
-    ) {
-        window.location.href = "living-space.html";
-    }
-
-    // Bedroom
-    else if (
-        value.includes("bedroom") ||
-        value.includes("bed") ||
-        value.includes("modular bed") ||
-        value.includes("side storage") ||
-        value.includes("wall mirror") ||
-        value.includes("study") ||
-        value.includes("study unit") ||
-        value.includes("work unit")
-    ) {
-        window.location.href = "living-space.html";
-    }
-
-    // Bathroom
-    else if (
-        value.includes("bathroom") ||
-        value.includes("vanity") ||
-        value.includes("sink") ||
-        value.includes("dressing") ||
-        value.includes("dressing unit") ||
-        value.includes("bath storage")
-    ) {
-        window.location.href = "living-space.html";
-    }
-
-    // Wardrobe
-    else if (
-        value.includes("wardrobe") ||
-        value.includes("hinged") ||
-        value.includes("sliding") ||
-        value.includes("walk-in") ||
-        value.includes("walk in")
-    ) {
-         window.location.href = "living-space.html";
-    }
-
-    // Workspace
-    else if (
-        value.includes("workspace") ||
-        value.includes("office") ||
-        value.includes("workstation") ||
-        value.includes("locker") ||
-        value.includes("storage") ||
-        value.includes("table") ||
-        value.includes("meeting") ||
-        value.includes("booth") ||
-        value.includes("lounge") ||
-        value.includes("bookshelf") ||
-        value.includes("reception") ||
-        value.includes("conference") ||
-        value.includes("executive")
-    ) {
-        window.location.href = "workspace.html";
-    }
-
-    // Contact
-    else if (
-        value.includes("contact") ||
-        value.includes("phone") ||
-        value.includes("email")
-    ) {
-        window.location.href = "contact.html";
-    }
-
-    // Culture
-    else if (
-        value.includes("culture")
-    ) {
-        window.location.href = "culture.html";
-    }
-
-    // Insight
-    else if (
-        value.includes("insight") ||
-        value.includes("design") ||
-        value.includes("story")
-    ) {
-        window.location.href = "insight.html";
-    }
-
-    else {
-        alert("Page not found");
-    }
-});
     </script>
 </body>
 
