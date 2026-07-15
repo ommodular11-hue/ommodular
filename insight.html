@@ -7,16 +7,58 @@
 
     <title>Furniture Ideas & Interior Tips | OM Modular Furniture</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
     <meta name="description"
         content="Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture.">
+
+    <link rel="canonical" href="https://ommodularfurniture.com/insight.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Furniture Ideas & Interior Tips | OM Modular Furniture">
+    <meta property="og:description"
+        content="Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture.">
+    <meta property="og:image" content="https://ommodularfurniture.com/image/In.jpg">
+    <meta property="og:url" content="https://ommodularfurniture.com/insight.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Furniture Ideas & Interior Tips | OM Modular Furniture">
+    <meta name="twitter:description"
+        content="Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture.">
+    <meta name="twitter:image" content="https://ommodularfurniture.com/image/In.jpg">
+
+    <link rel="icon" type="image/png" href="image/logo.png">
+
+    <link rel="preload" as="image" href="image/In.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "OM Modular Furniture",
+      "image": "https://ommodularfurniture.com/image/logo.png",
+      "telephone": "+91-99130-08830",
+      "email": "ommodular11@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "G 11, Ichhapore Textile Park, Opp. RJD Textile Park, Bhatpore",
+        "addressLocality": "Surat",
+        "postalCode": "394510",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "url": "https://ommodularfurniture.com/insight.html",
+      "description": "Explore furniture trends, modular kitchen ideas and interior design tips by OM Modular Furniture."
+    }
+    </script>
 
     <style>
         /* ============================
@@ -36,6 +78,10 @@
             overflow-x: hidden;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             padding-top: 90px;
         }
@@ -50,12 +96,25 @@
             font-family: 'Montserrat', sans-serif;
             background: #f5f2ed;
             color: #555;
+            margin: 0;
         }
 
         img {
             max-width: 100%;
             height: auto;
             display: block;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         :root {
@@ -68,7 +127,7 @@
         }
 
         /* ============================
-           CURSOR
+           CURSOR (fine pointer only, added via JS)
         ============================ */
         .cursor-dot {
             width: 8px;
@@ -180,12 +239,14 @@
             transition: width .4s var(--ease-out);
         }
 
-        .logo-area a:hover {
+        .logo-area a:hover,
+        .logo-area a:focus-visible {
             color: #bcb8b3;
             letter-spacing: 3px;
         }
 
-        .logo-area a:hover::after {
+        .logo-area a:hover::after,
+        .logo-area a:focus-visible::after {
             width: 100%;
         }
 
@@ -212,16 +273,31 @@
             gap: 20px;
         }
 
-        .icons i {
+        .icon-btn {
+            background: none;
+            border: none;
+            padding: 4px;
+            display: inline-flex;
+            cursor: pointer;
+            line-height: 0;
+        }
+
+        .icon-btn i {
             font-size: 20px;
             color: #f5f2ed;
-            cursor: none;
             transition: color .3s, transform .3s;
         }
 
-        .icons i:hover {
-            color: #8A8175;
+        .icon-btn:hover i,
+        .icon-btn:focus-visible i {
+            color: #bcb8b3;
             transform: scale(1.15);
+        }
+
+        .icon-btn:focus-visible {
+            outline: 2px solid #bcb8b3;
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
         .search-box {
@@ -301,7 +377,8 @@
             border-bottom: none;
         }
 
-        .menu-dropdown a:hover {
+        .menu-dropdown a:hover,
+        .menu-dropdown a:focus-visible {
             color: #8A8175;
             padding-left: 12px;
         }
@@ -310,37 +387,6 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0) scale(1);
-        }
-
-        @media (max-width:768px) {
-
-            .search-box {
-                position: relative;
-            }
-
-            .search-form {
-                position: absolute;
-                top: 42px;
-                right: -5px;
-                transform: none;
-                width: 0;
-                opacity: 0;
-                overflow: hidden;
-                transition: .35s;
-            }
-
-            .search-box.active .search-form {
-                width: 130px;
-                opacity: 1;
-            }
-
-            .search-input {
-                width: 130px;
-                height: 30px;
-                font-size: 12px;
-                padding: 0 10px;
-            }
-
         }
 
         /* ============================
@@ -396,7 +442,7 @@
 
         }
 
-         .cutting-edge {
+        .cutting-edge {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -687,8 +733,8 @@
             width: 50%;
         }
 
-        .left-content h5,
-        .right-content h5 {
+        .left-content h2,
+        .right-content h2 {
             font-size: 36px;
             font-weight: 500;
             text-transform: uppercase;
@@ -700,8 +746,8 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .left-content h5::after,
-        .right-content h5::after {
+        .left-content h2::after,
+        .right-content h2::after {
             content: "";
             position: absolute;
             left: 0;
@@ -712,12 +758,12 @@
             transition: width 1s ease;
         }
 
-        .left-content.active h5::after,
-        .right-content.active h5::after {
+        .left-content.active h2::after,
+        .right-content.active h2::after {
             width: 140px;
         }
 
-        .left-content h4 {
+        .left-content h3 {
             font-size: 22px;
             line-height: 1.4;
             font-weight: 300;
@@ -777,7 +823,7 @@
             text-align: center;
         }
 
-        .service-box h3 {
+        .service-box h2 {
             font-size: 42px;
             font-weight: 500;
             letter-spacing: 4px;
@@ -788,7 +834,7 @@
             display: inline-block;
         }
 
-        .service-box h3::after {
+        .service-box h2::after {
             content: "";
             position: absolute;
             left: 50%;
@@ -800,11 +846,11 @@
             transition: width 1s ease;
         }
 
-        .service-box h3.reveal.active::after {
+        .service-box h2.reveal.active::after {
             width: 140px;
         }
 
-        .service-box h4 {
+        .service-box h3 {
             font-size: 42px;
             font-weight: 500;
             text-transform: uppercase;
@@ -815,7 +861,7 @@
             display: inline-block;
         }
 
-        .service-box h4::after {
+        .service-box h3::after {
             content: "";
             position: absolute;
             left: 50%;
@@ -827,7 +873,7 @@
             transition: width 1s ease;
         }
 
-        .service-box h4.reveal.active::after {
+        .service-box h3.reveal.active::after {
             width: 140px;
         }
 
@@ -886,7 +932,7 @@
             margin-bottom: 15px;
         }
 
-        .service-item h6 {
+        .service-item h4 {
             font-size: 14px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -907,13 +953,13 @@
                 font-size: 38px;
             }
 
-            .left-content h5,
-            .right-content h5 {
+            .left-content h2,
+            .right-content h2 {
                 font-size: 28px;
             }
 
-            .service-box h3,
-            .service-box h4 {
+            .service-box h2,
+            .service-box h3 {
                 font-size: 30px;
             }
 
@@ -956,7 +1002,7 @@
             margin-left: 0;
         }
 
-        .contact h1 {
+        .contact h2 {
             font-size: 30px;
             font-weight: 500;
             letter-spacing: 2px;
@@ -965,7 +1011,7 @@
             margin-bottom: 20px;
         }
 
-        .contact h2 {
+        .contact h3 {
             font-size: 22px;
             font-weight: 400;
             margin-bottom: 20px;
@@ -976,6 +1022,15 @@
             line-height: 1.9;
             margin-bottom: 15px;
             max-width: 700px;
+        }
+
+        .contact a {
+            color: #fff;
+        }
+
+        .contact i {
+            color: #1a1a1a;
+            margin-right: 8px;
         }
 
         /* =====================================
@@ -1019,7 +1074,8 @@
             transition: .3s;
         }
 
-        footer a:hover {
+        footer a:hover,
+        footer a:focus-visible {
             color: #c7c0b8;
         }
 
@@ -1027,10 +1083,6 @@
 
         .contact+footer {
             margin-top: 0;
-        }
-
-        body {
-            margin: 0;
         }
 
         /* =====================================
@@ -1053,8 +1105,8 @@
                 width: 90px;
             }
 
-            .contact h1,
             .contact h2,
+            .contact h3,
             .contact p {
                 text-align: center;
                 margin-left: auto;
@@ -1065,78 +1117,6 @@
                 padding: 20px 30px;
             }
 
-        }
-
-        /* =====================================
-   MOBILE
-===================================== */
-
-        @media(max-width:768px) {
-
-            .contact {
-                padding: 60px 20px;
-            }
-
-            .logo1 img {
-                width: 85px;
-            }
-
-            .contact h1 {
-                font-size: 30px;
-                font-weight: 50px;
-            }
-
-            .contact h2 {
-                font-size: 26px;
-            }
-
-            .contact p {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-
-            .contact::before {
-                font-size: 140px;
-                right: -25px;
-                bottom: -20px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-                padding: 25px 15px;
-            }
-
-            .footer-left,
-            .footer-center,
-            .footer-right {
-                width: 100%;
-                text-align: center;
-            }
-
-        }
-
-
-        /* ============================
-           DIVIDER
-        ============================ */
-        .divider-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #bcb8b3 30%, #bcb8b3 70%, transparent);
-            width: 0;
-            margin: 0 auto;
-            transition: width 1.4s var(--ease-out);
-        }
-
-        .divider-line.active {
-            width: 80%;
-        }
-
-        /* ============================
-           RESPONSIVE
-        ============================ */
-        @media(max-width: 991px) {
             .box {
                 flex-direction: column;
                 gap: 50px;
@@ -1154,22 +1134,77 @@
             .two-col-section {
                 padding: 80px 30px;
             }
+
         }
 
-        @media(max-width: 768px) {
+        /* =====================================
+   MOBILE (consolidated — single breakpoint block)
+===================================== */
+
+        @media(max-width:768px) {
+
+            #cursorDot,
+            #cursorRing {
+                display: none;
+            }
+
             header {
                 height: 75px;
                 padding: 0 15px;
+                background: rgba(17, 17, 17, .75);
+                backdrop-filter: blur(15px);
+            }
+
+            .logo-area {
+                display: flex;
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+            .logo-area a {
+                font-size: 10px;
+                letter-spacing: 1px;
             }
 
             .logo {
-                position: static;
-                transform: none;
-                width: 75px;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
             }
 
             .logo img {
-                width: 75px;
+                width: 90px;
+            }
+
+            .icons {
+                gap: 12px;
+                flex-shrink: 0;
+            }
+
+            .icon-btn i {
+                font-size: 17px;
+            }
+
+            .search-form {
+                right: 0;
+                top: 55px;
+            }
+
+            .search-box.active .search-form {
+                width: 190px;
+            }
+
+            .search-input {
+                width: 190px;
+                height: 38px;
+            }
+
+            .menu-dropdown {
+                position: fixed;
+                top: 75px;
+                right: 12px;
+                width: 210px;
             }
 
             .cutting-edge {
@@ -1186,13 +1221,32 @@
             }
 
             .contact {
-                padding: 50px 20px;
+                padding: 60px 20px;
+                text-align: center;
             }
 
-            .contact h1,
-            .contact h2,
+            .logo1 img {
+                width: 85px;
+            }
+
+            .contact h2 {
+                font-size: 26px;
+            }
+
+            .contact h3 {
+                font-size: 20px;
+            }
+
             .contact p {
+                font-size: 15px;
+                line-height: 1.8;
                 text-align: center;
+            }
+
+            .contact::before {
+                font-size: 140px;
+                right: -25px;
+                bottom: -20px;
             }
 
             footer {
@@ -1208,150 +1262,6 @@
                 margin: 0;
                 text-align: center;
             }
-        }
-
-        @media(max-width: 600px) {
-            h1 {
-                font-size: 32px !important;
-            }
-
-            h2 {
-                font-size: 28px !important;
-            }
-
-            p {
-                font-size: 16px !important;
-                line-height: 1.6;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-        }
-
-        /* ============================
-   MOBILE HEADER
-============================ */
-
-        @media (max-width:768px) {
-
-            header {
-                height: 75px;
-                padding: 0 15px;
-                background: rgba(17, 17, 17, .75);
-                backdrop-filter: blur(15px);
-            }
-
-
-            .logo-area {
-                display: flex;
-                gap: 12px;
-                flex-shrink: 0;
-            }
-
-
-            .logo-area a {
-                font-size: 10px;
-                letter-spacing: 1px;
-            }
-
-
-            .logo {
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-
-            .logo img {
-                width: 90px;
-            }
-
-
-            .icons {
-                gap: 12px;
-                flex-shrink: 0;
-            }
-
-
-            .icons i {
-                font-size: 17px;
-            }
-
-
-            .search-form {
-                right: 0;
-                top: 55px;
-            }
-
-
-            .search-box.active .search-form {
-                width: 190px;
-            }
-
-
-            .search-input {
-                width: 190px;
-                height: 38px;
-            }
-
-
-            .menu-dropdown {
-                position: fixed;
-                top: 75px;
-                right: 12px;
-                width: 210px;
-            }
-
-        }
-
-
-
-        /* SMALL MOBILE */
-        @media(max-width:420px) {
-
-            header {
-                padding: 0 10px;
-            }
-
-
-            .logo-area {
-                gap: 8px;
-            }
-
-
-            .logo-area a {
-                font-size: 9px;
-            }
-
-
-            .logo img {
-                width: 75px;
-            }
-
-
-            .icons {
-                gap: 8px;
-            }
-
-
-            .icons i {
-                font-size: 16px;
-            }
-
-        }
-
-        /* ============================
-   HERO MOBILE FIX
-============================ */
-
-        @media (max-width:768px) {
 
             .hero-image {
                 height: 100vh;
@@ -1406,9 +1316,22 @@
 
         }
 
+        @media(max-width: 600px) {
+            h1 {
+                font-size: 32px !important;
+            }
+
+            h2 {
+                font-size: 28px !important;
+            }
+
+            p {
+                font-size: 16px !important;
+                line-height: 1.6;
+            }
+        }
 
         /* EXTRA SMALL MOBILE */
-
         @media (max-width:480px) {
 
             .hero-image {
@@ -1428,66 +1351,125 @@
 
         }
 
-        .contact i {
-    color: #000;
-    margin-right: 8px;
-}
+        /* SMALL MOBILE */
+        @media(max-width:420px) {
+
+            header {
+                padding: 0 10px;
+            }
+
+            .logo-area {
+                gap: 8px;
+            }
+
+            .logo-area a {
+                font-size: 9px;
+            }
+
+            .logo img {
+                width: 75px;
+            }
+
+            .icons {
+                gap: 8px;
+            }
+
+            .icon-btn i {
+                font-size: 16px;
+            }
+
+        }
+
+        /* ============================
+           DIVIDER
+        ============================ */
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #bcb8b3 30%, #bcb8b3 70%, transparent);
+            width: 0;
+            margin: 0 auto;
+            transition: width 1.4s var(--ease-out);
+        }
+
+        .divider-line.active {
+            width: 80%;
+        }
+
+        /* Visible keyboard focus */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid #8A8175;
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
 
         ::selection {
-    background: #8A8175;
-    color: white;
-}
+            background: #8A8175;
+            color: #fff;
+        }
 
-        /* Chrome, Edge, Safari, Opera, Android browsers */
-::selection {
-    background: #8A8175;
-    color: #fff;
-}
-
-/* Firefox (Desktop & Android) */
-::-moz-selection {
-    background: #8A8175;
-    color: #fff;
-}
-        
+        ::-moz-selection {
+            background: #8A8175;
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- CURSOR -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- CURSOR (injected/enabled only for fine-pointer devices via JS) -->
+    <div class="cursor-dot" id="cursorDot" hidden></div>
+    <div class="cursor-ring" id="cursorRing" hidden></div>
 
     <!-- PROGRESS BAR -->
     <div id="progress-bar"></div>
 
     <header id="mainHeader">
-        <div class="logo-area">
+        <nav class="logo-area" aria-label="Secondary navigation">
             <a href="culture.html">Culture</a>
             <a href="insight.html">Insight</a>
-        </div>
+        </nav>
 
         <div class="logo">
-            <a href="./index.html"><img src="image/logo.png" alt="OM Modular"></a>
+            <a href="index.html" aria-label="OM Modular Furniture home">
+                <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            </a>
         </div>
 
         <div class="icons">
             <div class="search-box">
-                <i class="fas fa-search search-btn"></i>
-                <form class="search-form">
-                    <input type="text" class="search-input" placeholder="Search...">
+                <button type="button" class="icon-btn search-btn" aria-label="Toggle search" aria-expanded="false">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                <form class="search-form" role="search">
+                    <label for="siteSearch" class="visually-hidden">Search the site</label>
+                    <input id="siteSearch" type="text" class="search-input" placeholder="Search...">
                 </form>
             </div>
 
             <div class="menu-box">
-                <i class="fas fa-bars menu-btn"></i>
-                <div class="menu-dropdown">
+                <button type="button" class="icon-btn menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav class="menu-dropdown" aria-label="Main navigation">
                     <a href="modular-kitchen.html">Modular Kitchen</a>
                     <a href="living-space.html">Living Space</a>
                     <a href="workspace.html">Workspace</a>
                     <a href="contact.html">Contact</a>
-                </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -1496,9 +1478,8 @@
     <section class="hero-image">
         <div class="hero-bg-layer" id="heroBg"></div>
         <div class="hero-overlay">
-            <p class="cutting-edge">
-                Cutting-Edge Design, Advanced Technology, and Exquisite Craftsmanship that
-                Metamorphosis ideas into reality
+            <p class="cutting-edge">Cutting-Edge Design, Advanced Technology, and Exquisite Craftsmanship that
+                Transform ideas into reality
             </p>
         </div>
         <div class="hero-line"></div>
@@ -1532,14 +1513,14 @@
 
     <!-- INSIGHT SLIDER -->
     <section class="insight-slider">
-        <div class="swiper mySwiper reveal">
+        <div class="swiper mySwiper reveal" aria-label="Interior design inspiration gallery">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="image/insight1.jpg" alt="Insight 1"></div>
-                <div class="swiper-slide"><img src="image/insight2.jpg" alt="Insight 2"></div>
-                <div class="swiper-slide"><img src="image/insight3.jpg" alt="Insight 3"></div>
-                <div class="swiper-slide"><img src="image/insight4.jpg" alt="Insight 4"></div>
-                <div class="swiper-slide"><img src="image/insight5.jpg" alt="Insight 5"></div>
-                <div class="swiper-slide"><img src="image/insight6.jpg" alt="Insight 6"></div>
+                <div class="swiper-slide"><img src="image/insight1.jpg" loading="lazy" alt="Modular kitchen interior design inspiration"></div>
+                <div class="swiper-slide"><img src="image/insight2.jpg" loading="lazy" alt="Living space furniture design inspiration"></div>
+                <div class="swiper-slide"><img src="image/insight3.jpg" loading="lazy" alt="Wardrobe and storage design inspiration"></div>
+                <div class="swiper-slide"><img src="image/insight4.jpg" loading="lazy" alt="Workspace interior design inspiration"></div>
+                <div class="swiper-slide"><img src="image/insight5.jpg" loading="lazy" alt="Custom modular furniture design inspiration"></div>
+                <div class="swiper-slide"><img src="image/insight6.jpg" loading="lazy" alt="Modern home interior design inspiration"></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -1549,11 +1530,11 @@
     <div class="two-col-section">
         <div class="box">
             <div class="left-content reveal-left">
-                <h5>Why OMF</h5>
-                <h4>
+                <h2>Why OMF</h2>
+                <h3>
                     Creativity, Trust, Flexibility and
                     Personalisation are our driving forces.
-                </h4>
+                </h3>
                 <p>
                     We believe in the essence of every living space—a soul waiting to be unveiled.
                     It's the passion, expertise, and creativity we pour into every design, manufacturing process, and
@@ -1570,7 +1551,7 @@
             <div class="col-divider"></div>
 
             <div class="right-content reveal-right">
-                <h5>Bespoke Concierge Service</h5>
+                <h2>Bespoke Concierge Service</h2>
                 <p>
                     Step into luxury with our exclusive Concierge Service, where you'll meet our specialized
                     team-consultants. Whether online, over the phone, or in person at our showroom, we cater to your
@@ -1585,23 +1566,23 @@
     <!-- OUR SERVICE -->
     <section class="our-service">
         <div class="service-box">
-            <h3 class="reveal">Our Service</h3>
+            <h2 class="reveal">Our Service</h2>
 
             <!-- Animated service cards -->
             <div class="service-list">
                 <div class="service-item reveal" data-delay="1">
-                    <div class="icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h6>Tailored Design</h6>
+                    <div class="icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+                    <h4>Tailored Design</h4>
                     <p>Customized solutions built around your unique preferences and lifestyle.</p>
                 </div>
                 <div class="service-item reveal" data-delay="2">
-                    <div class="icon"><i class="fas fa-cogs"></i></div>
-                    <h6>German Craftsmanship</h6>
+                    <div class="icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                    <h4>German Craftsmanship</h4>
                     <p>Enduring quality with precision German technology and artisanal craftsmanship.</p>
                 </div>
                 <div class="service-item reveal" data-delay="3">
-                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
-                    <h6>Design-Driven Execution</h6>
+                    <div class="icon"><i class="fas fa-pencil-ruler" aria-hidden="true"></i></div>
+                    <h4>Design-Driven Execution</h4>
                     <p>Organized, detail-oriented process from conception to installation.</p>
                 </div>
             </div>
@@ -1612,11 +1593,11 @@
                 style, and functionality.
             </p>
 
-            <img src="image/Picture1.png" alt="Our Service" class="reveal">
+            <img src="image/Picture1.png" loading="lazy" alt="OM Modular Furniture service overview diagram" class="reveal">
 
-            <h4 class="reveal">Work Process</h4>
+            <h3 class="reveal">Work Process</h3>
 
-            <img src="image/Picture2.png" alt="Work Process" class="reveal">
+            <img src="image/Picture2.png" loading="lazy" alt="OM Modular Furniture work process from consultation to installation" class="reveal">
         </div>
     </section>
 
@@ -1624,24 +1605,25 @@
     <section class="contact">
 
         <div class="logo1">
-            <img src="image/logo.png" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
+            <img src="image/logo.png" loading="lazy" alt="OM Modular Furniture - Modular Kitchen & Interior Solutions">
         </div>
 
-        <h1 class="reveal">Om Modular Furniture</h1>
-        <h2 class="reveal">Craft your modular luxury!</h2>
+        <h2 class="reveal">Om Modular Furniture</h2>
+        <h3 class="reveal">Craft your modular luxury!</h3>
         <p class="reveal">Modular Kitchens · Living Spaces · Workspaces</p>
         <p class="reveal">
-    <i class="fa-solid fa-location-dot"></i>
-    G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
-    Bhatpore, Surat-394510, Gujarat, India.
-</p>
-
-<p class="reveal">
-    <i class="fa-solid fa-phone"></i>
-    +91 99130 08830
-</p>
-
-        <p class="reveal">📧 ommodular11@gmail.com</p>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            G 11, Ichhapore Textile Park, Opp. RJD Textile Park,
+            Bhatpore, Surat-394510, Gujarat, India.
+        </p>
+        <p class="reveal">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+919913008830">+91 99130 08830</a>
+        </p>
+        <p class="reveal">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:ommodular11@gmail.com">ommodular11@gmail.com</a>
+        </p>
     </section>
 
     <!-- FOOTER -->
@@ -1655,35 +1637,45 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         /* ============================
-           CURSOR
+           CURSOR (fine pointer only)
         ============================ */
-        const dot = document.getElementById("cursorDot");
-        const ring = document.getElementById("cursorRing");
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        const prefersFinePointer = window.matchMedia("(pointer: fine)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        document.addEventListener("mousemove", e => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
-        });
-        (function ringFollow() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
-            requestAnimationFrame(ringFollow);
-        })();
-        document.querySelectorAll("a, button, .icons i, .service-item").forEach(el => {
-            el.addEventListener("mouseenter", () => ring.classList.add("expand"));
-            el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
-        });
+        if (prefersFinePointer && !prefersReducedMotion) {
+
+            const dot = document.getElementById("cursorDot");
+            const ring = document.getElementById("cursorRing");
+            dot.hidden = false;
+            ring.hidden = false;
+
+            let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+            document.addEventListener("mousemove", e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+            });
+            (function ringFollow() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
+                requestAnimationFrame(ringFollow);
+            })();
+            document.querySelectorAll("a, button, .icon-btn i, .service-item").forEach(el => {
+                el.addEventListener("mouseenter", () => ring.classList.add("expand"));
+                el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
+            });
+        }
 
         /* ============================
            SCROLL PROGRESS
         ============================ */
         const progressBar = document.getElementById("progress-bar");
         window.addEventListener("scroll", () => {
-            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const pct = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
             progressBar.style.width = pct + "%";
         });
 
@@ -1691,20 +1683,20 @@
            HEADER ON SCROLL
         ============================ */
         const header = document.getElementById("mainHeader");
-        let lastScroll = 0;
         window.addEventListener("scroll", () => {
             const y = window.scrollY;
             header.classList.toggle("scrolled", y > 60);
-            lastScroll = y;
         });
 
         /* ============================
            PARALLAX HERO
         ============================ */
         const heroBg = document.getElementById("heroBg");
-        window.addEventListener("scroll", () => {
-            if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-        });
+        if (!prefersReducedMotion) {
+            window.addEventListener("scroll", () => {
+                if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+            }, { passive: true });
+        }
 
         /* ============================
            SWIPER
@@ -1731,28 +1723,46 @@
         /* ============================
            MENU
         ============================ */
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuBtn = document.querySelector(".menu-btn");
-            const menuBox = document.querySelector(".menu-box");
-            menuBtn.addEventListener("click", e => { e.stopPropagation(); menuBox.classList.toggle("active"); });
-            document.addEventListener("click", () => menuBox.classList.remove("active"));
-        });
+        const menuBtn = document.querySelector(".menu-btn");
+        const menuBox = document.querySelector(".menu-box");
+
+        if (menuBtn && menuBox) {
+            menuBtn.addEventListener("click", e => {
+                e.stopPropagation();
+                const isOpen = menuBox.classList.toggle("active");
+                menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            document.addEventListener("click", () => {
+                menuBox.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    menuBox.classList.remove("active");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
 
         /* ============================
            SEARCH
         ============================ */
-        /* SEARCH */
         const searchBtn = document.querySelector(".search-btn");
         const searchBox = document.querySelector(".search-box");
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
 
-        if (searchBtn) {
+        if (searchBtn && searchBox) {
 
             searchBtn.addEventListener("click", function (e) {
                 e.stopPropagation();
 
-                searchBox.classList.toggle("active");
+                const isActive = searchBox.classList.toggle("active");
+                searchBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
 
-                if (searchBox.classList.contains("active")) {
+                if (isActive) {
                     setTimeout(() => {
                         searchInput.focus();
                     }, 200);
@@ -1765,131 +1775,139 @@
 
             document.addEventListener("click", function () {
                 searchBox.classList.remove("active");
+                searchBtn.setAttribute("aria-expanded", "false");
             });
 
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    searchBox.classList.remove("active");
+                    searchBtn.setAttribute("aria-expanded", "false");
+                }
+            });
         }
 
-        const searchForm = document.querySelector(".search-form");
-const searchInput = document.querySelector(".search-input");
+        if (searchForm && searchInput) {
 
-searchForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+            searchForm.addEventListener("submit", function (e) {
+                e.preventDefault();
 
-    let value = searchInput.value.toLowerCase().trim();
+                let value = searchInput.value.toLowerCase().trim();
 
-    // Kitchen
-    if (
-        value.includes("kitchen") ||
-        value.includes("linear") ||
-        value.includes("parallel") ||
-        value.includes("l-shape") ||
-        value.includes("l shape") ||
-        value.includes("u-shape") ||
-        value.includes("u shape") ||
-        value.includes("island") ||
-        value.includes("peninsula")
-    ) {
-        window.location.href = "modular-kitchen.html";
-    }
+                // Kitchen
+                if (
+                    value.includes("kitchen") ||
+                    value.includes("linear") ||
+                    value.includes("parallel") ||
+                    value.includes("l-shape") ||
+                    value.includes("l shape") ||
+                    value.includes("u-shape") ||
+                    value.includes("u shape") ||
+                    value.includes("island") ||
+                    value.includes("peninsula")
+                ) {
+                    window.location.href = "modular-kitchen.html";
+                }
 
-    // Living Space
-    else if (
-        value.includes("living") ||
-        value.includes("living room") ||
-        value.includes("tv unit") ||
-        value.includes("display unit") ||
-        value.includes("storage cabinet") ||
-        value.includes("coffee table") ||
-        value.includes("entertainment unit")
-    ) {
-        window.location.href = "living-space.html";
-    }
+                // Living Space
+                else if (
+                    value.includes("living") ||
+                    value.includes("living room") ||
+                    value.includes("tv unit") ||
+                    value.includes("display unit") ||
+                    value.includes("storage cabinet") ||
+                    value.includes("coffee table") ||
+                    value.includes("entertainment unit")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-    // Bedroom
-    else if (
-        value.includes("bedroom") ||
-        value.includes("bed") ||
-        value.includes("modular bed") ||
-        value.includes("side storage") ||
-        value.includes("wall mirror") ||
-        value.includes("study") ||
-        value.includes("study unit") ||
-        value.includes("work unit")
-    ) {
-       window.location.href = "living-space.html";
-    }
+                // Bedroom — routed to living-space.html to match culture.html (no dedicated page exists yet)
+                else if (
+                    value.includes("bedroom") ||
+                    value.includes("bed") ||
+                    value.includes("modular bed") ||
+                    value.includes("side storage") ||
+                    value.includes("wall mirror") ||
+                    value.includes("study") ||
+                    value.includes("study unit") ||
+                    value.includes("work unit")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-    // Bathroom
-    else if (
-        value.includes("bathroom") ||
-        value.includes("vanity") ||
-        value.includes("sink") ||
-        value.includes("dressing") ||
-        value.includes("dressing unit") ||
-        value.includes("bath storage")
-    ) {
-        window.location.href = "living-space.html";
-    }
+                // Bathroom — routed to living-space.html to match culture.html (no dedicated page exists yet)
+                else if (
+                    value.includes("bathroom") ||
+                    value.includes("vanity") ||
+                    value.includes("sink") ||
+                    value.includes("dressing") ||
+                    value.includes("dressing unit") ||
+                    value.includes("bath storage")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-    // Wardrobe
-    else if (
-        value.includes("wardrobe") ||
-        value.includes("hinged") ||
-        value.includes("sliding") ||
-        value.includes("walk-in") ||
-        value.includes("walk in")
-    ) {
-         window.location.href = "living-space.html";
-    }
+                // Wardrobe — routed to living-space.html to match culture.html (no dedicated page exists yet)
+                else if (
+                    value.includes("wardrobe") ||
+                    value.includes("hinged") ||
+                    value.includes("sliding") ||
+                    value.includes("walk-in") ||
+                    value.includes("walk in")
+                ) {
+                    window.location.href = "living-space.html";
+                }
 
-    // Workspace
-    else if (
-        value.includes("workspace") ||
-        value.includes("office") ||
-        value.includes("workstation") ||
-        value.includes("locker") ||
-        value.includes("storage") ||
-        value.includes("table") ||
-        value.includes("meeting") ||
-        value.includes("booth") ||
-        value.includes("lounge") ||
-        value.includes("bookshelf") ||
-        value.includes("reception") ||
-        value.includes("conference") ||
-        value.includes("executive")
-    ) {
-        window.location.href = "workspace.html";
-    }
+                // Workspace
+                else if (
+                    value.includes("workspace") ||
+                    value.includes("office") ||
+                    value.includes("workstation") ||
+                    value.includes("locker") ||
+                    value.includes("storage") ||
+                    value.includes("table") ||
+                    value.includes("meeting") ||
+                    value.includes("booth") ||
+                    value.includes("lounge") ||
+                    value.includes("bookshelf") ||
+                    value.includes("reception") ||
+                    value.includes("conference") ||
+                    value.includes("executive")
+                ) {
+                    window.location.href = "workspace.html";
+                }
 
-    // Contact
-    else if (
-        value.includes("contact") ||
-        value.includes("phone") ||
-        value.includes("email")
-    ) {
-        window.location.href = "contact.html";
-    }
+                // Contact
+                else if (
+                    value.includes("contact") ||
+                    value.includes("phone") ||
+                    value.includes("email")
+                ) {
+                    window.location.href = "contact.html";
+                }
 
-    // Culture
-    else if (
-        value.includes("culture")
-    ) {
-        window.location.href = "culture.html";
-    }
+                // Culture
+                else if (
+                    value.includes("culture")
+                ) {
+                    window.location.href = "culture.html";
+                }
 
-    // Insight
-    else if (
-        value.includes("insight") ||
-        value.includes("design") ||
-        value.includes("story")
-    ) {
-        window.location.href = "insight.html";
-    }
+                // Insight
+                else if (
+                    value.includes("insight") ||
+                    value.includes("design") ||
+                    value.includes("story")
+                ) {
+                    window.location.href = "insight.html";
+                }
 
-    else {
-        alert("Page not found");
-    }
-});    </script>
+                else {
+                    alert("Page not found");
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
